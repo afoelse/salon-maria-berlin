@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; }
+  ::selection { background: #d6e3c2; color: #3c4a2a; }
+  @keyframes sway { 0%,100% { transform: rotate(0deg); } 50% { transform: rotate(4deg); } }
+  @keyframes swayslow { 0%,100% { transform: rotate(0deg) translateY(0); } 50% { transform: rotate(-3deg) translateY(6px); } }
+  @keyframes floaty { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+</style>
+</helmet>
+<div style="font-family: 'Jost', system-ui, sans-serif; color: #3f472f; background: #fbfaf6; line-height: 1.6;">
+
+  <!-- NAV -->
+  <nav style="position: sticky; top: 0; z-index: 50; display: flex; align-items: center; justify-content: space-between; padding: 12px 48px; background: rgba(251,250,246,0.88); backdrop-filter: blur(12px); border-bottom: 1px solid #ebe7da;">
+    <a href="#hero" style="text-decoration: none; display: flex; align-items: center; gap: 14px;">
+      <img src="assets/logo.png" alt="Maria Augusta Fölsener" style="height: 50px; width: 50px; object-fit: contain;">
+      <span style="display: flex; flex-direction: column; line-height: 1.1;">
+        <span style="font-family: 'Cormorant Garamond', serif; font-size: 21px; font-weight: 600; letter-spacing: 0.5px; color: #4a5733;">Maria Augusta Fölsener</span>
+        <span style="font-size: 9px; letter-spacing: 3.5px; text-transform: uppercase; color: #b69b7d;">Ganzheitskosmetik · Berlin</span>
+      </span>
+    </a>
+    <div style="display: flex; align-items: center; gap: 32px;">
+      <a href="#ueber" style="text-decoration: none; color: #5e6748; font-size: 14px; letter-spacing: 0.3px;">Über mich</a>
+      <a href="Leistungen.dc.html" style="text-decoration: none; color: #5e6748; font-size: 14px; letter-spacing: 0.3px;">Leistungen</a>
+      <a href="#kontakt" style="text-decoration: none; color: #5e6748; font-size: 14px; letter-spacing: 0.3px;">Kontakt</a>
+      <a href="#kontakt" style="text-decoration: none; background: {{ accent }}; color: #fff; font-size: 13px; letter-spacing: 0.5px; padding: 10px 22px; border-radius: 100px;" style-hover="filter: brightness(0.92);">Termin buchen</a>
+    </div>
+  </nav>
+
+  <!-- HERO (minimal) -->
+  <section id="hero" style="position: relative; background: #fbfaf6; padding: 116px 56px 0; text-align: center; overflow: hidden;">
+    <div style="max-width: 840px; margin: 0 auto;">
+      <div style="display: flex; justify-content: center; margin-bottom: 30px;">{{ divider }}</div>
+      <span style="font-size: 12px; letter-spacing: 5px; text-transform: uppercase; color: #b69b7d;">Ganzheitskosmetik · Berlin</span>
+      <h1 style="font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: 82px; line-height: 1.02; margin: 22px 0 26px; color: #45522f; letter-spacing: -0.5px;">Wellness für<br>Körper und Seele</h1>
+      <p style="font-size: 19px; color: #5e6748; max-width: 480px; margin: 0 auto 40px; font-weight: 300;">Ganzheitliche Kosmetik – individuell abgestimmt auf deine Bedürfnisse.</p>
+      <div style="display: flex; gap: 28px; align-items: center; justify-content: center; flex-wrap: wrap;">
+        <a href="#kontakt" style="display: inline-block; text-decoration: none; background: {{ accent }}; color: #fff; font-size: 15px; letter-spacing: 0.5px; padding: 15px 36px; border-radius: 100px;" style-hover="filter: brightness(0.92);">Jetzt Termin buchen</a>
+        <a href="Leistungen.dc.html" style="display: inline-flex; align-items: center; gap: 8px; text-decoration: none; color: {{ accentText }}; font-size: 15px; letter-spacing: 0.3px; border-bottom: 1px solid #cdbfa3; padding-bottom: 3px;" style-hover="border-color: {{ accent }};">Behandlungen ansehen →</a>
+      </div>
+    </div>
+    <div style="margin-top: 92px; height: 480px; overflow: hidden;">
+      <img src="assets/raum3.jpg" alt="Behandlungsraum im Studio" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+    </div>
+  </section>
+
+  <!-- ÜBER MICH -->
+  <section id="ueber" style="position: relative; display: grid; grid-template-columns: 1fr 1.12fr; gap: 76px; align-items: center; max-width: 1180px; margin: 0 auto; padding: 116px 56px; overflow: visible;">
+    <div style="position: relative;">
+      <div style="aspect-ratio: 4/5; border-radius: 6px; overflow: hidden; box-shadow: 0 30px 60px -34px rgba(70,82,47,0.5);">
+        <img src="assets/maria.png" alt="Maria Augusta Fölsener" style="width: 100%; height: 100%; object-fit: cover;">
+      </div>
+      <div style="position: absolute; top: -28px; left: -34px; animation: sway 8s ease-in-out infinite; transform-origin: bottom;">{{ decoOrchidSm }}</div>
+    </div>
+    <div>
+      <span style="font-size: 12px; letter-spacing: 4px; text-transform: uppercase; color: #b69b7d;">Über mich</span>
+      <h2 style="font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: 47px; line-height: 1.08; margin: 16px 0 26px; color: #45522f;">Ganzheitskosmetik mit Herz</h2>
+      <p style="font-size: 16.5px; color: #585f47; max-width: 520px; margin: 0; font-weight: 300;">Ich bin Maria und arbeite seit 9 Jahren als Ganzheitskosmetikerin. Ich sehe und behandle den Körper als Ganzes und kombiniere Techniken wie Ayurveda und Lomi-Lomi. Ursprünglich komme ich aus Ecuador und spreche fließend Deutsch, Spanisch und Englisch. Ich bringe meine Herzlichkeit zur Arbeit und schaffe für jeden Kunden genau die richtige Balance aus Entspannung und Lebendigkeit.</p>
+      <div style="display: flex; gap: 36px; margin-top: 38px;">
+        <div><div style="font-family: 'Cormorant Garamond', serif; font-size: 38px; color: {{ accent }}; line-height: 1;">9</div><div style="font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; color: #8a907a; margin-top: 4px;">Jahre Erfahrung</div></div>
+        <div><div style="font-family: 'Cormorant Garamond', serif; font-size: 38px; color: {{ accent }}; line-height: 1;">3</div><div style="font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; color: #8a907a; margin-top: 4px;">Sprachen</div></div>
+        <div><div style="font-family: 'Cormorant Garamond', serif; font-size: 38px; color: {{ accent }}; line-height: 1;">∞</div><div style="font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; color: #8a907a; margin-top: 4px;">Herzlichkeit</div></div>
+      </div>
+      <div style="margin-top: 36px;">{{ divider }}</div>
+    </div>
+  </section>
+
+  <!-- LEISTUNGEN PREVIEW -->
+  <section id="leistungen" style="position: relative; text-align: center; max-width: 1180px; margin: 0 auto; padding: 24px 56px 110px; overflow: visible;">
+    <div style="position: absolute; top: 0; right: 12px; animation: swayslow 10s ease-in-out infinite; transform-origin: top right;">{{ decoFrondSm }}</div>
+    <span style="font-size: 12px; letter-spacing: 4px; text-transform: uppercase; color: #b69b7d;">Leistungen</span>
+    <h2 style="font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: 47px; margin: 16px 0 56px; color: #45522f;">Meine Behandlungen</h2>
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px;">
+      <sc-for list="{{ services }}" as="svc" hint-placeholder-count="3">
+        <div style="background: #fff; border: 1px solid #ebe7da; border-radius: 8px; padding: 46px 32px; text-align: center; transition: box-shadow 0.3s, transform 0.3s;" style-hover="box-shadow: 0 22px 46px -24px rgba(70,82,47,0.42); transform: translateY(-5px);">
+          <div style="display: flex; justify-content: center; margin-bottom: 22px;">{{ svc.icon }}</div>
+          <h3 style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 26px; margin: 0 0 12px; color: #45522f;">{{ svc.title }}</h3>
+          <p style="font-size: 15px; color: #6a7158; margin: 0; font-weight: 300;">{{ svc.desc }}</p>
+        </div>
+      </sc-for>
+    </div>
+    <div style="display: flex; gap: 16px; justify-content: center; margin-top: 52px; flex-wrap: wrap;">
+      <a href="Leistungen.dc.html" style="text-decoration: none; border: 1.5px solid {{ accent }}; color: {{ accentText }}; font-size: 14px; letter-spacing: 0.5px; padding: 13px 28px; border-radius: 100px;" style-hover="background: #f1f4ec;">Alle Leistungen & Preise</a>
+      <a href="https://www.treatwell.de" target="_blank" style="text-decoration: none; background: {{ accent }}; color: #fff; font-size: 14px; letter-spacing: 0.5px; padding: 14.5px 28px; border-radius: 100px;" style-hover="filter: brightness(0.92);">Auf Treatwell buchen</a>
+    </div>
+  </section>
+
+  <!-- PRODUKTPARTNER -->
+  <section style="background: #f4f1e8; padding: 80px 56px;">
+    <div style="max-width: 1080px; margin: 0 auto; text-align: center;">
+      <span style="font-size: 12px; letter-spacing: 4px; text-transform: uppercase; color: #b69b7d;">Produktpartner</span>
+      <h2 style="font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: 38px; margin: 14px 0 10px; color: #45522f;">Womit ich arbeite</h2>
+      <p style="font-size: 15.5px; color: #6a7158; max-width: 480px; margin: 0 auto 46px; font-weight: 300;">Hochwertige Pflege von Marken, denen ich vertraue — für sichtbare und spürbare Ergebnisse.</p>
+      <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px;">
+        <sc-for list="{{ partners }}" as="p" hint-placeholder-count="4">
+          <div style="background: #fff; border-radius: 8px; height: 116px; display: flex; align-items: center; justify-content: center; padding: 26px; box-shadow: 0 8px 24px -18px rgba(70,82,47,0.5); transition: transform 0.3s;" style-hover="transform: translateY(-4px);">
+            <img src="{{ p }}" alt="Partnermarke" style="max-width: 100%; max-height: 56px; object-fit: contain;">
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- KUNDENSTIMMEN -->
+  <section style="background: #eaf0df; padding: 104px 56px; position: relative; overflow: hidden;">
+    <div style="position: absolute; top: -20px; right: -16px; animation: sway 9s ease-in-out infinite; transform-origin: top right;">{{ decoOrchidLg }}</div>
+    <div style="position: absolute; bottom: -30px; left: -20px; animation: swayslow 11s ease-in-out infinite; transform-origin: bottom left;">{{ decoFrond }}</div>
+    <div style="max-width: 1180px; margin: 0 auto; text-align: center; position: relative;">
+      <span style="font-size: 12px; letter-spacing: 4px; text-transform: uppercase; color: #8a9778;">Kundenstimmen</span>
+      <h2 style="font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: 47px; margin: 16px 0 8px; color: #45522f;">Was Kundinnen sagen</h2>
+      <div style="display: inline-flex; align-items: center; gap: 8px; background: #fff; border-radius: 100px; padding: 7px 16px; margin-bottom: 52px; box-shadow: 0 4px 18px -10px rgba(70,82,47,0.4);">
+        <span style="color: #e7b84a; font-size: 13px; letter-spacing: 1px;">★★★★★</span>
+        <span style="font-size: 12px; color: #5e6748; letter-spacing: 0.5px;">Treatwell Top Rated 2020</span>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px;">
+        <sc-for list="{{ reviews }}" as="rev" hint-placeholder-count="3">
+          <div style="background: #fff; border-radius: 8px; padding: 38px 32px; text-align: left; box-shadow: 0 14px 36px -26px rgba(70,82,47,0.5);">
+            <div style="color: #e7b84a; font-size: 15px; letter-spacing: 2px; margin-bottom: 18px;">★★★★★</div>
+            <p style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 21px; line-height: 1.42; color: #47502f; margin: 0 0 22px;">„{{ rev.quote }}"</p>
+            <span style="font-size: 13px; letter-spacing: 1px; text-transform: uppercase; color: #b69b7d;">{{ rev.name }}</span>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- EINBLICKE / GALERIE -->
+  <section style="max-width: 1280px; margin: 0 auto; padding: 110px 56px 96px; text-align: center;">
+    <span style="font-size: 12px; letter-spacing: 4px; text-transform: uppercase; color: #b69b7d;">Einblicke</span>
+    <h2 style="font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: 47px; margin: 16px 0 48px; color: #45522f;">Mein Studio</h2>
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); grid-auto-rows: 200px; gap: 16px;">
+      <div style="overflow: hidden; border-radius: 8px; grid-row: span 2;"><img src="assets/raum6.jpg" alt="Wohlfühlmoment" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s;" style-hover="transform: scale(1.05);"></div>
+      <div style="overflow: hidden; border-radius: 8px;"><img src="assets/raum5.jpg" alt="Behandlungsplatz" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s;" style-hover="transform: scale(1.05);"></div>
+      <div style="overflow: hidden; border-radius: 8px;"><img src="assets/raum1.jpg" alt="Massageraum" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s;" style-hover="transform: scale(1.05);"></div>
+      <div style="overflow: hidden; border-radius: 8px;"><img src="assets/raum2.jpg" alt="Behandlungsraum" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s;" style-hover="transform: scale(1.05);"></div>
+      <div style="overflow: hidden; border-radius: 8px;"><img src="assets/raum4.jpg" alt="Empfang" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s;" style-hover="transform: scale(1.05);"></div>
+    </div>
+  </section>
+
+  <!-- KONTAKT -->
+  <section id="kontakt" style="position: relative; background: #f4f1e8; padding: 104px 56px; overflow: hidden;">
+    <div style="position: absolute; top: 40px; left: -10px; animation: sway 8s ease-in-out infinite; transform-origin: top left;">{{ decoFrondSm }}</div>
+    <div style="position: absolute; bottom: -10px; right: 30px; animation: floaty 7s ease-in-out infinite;">{{ decoOrchidSm }}</div>
+    <div style="max-width: 1120px; margin: 0 auto; position: relative;">
+      <div style="text-align: center; margin-bottom: 56px;">
+        <span style="font-size: 12px; letter-spacing: 4px; text-transform: uppercase; color: #b69b7d;">Kontakt</span>
+        <h2 style="font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: 46px; margin: 16px 0 14px; color: #45522f;">Ich freue mich auf deinen Besuch!</h2>
+        <p style="font-size: 16.5px; color: #5e6748; max-width: 480px; margin: 0 auto; font-weight: 300;">Ich biete Termine im Studio sowie Hausbesuche an. Schreib mir oder ruf mich an.</p>
+      </div>
+      <div style="display: grid; grid-template-columns: 1fr 1.1fr; gap: 28px; align-items: stretch;">
+        <div style="display: flex; flex-direction: column; gap: 18px;">
+          <div style="background: #fff; border-radius: 10px; padding: 28px 30px; box-shadow: 0 12px 32px -24px rgba(70,82,47,0.5);">
+            <div style="font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #b69b7d; margin-bottom: 16px;">Direkt erreichen</div>
+            <a href="tel:+4917610106022" style="display: flex; align-items: center; gap: 14px; text-decoration: none; color: #45522f; margin-bottom: 14px;">
+              <span style="display:flex;align-items:center;justify-content:center;width:42px;height:42px;border-radius:50%;background:#eef1e4;flex:none;">{{ iconPhone }}</span>
+              <span><span style="display:block;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:#8a907a;">Mobil</span><span style="font-size:18px;font-family:'Cormorant Garamond',serif;font-weight:600;">0176 10 10 60 22</span></span>
+            </a>
+            <a href="tel:+49302824080" style="display: flex; align-items: center; gap: 14px; text-decoration: none; color: #45522f; margin-bottom: 14px;">
+              <span style="display:flex;align-items:center;justify-content:center;width:42px;height:42px;border-radius:50%;background:#eef1e4;flex:none;">{{ iconPhone }}</span>
+              <span><span style="display:block;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:#8a907a;">Festnetz</span><span style="font-size:18px;font-family:'Cormorant Garamond',serif;font-weight:600;">030 28 24 080</span></span>
+            </a>
+            <a href="mailto:kosmetik@mariafoelsener.com" style="display: flex; align-items: center; gap: 14px; text-decoration: none; color: #45522f; margin-bottom: 18px;">
+              <span style="display:flex;align-items:center;justify-content:center;width:42px;height:42px;border-radius:50%;background:#eef1e4;flex:none;">{{ iconMail }}</span>
+              <span><span style="display:block;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:#8a907a;">E-Mail</span><span style="font-size:15.5px;font-weight:500;">kosmetik@mariafoelsener.com</span></span>
+            </a>
+            <a href="https://wa.me/4917610106022" target="_blank" style="display: flex; align-items: center; justify-content: center; gap: 10px; text-decoration: none; background: #5aa469; color: #fff; padding: 14px; border-radius: 100px; font-size: 15px; letter-spacing: 0.3px;" style-hover="filter: brightness(0.94);">
+              {{ iconWhatsapp }} Per WhatsApp schreiben
+            </a>
+          </div>
+          <div style="background: #fff; border-radius: 10px; padding: 28px 30px; box-shadow: 0 12px 32px -24px rgba(70,82,47,0.5);">
+            <div style="font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #b69b7d; margin-bottom: 14px;">Öffnungszeiten</div>
+            <sc-for list="{{ hours }}" as="h" hint-placeholder-count="4">
+              <div style="display: flex; justify-content: space-between; padding: 7px 0; border-bottom: 1px solid #f0ece1; font-size: 14.5px;">
+                <span style="color: #5e6748;">{{ h.day }}</span><span style="color: #45522f; font-weight: 500;">{{ h.time }}</span>
+              </div>
+            </sc-for>
+            <p style="font-size: 13px; color: #8a907a; margin: 14px 0 0; font-weight: 300;">Hausbesuche nach Vereinbarung.</p>
+          </div>
+          <div style="background: #fff; border-radius: 10px; padding: 28px 30px; box-shadow: 0 12px 32px -24px rgba(70,82,47,0.5);">
+            <div style="font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #b69b7d; margin-bottom: 12px;">Adresse</div>
+            <div style="display: flex; align-items: flex-start; gap: 14px; margin-bottom: 18px;">
+              <span style="display:flex;align-items:center;justify-content:center;width:42px;height:42px;border-radius:50%;background:#eef1e4;flex:none;">{{ iconPin }}</span>
+              <span style="font-size: 15.5px; color: #45522f; line-height: 1.5;">Maria Augusta Fölsener Kosmetik<br>Tieckstr. 1b, 10115 Berlin</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 12px; padding-top: 16px; border-top: 1px solid #f0ece1;">
+              <span style="font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #b69b7d;">Folgen</span>
+              <a href="https://instagram.com/mariafoelsenerkosmetik" target="_blank" style="display:flex;align-items:center;gap:7px;text-decoration:none;color:#5e6748;font-size:13.5px;" style-hover="color:#6f8f3f;">{{ iconInstagram }} Instagram</a>
+              <a href="https://facebook.com/mariafoelsenerkosmetik" target="_blank" style="display:flex;align-items:center;gap:7px;text-decoration:none;color:#5e6748;font-size:13.5px;" style-hover="color:#6f8f3f;">{{ iconFacebook }} Facebook</a>
+            </div>
+          </div>
+        </div>
+        <div style="border-radius: 10px; overflow: hidden; min-height: 460px; box-shadow: 0 12px 32px -24px rgba(70,82,47,0.5);">
+          <iframe title="Standort auf Google Maps" src="https://www.google.com/maps?q=Tieckstr.+1b,+10115+Berlin&output=embed" style="width: 100%; height: 100%; min-height: 460px; border: 0;" loading="lazy"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="background: #3c4a2a; color: #cdd5bd; padding: 64px 56px 40px;">
+    <div style="max-width: 1180px; margin: 0 auto; display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 48px;">
+      <div style="max-width: 360px;">
+        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 14px;">
+          <img src="assets/logo.png" alt="" style="height: 46px; width: 46px; object-fit: contain; background: #fff; border-radius: 50%;">
+          <div style="font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 600; color: #f3f6ea;">Maria Augusta Fölsener</div>
+        </div>
+        <p style="font-size: 14px; color: #a6b094; margin: 0 0 18px; font-weight: 300;">Ganzheitliche Kosmetik in Berlin — Behandlungen mit Herz für Körper und Seele.</p>
+        <div style="display: flex; gap: 10px;">
+          <a href="https://instagram.com/mariafoelsenerkosmetik" target="_blank" aria-label="Instagram" style="display:flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:50%;border:1px solid #4d5b39;color:#cdd5bd;text-decoration:none;" style-hover="background:#4d5b39;color:#fff;">{{ iconInstagram }}</a>
+          <a href="https://facebook.com/mariafoelsenerkosmetik" target="_blank" aria-label="Facebook" style="display:flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:50%;border:1px solid #4d5b39;color:#cdd5bd;text-decoration:none;" style-hover="background:#4d5b39;color:#fff;">{{ iconFacebook }}</a>
+        </div>
+      </div>
+      <div>
+        <div style="font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #8a957a; margin-bottom: 16px;">Schnellmenü</div>
+        <div style="display: flex; flex-direction: column; gap: 11px;">
+          <a href="#hero" style="text-decoration: none; color: #cdd5bd; font-size: 14px;" style-hover="color: #fff;">Startseite</a>
+          <a href="#ueber" style="text-decoration: none; color: #cdd5bd; font-size: 14px;" style-hover="color: #fff;">Über mich</a>
+          <a href="Leistungen.dc.html" style="text-decoration: none; color: #cdd5bd; font-size: 14px;" style-hover="color: #fff;">Leistungen & Preise</a>
+          <a href="#kontakt" style="text-decoration: none; color: #cdd5bd; font-size: 14px;" style-hover="color: #fff;">Kontakt</a>
+          <a href="https://www.treatwell.de" target="_blank" style="text-decoration: none; color: #cdd5bd; font-size: 14px;" style-hover="color: #fff;">Termin buchen</a>
+        </div>
+      </div>
+      <div>
+        <div style="font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #8a957a; margin-bottom: 16px;">Kontakt</div>
+        <div style="display: flex; flex-direction: column; gap: 11px; font-size: 14px; color: #cdd5bd;">
+          <a href="tel:+4917610106022" style="text-decoration: none; color: #cdd5bd;" style-hover="color: #fff;">0176 10 10 60 22</a>
+          <a href="tel:+49302824080" style="text-decoration: none; color: #cdd5bd;" style-hover="color: #fff;">030 28 24 080</a>
+          <a href="mailto:kosmetik@mariafoelsener.com" style="text-decoration: none; color: #cdd5bd;" style-hover="color: #fff;">kosmetik@mariafoelsener.com</a>
+          <span style="color: #a6b094; line-height: 1.5;">Tieckstr. 1b<br>10115 Berlin</span>
+        </div>
+      </div>
+    </div>
+    <div style="max-width: 1180px; margin: 44px auto 0; padding-top: 24px; border-top: 1px solid #4d5b39; display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; font-size: 13px; color: #8a957a;">
+      <span>© 2025 Maria Augusta Fölsener Kosmetik</span>
+      <span style="display: flex; gap: 22px; flex-wrap: wrap;">
+        <a href="#" style="text-decoration: none; color: #8a957a;" style-hover="color: #fff;">Impressum</a>
+        <a href="#" style="text-decoration: none; color: #8a957a;" style-hover="color: #fff;">Datenschutz</a>
+        <a href="#" style="text-decoration: none; color: #8a957a;" style-hover="color: #fff;">AGB</a>
+      </span>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280},&quot;theme&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Salbei &amp; Orchidee&quot;,&quot;Tiefes Grün&quot;,&quot;Sanftes Blush&quot;],&quot;default&quot;:&quot;Salbei &amp; Orchidee&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Atmosphäre&quot;},&quot;plants&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Dezent&quot;,&quot;Natürlich&quot;,&quot;Üppig&quot;],&quot;default&quot;:&quot;Natürlich&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Atmosphäre&quot;}}">
+class Component extends DCLogic {
+  // ---- palette themes (derived from logo) ----
+  themes() {
+    return {
+      "Salbei & Orchidee": { accent: "#6f8f3f", accentText: "#5a7634", leaf: "#7d9a4e", bloom: "#e3a9b6", bud: "#ecc3cd" },
+      "Tiefes Grün":       { accent: "#52702f", accentText: "#46612a", leaf: "#5f7e3a", bloom: "#cf94a3", bud: "#e0b0bb" },
+      "Sanftes Blush":     { accent: "#c98397", accentText: "#b06b80", leaf: "#9aa874", bloom: "#dd9aab", bud: "#eebfca" },
+    };
+  }
+  theme() { return this.themes()[this.props.theme] || this.themes()["Salbei & Orchidee"]; }
+  density() {
+    const map = { "Dezent": 0.35, "Natürlich": 0.62, "Üppig": 0.95 };
+    return map[this.props.plants] != null ? map[this.props.plants] : 0.62;
+  }
+
+  // ---- botanical: eucalyptus / fern frond ----
+  frond(size, opacity, color) {
+    const c = color, op = opacity;
+    const leaf = (cx, cy, rx, ry, rot) => React.createElement("ellipse", { cx, cy, rx, ry, fill: c, opacity: 0.55, transform: `rotate(${rot} ${cx} ${cy})` });
+    const out = (cx, cy, rx, ry, rot) => React.createElement("ellipse", { cx, cy, rx, ry, fill: "none", stroke: c, strokeWidth: 1.1, transform: `rotate(${rot} ${cx} ${cy})` });
+    return React.createElement("svg", { width: size, height: size * 1.5, viewBox: "0 0 80 120", fill: "none", style: { opacity: op } },
+      React.createElement("path", { d: "M40 118 C36 92 40 60 52 30 C58 16 62 10 64 4", stroke: c, strokeWidth: 1.3, fill: "none", strokeLinecap: "round" }),
+      leaf(30, 96, 9, 4, 30), out(50, 88, 10, 4.4, -28),
+      leaf(33, 78, 10, 4.2, 28), out(53, 70, 10, 4.4, -30),
+      leaf(38, 58, 10, 4.2, 22), out(55, 50, 9, 4, -34),
+      leaf(45, 38, 8, 3.6, 8),  out(58, 30, 8, 3.4, -40),
+      React.createElement("circle", { cx: 64, cy: 5, r: 3, fill: c, opacity: 0.7 })
+    );
+  }
+
+  // ---- botanical: orchid sprig (echoes the logo bloom) ----
+  orchid(size, opacity, t) {
+    const stem = t.leaf, bloom = t.bloom, bud = t.bud, lip = "#e7b84a";
+    const petal = (cx, cy, rx, ry, rot) => React.createElement("ellipse", { cx, cy, rx, ry, fill: bloom, opacity: 0.92, stroke: "#d99dab", strokeWidth: 0.6, transform: `rotate(${rot} ${cx} ${cy})` });
+    return React.createElement("svg", { width: size * 1.7, height: size, viewBox: "0 0 170 100", fill: "none", style: { opacity } },
+      // arching stem
+      React.createElement("path", { d: "M6 70 C40 86 86 80 120 60", stroke: stem, strokeWidth: 1.6, fill: "none", strokeLinecap: "round" }),
+      React.createElement("path", { d: "M20 72 C16 60 18 52 24 46", stroke: stem, strokeWidth: 1.3, fill: "none", strokeLinecap: "round" }),
+      // buds along stem
+      React.createElement("ellipse", { cx: 24, cy: 44, rx: 5, ry: 8, fill: bud, transform: "rotate(-20 24 44)" }),
+      React.createElement("ellipse", { cx: 44, cy: 80, rx: 5, ry: 7.5, fill: bud, transform: "rotate(40 44 80)" }),
+      React.createElement("ellipse", { cx: 66, cy: 82, rx: 4.5, ry: 7, fill: bud, transform: "rotate(35 66 82)" }),
+      // main orchid bloom near the right end
+      petal(120, 60, 13, 9, 0),
+      petal(108, 48, 11, 7, -38),
+      petal(132, 48, 11, 7, 38),
+      petal(110, 70, 10, 6.5, 40),
+      petal(130, 70, 10, 6.5, -40),
+      React.createElement("circle", { cx: 120, cy: 60, r: 5, fill: lip }),
+      React.createElement("circle", { cx: 120, cy: 60, r: 2, fill: "#cf9a2e" })
+    );
+  }
+
+  divider() {
+    const c = "#b69b7d", t = this.theme(), lip = "#e7b84a";
+    return React.createElement("svg", { width: 150, height: 20, viewBox: "0 0 150 20", fill: "none" },
+      React.createElement("path", { d: "M2 10 H56", stroke: c, strokeWidth: 1 }),
+      React.createElement("path", { d: "M94 10 H148", stroke: c, strokeWidth: 1 }),
+      React.createElement("ellipse", { cx: 66, cy: 10, rx: 6, ry: 3, stroke: t.leaf, strokeWidth: 1.1, fill: "none", transform: "rotate(35 66 10)" }),
+      React.createElement("ellipse", { cx: 84, cy: 10, rx: 6, ry: 3, stroke: t.leaf, strokeWidth: 1.1, fill: "none", transform: "rotate(-35 84 10)" }),
+      React.createElement("circle", { cx: 75, cy: 10, r: 3, fill: t.bloom }),
+      React.createElement("circle", { cx: 75, cy: 10, r: 1.2, fill: lip })
+    );
+  }
+
+  svcIcon(kind) {
+    const c = this.theme().accent;
+    const common = { width: 42, height: 42, viewBox: "0 0 40 40", fill: "none" };
+    if (kind === "face") {
+      return React.createElement("svg", common,
+        React.createElement("circle", { cx: 20, cy: 20, r: 13, stroke: c, strokeWidth: 1.3 }),
+        React.createElement("path", { d: "M20 7 C20 14 16 18 12 20 C16 22 20 26 20 33", stroke: c, strokeWidth: 1.3, fill: "none" }),
+        React.createElement("path", { d: "M20 7 C20 14 24 18 28 20 C24 22 20 26 20 33", stroke: c, strokeWidth: 1.3, fill: "none" }));
+    }
+    if (kind === "massage") {
+      return React.createElement("svg", common,
+        React.createElement("path", { d: "M20 34 C20 24 20 14 20 6", stroke: c, strokeWidth: 1.3 }),
+        React.createElement("ellipse", { cx: 11, cy: 22, rx: 7, ry: 3.6, stroke: c, strokeWidth: 1.3, fill: "none", transform: "rotate(35 11 22)" }),
+        React.createElement("ellipse", { cx: 29, cy: 22, rx: 7, ry: 3.6, stroke: c, strokeWidth: 1.3, fill: "none", transform: "rotate(-35 29 22)" }),
+        React.createElement("ellipse", { cx: 14, cy: 13, rx: 6, ry: 3.2, stroke: c, strokeWidth: 1.3, fill: "none", transform: "rotate(35 14 13)" }),
+        React.createElement("ellipse", { cx: 26, cy: 13, rx: 6, ry: 3.2, stroke: c, strokeWidth: 1.3, fill: "none", transform: "rotate(-35 26 13)" }));
+    }
+    return React.createElement("svg", common,
+      React.createElement("path", { d: "M20 6 C14 12 12 20 20 34 C28 20 26 12 20 6 Z", stroke: c, strokeWidth: 1.3, fill: "none" }),
+      React.createElement("path", { d: "M20 12 V30", stroke: c, strokeWidth: 1.1 }));
+  }
+
+  iconLine(paths, size) {
+    return React.createElement("svg", { width: size || 20, height: size || 20, viewBox: "0 0 24 24", fill: "none" },
+      ...paths.map((p, i) => React.createElement("path", { key: i, d: p, stroke: this.theme().accent, strokeWidth: 1.6, fill: "none", strokeLinecap: "round", strokeLinejoin: "round" })));
+  }
+
+  renderVals() {
+    const t = this.theme(), d = this.density();
+    const wa = "#fff";
+    return {
+      accent: t.accent,
+      accentText: t.accentText,
+      decoOrchid:   this.orchid(120, 0.5 + d * 0.45, t),
+      decoOrchidSm: this.orchid(78, 0.5 + d * 0.4, t),
+      decoOrchidLg: this.orchid(170, 0.35 + d * 0.4, t),
+      decoFrond:    this.frond(130, 0.3 + d * 0.5, t.leaf),
+      decoFrondSm:  this.frond(90, 0.3 + d * 0.5, t.leaf),
+      divider: this.divider(),
+      services: [
+        { icon: this.svcIcon("face"), title: "Gesichtsbehandlung", desc: "Individuelle Pflege für deine Haut." },
+        { icon: this.svcIcon("massage"), title: "Massagen", desc: "Entspannung mit Ayurveda & Lomi-Lomi." },
+        { icon: this.svcIcon("hand"), title: "Hand- & Fußpflege", desc: "Verwöhnprogramm für deine Hände und Füße." },
+      ],
+      partners: ["assets/brand-meentzen.png", "assets/brand-clarena.png", "assets/brand-denova.png", "assets/brand-grandel.png"],
+      reviews: [
+        { quote: "Maria nimmt sich Zeit und geht auf jeden Wunsch ein. Ich fühle mich rundum wohl.", name: "Tizia" },
+        { quote: "Die Lomi-Lomi Massage war pure Entspannung. Absolute Wohlfühloase.", name: "Finja" },
+        { quote: "So herzlich und professionell – meine Haut hat noch nie besser ausgesehen.", name: "Paula" },
+      ],
+      hours: [
+        { day: "Montag", time: "Geschlossen" },
+        { day: "Dienstag – Freitag", time: "09:00 – 19:00" },
+        { day: "Samstag", time: "Auf Anfrage" },
+        { day: "Sonntag", time: "Geschlossen" },
+      ],
+      iconPhone: this.iconLine(["M5 4h3l1.5 5-2 1.5a12 12 0 006 6l1.5-2 5 1.5v3a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z"]),
+      iconMail: this.iconLine(["M3 6h18v12H3z", "M3 7l9 6 9-6"]),
+      iconPin: this.iconLine(["M12 21s7-6.4 7-11a7 7 0 10-14 0c0 4.6 7 11 7 11z", "M12 10.5a2 2 0 100-4 2 2 0 000 4z"]),
+      iconInstagram: this.iconLine(["M4 8a4 4 0 014-4h8a4 4 0 014 4v8a4 4 0 01-4 4H8a4 4 0 01-4-4z", "M15.5 11.5a3.5 3.5 0 11-3-3", "M17.5 6.6h.01"], 17),
+      iconFacebook: this.iconLine(["M14 8.5V6.8c0-.9.4-1.3 1.3-1.3H17V2.5h-2.4c-2.4 0-3.6 1.4-3.6 3.8v2.2H9V12h2v9.5h3V12h2.2l.4-3.5H14z"], 17),
+      iconWhatsapp: React.createElement("svg", { width: 18, height: 18, viewBox: "0 0 24 24", fill: "none" },
+        React.createElement("path", { d: "M3 21l1.8-5A8 8 0 1112 20a8 8 0 01-4-1l-5 2z", stroke: wa, strokeWidth: 1.6, fill: "none", strokeLinejoin: "round" }),
+        React.createElement("path", { d: "M9 9c0 4 2 6 6 6 1-1 1-1.5.5-2.2-.5-.6-1.4-.9-2-.4-.7.6-1.9-.6-2.4-1.4-.4-.7 0-1.4.4-1.6C12 9 11.5 8 11 8 10 8 9 8 9 9z", fill: wa })),
+    };
+  }
+}
+</script>
+</body>
+</html>

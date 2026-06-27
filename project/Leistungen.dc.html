@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; }
+  ::selection { background: #d6e3c2; color: #3c4a2a; }
+  @keyframes sway { 0%,100% { transform: rotate(0deg); } 50% { transform: rotate(4deg); } }
+  @keyframes swayslow { 0%,100% { transform: rotate(0deg) translateY(0); } 50% { transform: rotate(-3deg) translateY(6px); } }
+</style>
+</helmet>
+<div style="font-family: 'Jost', system-ui, sans-serif; color: #3f472f; background: #fbfaf6; line-height: 1.6;">
+
+  <!-- NAV -->
+  <nav style="position: sticky; top: 0; z-index: 50; display: flex; align-items: center; justify-content: space-between; padding: 12px 48px; background: rgba(251,250,246,0.88); backdrop-filter: blur(12px); border-bottom: 1px solid #ebe7da;">
+    <a href="Salon Maria.dc.html" style="text-decoration: none; display: flex; align-items: center; gap: 14px;">
+      <img src="assets/logo.png" alt="Maria Augusta Fölsener" style="height: 50px; width: 50px; object-fit: contain;">
+      <span style="display: flex; flex-direction: column; line-height: 1.1;">
+        <span style="font-family: 'Cormorant Garamond', serif; font-size: 21px; font-weight: 600; letter-spacing: 0.5px; color: #4a5733;">Maria Augusta Fölsener</span>
+        <span style="font-size: 9px; letter-spacing: 3.5px; text-transform: uppercase; color: #b69b7d;">Ganzheitskosmetik · Berlin</span>
+      </span>
+    </a>
+    <div style="display: flex; align-items: center; gap: 32px;">
+      <a href="Salon Maria.dc.html#ueber" style="text-decoration: none; color: #5e6748; font-size: 14px; letter-spacing: 0.3px;">Über mich</a>
+      <a href="Leistungen.dc.html" style="text-decoration: none; color: #6f8f3f; font-size: 14px; letter-spacing: 0.3px; font-weight: 500;">Leistungen</a>
+      <a href="Salon Maria.dc.html#kontakt" style="text-decoration: none; color: #5e6748; font-size: 14px; letter-spacing: 0.3px;">Kontakt</a>
+      <a href="https://www.treatwell.de" target="_blank" style="text-decoration: none; background: #6f8f3f; color: #fff; font-size: 13px; letter-spacing: 0.5px; padding: 10px 22px; border-radius: 100px;" style-hover="filter: brightness(0.92);">Termin buchen</a>
+    </div>
+  </nav>
+
+  <!-- HEADER -->
+  <section style="position: relative; text-align: center; padding: 92px 56px 60px; overflow: hidden;">
+    <div style="position: absolute; top: 30px; left: 40px; animation: sway 8s ease-in-out infinite; transform-origin: bottom left;">{{ decoOrchid }}</div>
+    <div style="position: absolute; bottom: -10px; right: 50px; animation: swayslow 10s ease-in-out infinite; transform-origin: top right;">{{ decoFrond }}</div>
+    <a href="Salon Maria.dc.html" style="display:inline-block; text-decoration:none; font-size:13px; letter-spacing:1px; color:#b69b7d; margin-bottom:20px;">← Zurück zur Startseite</a>
+    <h1 style="font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: 60px; line-height: 1.05; margin: 0 0 18px; color: #45522f;">Leistungen & Preise</h1>
+    <p style="font-size: 17px; color: #5e6748; max-width: 540px; margin: 0 auto; font-weight: 300;">Jede Behandlung beginnt mit einem erholsamen Ritual, das von Kopf bis Fuß in tiefe Entspannung führt. In ruhiger Atmosphäre finden Körper und Geist zurück zur Balance.</p>
+  </section>
+
+  <!-- PRICE GROUPS -->
+  <section style="max-width: 1080px; margin: 0 auto; padding: 24px 56px 40px;">
+    <sc-for list="{{ groups }}" as="g" hint-placeholder-count="4">
+      <div style="margin-bottom: 64px;">
+        <div style="display: flex; align-items: center; gap: 18px; margin-bottom: 26px;">
+          <span style="flex: none;">{{ g.icon }}</span>
+          <div>
+            <h2 style="font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 32px; margin: 0; color: #45522f;">{{ g.title }}</h2>
+            <p style="font-size: 14.5px; color: #8a907a; margin: 2px 0 0; font-weight: 300;">{{ g.sub }}</p>
+          </div>
+        </div>
+        <div style="background: #fff; border: 1px solid #ebe7da; border-radius: 10px; overflow: hidden; box-shadow: 0 16px 40px -30px rgba(70,82,47,0.5);">
+          <sc-for list="{{ g.items }}" as="it" hint-placeholder-count="3">
+            <div style="display: flex; align-items: baseline; gap: 18px; padding: 20px 28px; border-bottom: 1px solid #f1ede2;">
+              <div style="flex: 1;">
+                <div style="font-size: 17px; font-weight: 500; color: #45522f;">{{ it.name }}</div>
+                <div style="font-size: 14px; color: #7a8169; font-weight: 300; margin-top: 2px;">{{ it.desc }}</div>
+              </div>
+              <div style="flex: none; font-size: 13px; color: #b69b7d; letter-spacing: 0.5px; min-width: 64px; text-align: right;">{{ it.dur }}</div>
+              <div style="flex: none; font-family: 'Cormorant Garamond', serif; font-size: 23px; font-weight: 600; color: #6f8f3f; min-width: 78px; text-align: right;">{{ it.price }}</div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </sc-for>
+  </section>
+
+  <!-- CTA STRIP -->
+  <section style="position: relative; background: #eaf0df; padding: 88px 56px; text-align: center; overflow: hidden;">
+    <div style="position: absolute; top: -16px; right: -10px; animation: sway 9s ease-in-out infinite; transform-origin: top right;">{{ decoOrchidLg }}</div>
+    <div style="position: absolute; bottom: -20px; left: -10px; animation: swayslow 11s ease-in-out infinite; transform-origin: bottom left;">{{ decoFrond }}</div>
+    <div style="position: relative;">
+      <h2 style="font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: 40px; margin: 0 0 14px; color: #45522f;">Bereit für deine Auszeit?</h2>
+      <p style="font-size: 16px; color: #5e6748; max-width: 460px; margin: 0 auto 32px; font-weight: 300;">Buche bequem online oder melde dich direkt bei mir. Geschenkgutscheine sind für alle Anwendungen erhältlich.</p>
+      <div style="display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;">
+        <a href="https://www.treatwell.de" target="_blank" style="text-decoration: none; background: #6f8f3f; color: #fff; font-size: 15px; letter-spacing: 0.5px; padding: 15px 32px; border-radius: 100px;" style-hover="filter: brightness(0.92);">Auf Treatwell buchen</a>
+        <a href="Salon Maria.dc.html#kontakt" style="text-decoration: none; border: 1.5px solid #6f8f3f; color: #5a7634; font-size: 15px; letter-spacing: 0.5px; padding: 13.5px 30px; border-radius: 100px;" style-hover="background: #f1f4ec;">Kontakt aufnehmen</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="background: #3c4a2a; color: #cdd5bd; padding: 64px 56px 40px;">
+    <div style="max-width: 1180px; margin: 0 auto; display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 48px;">
+      <div style="max-width: 360px;">
+        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 14px;">
+          <img src="assets/logo.png" alt="" style="height: 46px; width: 46px; object-fit: contain; background: #fff; border-radius: 50%;">
+          <div style="font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 600; color: #f3f6ea;">Maria Augusta Fölsener</div>
+        </div>
+        <p style="font-size: 14px; color: #a6b094; margin: 0 0 18px; font-weight: 300;">Ganzheitliche Kosmetik in Berlin — Behandlungen mit Herz für Körper und Seele.</p>
+        <div style="display: flex; gap: 18px; font-size: 13.5px;">
+          <a href="https://instagram.com/mariafoelsenerkosmetik" target="_blank" style="text-decoration: none; color: #cdd5bd;" style-hover="color: #fff;">Instagram</a>
+          <a href="https://facebook.com/mariafoelsenerkosmetik" target="_blank" style="text-decoration: none; color: #cdd5bd;" style-hover="color: #fff;">Facebook</a>
+        </div>
+      </div>
+      <div>
+        <div style="font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #8a957a; margin-bottom: 16px;">Schnellmenü</div>
+        <div style="display: flex; flex-direction: column; gap: 11px;">
+          <a href="Salon Maria.dc.html" style="text-decoration: none; color: #cdd5bd; font-size: 14px;" style-hover="color: #fff;">Startseite</a>
+          <a href="Salon Maria.dc.html#ueber" style="text-decoration: none; color: #cdd5bd; font-size: 14px;" style-hover="color: #fff;">Über mich</a>
+          <a href="Leistungen.dc.html" style="text-decoration: none; color: #cdd5bd; font-size: 14px;" style-hover="color: #fff;">Leistungen & Preise</a>
+          <a href="Salon Maria.dc.html#kontakt" style="text-decoration: none; color: #cdd5bd; font-size: 14px;" style-hover="color: #fff;">Kontakt</a>
+          <a href="https://www.treatwell.de" target="_blank" style="text-decoration: none; color: #cdd5bd; font-size: 14px;" style-hover="color: #fff;">Termin buchen</a>
+        </div>
+      </div>
+      <div>
+        <div style="font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #8a957a; margin-bottom: 16px;">Kontakt</div>
+        <div style="display: flex; flex-direction: column; gap: 11px; font-size: 14px; color: #cdd5bd;">
+          <a href="tel:+4917610106022" style="text-decoration: none; color: #cdd5bd;" style-hover="color: #fff;">0176 10 10 60 22</a>
+          <a href="tel:+49302824080" style="text-decoration: none; color: #cdd5bd;" style-hover="color: #fff;">030 28 24 080</a>
+          <a href="mailto:kosmetik@mariafoelsener.com" style="text-decoration: none; color: #cdd5bd;" style-hover="color: #fff;">kosmetik@mariafoelsener.com</a>
+          <span style="color: #a6b094; line-height: 1.5;">Tieckstr. 1b<br>10115 Berlin</span>
+        </div>
+      </div>
+    </div>
+    <div style="max-width: 1180px; margin: 44px auto 0; padding-top: 24px; border-top: 1px solid #4d5b39; display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; font-size: 13px; color: #8a957a;">
+      <span>© 2025 Maria Augusta Fölsener Kosmetik</span>
+      <span style="display: flex; gap: 22px; flex-wrap: wrap;">
+        <a href="#" style="text-decoration: none; color: #8a957a;" style-hover="color: #fff;">Impressum</a>
+        <a href="#" style="text-decoration: none; color: #8a957a;" style-hover="color: #fff;">Datenschutz</a>
+        <a href="#" style="text-decoration: none; color: #8a957a;" style-hover="color: #fff;">AGB</a>
+      </span>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  frond(size, opacity, color) {
+    const c = color || "#7d9a4e";
+    const leaf = (cx, cy, rx, ry, rot) => React.createElement("ellipse", { cx, cy, rx, ry, fill: c, opacity: 0.55, transform: `rotate(${rot} ${cx} ${cy})` });
+    const out = (cx, cy, rx, ry, rot) => React.createElement("ellipse", { cx, cy, rx, ry, fill: "none", stroke: c, strokeWidth: 1.1, transform: `rotate(${rot} ${cx} ${cy})` });
+    return React.createElement("svg", { width: size, height: size * 1.5, viewBox: "0 0 80 120", fill: "none", style: { opacity } },
+      React.createElement("path", { d: "M40 118 C36 92 40 60 52 30 C58 16 62 10 64 4", stroke: c, strokeWidth: 1.3, fill: "none", strokeLinecap: "round" }),
+      leaf(30, 96, 9, 4, 30), out(50, 88, 10, 4.4, -28),
+      leaf(33, 78, 10, 4.2, 28), out(53, 70, 10, 4.4, -30),
+      leaf(38, 58, 10, 4.2, 22), out(55, 50, 9, 4, -34),
+      leaf(45, 38, 8, 3.6, 8),  out(58, 30, 8, 3.4, -40),
+      React.createElement("circle", { cx: 64, cy: 5, r: 3, fill: c, opacity: 0.7 })
+    );
+  }
+
+  orchid(size, opacity) {
+    const stem = "#7d9a4e", bloom = "#e3a9b6", bud = "#ecc3cd", lip = "#e7b84a";
+    const petal = (cx, cy, rx, ry, rot) => React.createElement("ellipse", { cx, cy, rx, ry, fill: bloom, opacity: 0.92, stroke: "#d99dab", strokeWidth: 0.6, transform: `rotate(${rot} ${cx} ${cy})` });
+    return React.createElement("svg", { width: size * 1.7, height: size, viewBox: "0 0 170 100", fill: "none", style: { opacity } },
+      React.createElement("path", { d: "M6 70 C40 86 86 80 120 60", stroke: stem, strokeWidth: 1.6, fill: "none", strokeLinecap: "round" }),
+      React.createElement("path", { d: "M20 72 C16 60 18 52 24 46", stroke: stem, strokeWidth: 1.3, fill: "none", strokeLinecap: "round" }),
+      React.createElement("ellipse", { cx: 24, cy: 44, rx: 5, ry: 8, fill: bud, transform: "rotate(-20 24 44)" }),
+      React.createElement("ellipse", { cx: 44, cy: 80, rx: 5, ry: 7.5, fill: bud, transform: "rotate(40 44 80)" }),
+      React.createElement("ellipse", { cx: 66, cy: 82, rx: 4.5, ry: 7, fill: bud, transform: "rotate(35 66 82)" }),
+      petal(120, 60, 13, 9, 0),
+      petal(108, 48, 11, 7, -38),
+      petal(132, 48, 11, 7, 38),
+      petal(110, 70, 10, 6.5, 40),
+      petal(130, 70, 10, 6.5, -40),
+      React.createElement("circle", { cx: 120, cy: 60, r: 5, fill: lip }),
+      React.createElement("circle", { cx: 120, cy: 60, r: 2, fill: "#cf9a2e" })
+    );
+  }
+
+  grpIcon(kind) {
+    const c = "#6f8f3f";
+    const common = { width: 40, height: 40, viewBox: "0 0 40 40", fill: "none" };
+    if (kind === "face") {
+      return React.createElement("svg", common,
+        React.createElement("circle", { cx: 20, cy: 20, r: 13, stroke: c, strokeWidth: 1.3 }),
+        React.createElement("path", { d: "M20 7 C20 14 16 18 12 20 C16 22 20 26 20 33", stroke: c, strokeWidth: 1.3, fill: "none" }),
+        React.createElement("path", { d: "M20 7 C20 14 24 18 28 20 C24 22 20 26 20 33", stroke: c, strokeWidth: 1.3, fill: "none" }));
+    }
+    if (kind === "massage") {
+      return React.createElement("svg", common,
+        React.createElement("path", { d: "M20 34 C20 24 20 14 20 6", stroke: c, strokeWidth: 1.3 }),
+        React.createElement("ellipse", { cx: 11, cy: 22, rx: 7, ry: 3.6, stroke: c, strokeWidth: 1.3, fill: "none", transform: "rotate(35 11 22)" }),
+        React.createElement("ellipse", { cx: 29, cy: 22, rx: 7, ry: 3.6, stroke: c, strokeWidth: 1.3, fill: "none", transform: "rotate(-35 29 22)" }),
+        React.createElement("ellipse", { cx: 14, cy: 13, rx: 6, ry: 3.2, stroke: c, strokeWidth: 1.3, fill: "none", transform: "rotate(35 14 13)" }),
+        React.createElement("ellipse", { cx: 26, cy: 13, rx: 6, ry: 3.2, stroke: c, strokeWidth: 1.3, fill: "none", transform: "rotate(-35 26 13)" }));
+    }
+    if (kind === "extra") {
+      return React.createElement("svg", common,
+        React.createElement("path", { d: "M20 5 L23 16 L34 19 L23 22 L20 33 L17 22 L6 19 L17 16 Z", stroke: c, strokeWidth: 1.3, fill: "none", strokeLinejoin: "round" }),
+        React.createElement("circle", { cx: 31, cy: 9, r: 1.6, fill: c }));
+    }
+    return React.createElement("svg", common,
+      React.createElement("path", { d: "M20 6 C14 12 12 20 20 34 C28 20 26 12 20 6 Z", stroke: c, strokeWidth: 1.3, fill: "none" }),
+      React.createElement("path", { d: "M20 12 V30", stroke: c, strokeWidth: 1.1 }));
+  }
+
+  renderVals() {
+    return {
+      decoOrchid: this.orchid(120, 0.55),
+      decoOrchidLg: this.orchid(180, 0.5),
+      decoFrond: this.frond(140, 0.5),
+      groups: [
+        { icon: this.grpIcon("face"), title: "Gesichtsbehandlungen", sub: "Individuelle Pflege für deine Haut", items: [
+          { name: "Grundbehandlung Basic", desc: "Reinigung, Hautanalyse, Ausreinigung, kleine Massage & Abschlusspflege", dur: "ca. 60 Min.", price: "68 €" },
+          { name: "S.O.S. Kosmetikbehandlung", desc: "Ausreinigung mit Pflegecreme-Ampulle", dur: "ca. 30 Min.", price: "47 €" },
+          { name: "Sanftes Gesichtspeeling", desc: "Für eine glatte Haut, inkl. kleiner Massage", dur: "ca. 30 Min.", price: "47 €" },
+          { name: "Entspannende Vital-Massage", desc: "Inkl. Serum", dur: "ca. 20 Min.", price: "37 €" },
+          { name: "Edelstein-Gesichtsmassage", desc: "Mit Rosenquarz und Bergkristall", dur: "ca. 20 Min.", price: "42 €" },
+          { name: "Herren-Kosmetikbehandlung", desc: "Reinigung, Hautanalyse, Ausreinigung, kleine Massage & Abschlusspflege", dur: "ca. 60 Min.", price: "68 €" },
+          { name: "Teenager-Kosmetikbehandlung", desc: "Mit talgreduzierenden Wirkstoffen und HF-Stab", dur: "ca. 45 Min.", price: "52 €" },
+          { name: "Akne-Behandlung", desc: "Mit Vapozon & Hochfrequenz-Stab, wirkt desinfizierend", dur: "ca. 60 Min.", price: "85 €" },
+          { name: "Super-Clean Akne-Behandlung", desc: "Porentiefe Reinigung & Desinkrustation für strahlenden Teint", dur: "ca. 75 Min.", price: "105 €" },
+          { name: "Mikrodermabrasion", desc: "Apparatives Peeling, regt Zellneubildung an", dur: "ca. 60 Min.", price: "88 €" },
+          { name: "Anti-Aging-Iontophorese", desc: "Wirkstoffe dringen tief in die Haut ein und regenerieren", dur: "ca. 75 Min.", price: "105 €" },
+          { name: "Galvanischer Strom", desc: "Bio-Cellulose-Maske, sehr intensive Behandlung", dur: "ca. 75 Min.", price: "115 €" },
+          { name: "Behandlung mit Ultraschall", desc: "Impulsschall fördert die Zellerneuerung", dur: "ca. 75 Min.", price: "105 €" },
+          { name: "Rückenbehandlung", desc: "Reinigung mit dem HF-Stab plus Packung", dur: "ca. 45 Min.", price: "70 €" },
+          { name: "Thermo-Aktiv-Modellage", desc: "Extra-Ampulle mit Depoteffekt", dur: "ca. 75 Min.", price: "85 €" },
+          { name: "Intensive Kosmetikbehandlung", desc: "Inkl. kleiner Rücken-, Hand- und Arm-Massage", dur: "ca. 75 Min.", price: "98 €" },
+        ]},
+        { icon: this.grpIcon("massage"), title: "Massagen", sub: "Jede Massage beginnt mit einem entspannenden Fußbad", items: [
+          { name: "Basische Salz-Öl-Massage", desc: "Zum Entgiften des Körpers", dur: "ca. 60 Min.", price: "85 €" },
+          { name: "Körper-Sportmassage", desc: "Inkl. heißer Kompressen zum Lösen von Verspannungen", dur: "ca. 60 Min.", price: "90 €" },
+          { name: "Kräuterstempel-Massage", desc: "Mit ausgesuchten Kräutern, entspannend & entschlackend", dur: "ca. 60 Min.", price: "102 €" },
+          { name: "Rückenmassage bei Verspannungen", desc: "Inkl. heißer Kompressen", dur: "ca. 30 Min.", price: "54 €" },
+          { name: "Rückenmassage mit Tonerde", desc: "Gegen Schmerzen & Verspannungen am Bewegungsapparat", dur: "ca. 30 Min.", price: "58 €" },
+          { name: "Rückenmassage mit Schröpfen", desc: "Manuelle Massage mit Schröpfen, inkl. heißer Kompressen", dur: "ca. 30 Min.", price: "58 €" },
+          { name: "Rückenmassage mit Kräuterstempel", desc: "Warme Kräuteressenzen für Tiefenentspannung", dur: "ca. 30 Min.", price: "60 €" },
+          { name: "Lomi-Lomi-Massage", desc: "Hawaiianische Tempelmassage für Körper & Seele", dur: "ca. 90 Min.", price: "125 €" },
+          { name: "Raindrop-Technique-Massage", desc: "Neun ätherische Essenzen entlang der Wirbelsäule", dur: "ca. 75 Min.", price: "105 €" },
+          { name: "Hot-Cold-Stone-Massage", desc: "Ayurveda: warme Lava-Basaltsteine & Ölmassage", dur: "ca. 90 Min.", price: "132 €" },
+          { name: "Garschan-Massage", desc: "Seidenhandschuh-Massage, peelend & belebend", dur: "ca. 60 Min.", price: "90 €" },
+          { name: "Aroma-Öl-Massage", desc: "Ganzkörpermassage mit ätherischen Ölen", dur: "ca. 60 Min.", price: "80 €" },
+          { name: "Abhyanga-Massage", desc: "Mit Stirnaufguss nach altindischer Heilkunst", dur: "ca. 60 Min.", price: "85 €" },
+        ]},
+        { icon: this.grpIcon("hand"), title: "Hand- & Fußpflege", sub: "Verwöhnprogramm für Hände und Füße", items: [
+          { name: "Lack entfernen", desc: "Shellac nicht inbegriffen", dur: "", price: "5 €" },
+          { name: "Klassische Maniküre", desc: "Optional mit Peeling (42 €) oder mit Lack (45 €)", dur: "ca. 30 Min.", price: "37 €" },
+          { name: "Wellness Maniküre", desc: "Natur-Peeling, Hand- & Unterarm-Massage und 1 Glas Sekt — mit Lack 76 €", dur: "ca. 60 Min.", price: "68 €" },
+          { name: "Paraffin-Bad", desc: "Inkl. kleiner Massage und Peeling", dur: "ca. 20 Min.", price: "40 €" },
+          { name: "Fußpflege (medizinisch)", desc: "Inkl. Fußbad — mit Peeling 51 €, mit Lack 53 €", dur: "ca. 30 Min.", price: "ab 45 €" },
+          { name: "Wellness Pediküre", desc: "Hot-Cold-Stone, Natur-Peeling, Fuß- & Waden-Massage und ein Glas Sekt", dur: "ca. 60 Min.", price: "68 €" },
+          { name: "Fußreflexzonen-Massage", desc: "Gezielter Druck auf die Reflexpunkte, inkl. Fußbad", dur: "ca. 45 Min.", price: "52 €" },
+          { name: "Wellness Luxus Fußmassage", desc: "Inkl. Peeling und ausgesuchten ätherischen Ölen", dur: "ca. 20 Min.", price: "40 €" },
+          { name: "Padabhyanga", desc: "Indische Fußmassage mit Klangschale, Fußbad & heißen Kompressen", dur: "ca. 45 Min.", price: "65 €" },
+        ]},
+        { icon: this.grpIcon("extra"), title: "Weitere Anwendungen & Extras", sub: "Zusatzbehandlungen — auch zu jeder Behandlung dazu buchbar", items: [
+          { name: "Augenbrauen formen", desc: "", dur: "ca. 15 Min.", price: "ab 15 €" },
+          { name: "Augenbrauen färben", desc: "", dur: "ca. 15 Min.", price: "ab 15 €" },
+          { name: "Wimpern färben", desc: "", dur: "ca. 15 Min.", price: "15 €" },
+          { name: "Augenbrauen & Wimpern färben", desc: "In kosmetischer Behandlung", dur: "", price: "28 €" },
+          { name: "Entfernung von Milien", desc: "Zu jeder Kosmetikbehandlung dazu buchbar", dur: "", price: "0,50 €" },
+          { name: "Ohrkerzen-Behandlung", desc: "Sanfte Trommelfellmassage, intensive Entspannung", dur: "ca. 30 Min.", price: "42 €" },
+          { name: "HF-Stab-Behandlung", desc: "Desinfizierend & abheilend, dazu buchbar", dur: "ca. 10 Min.", price: "20 €" },
+          { name: "Mikrodermabrasion (Zusatz)", desc: "Intensives Peeling, zu jeder Behandlung dazu buchbar", dur: "ca. 10 Min.", price: "18 €" },
+        ]},
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>

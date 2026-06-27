@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; }
+  ::selection { background: #2f3a2a; color: #f4f1e8; }
+  @keyframes scrollcue { 0% { transform: translateY(0); opacity: .8; } 50% { transform: translateY(8px); opacity: .3; } 100% { transform: translateY(0); opacity: .8; } }
+</style>
+</helmet>
+<div style="font-family: 'Jost', system-ui, sans-serif; color: #2a2f22; background: #f6f3ea; line-height: 1.65;">
+
+  <!-- HERO -->
+  <section id="hero" style="position: relative; min-height: 760px; height: 100vh; max-height: 920px; overflow: hidden; color: #fff;">
+    <img src="assets/raum6.jpg" alt="Wohlfühlmoment im Studio" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;">
+    <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(28,35,24,0.62) 0%, rgba(28,35,24,0.28) 38%, rgba(28,35,24,0.74) 100%);"></div>
+
+    <!-- nav over hero -->
+    <nav style="position: relative; z-index: 3; display: flex; align-items: center; justify-content: space-between; padding: 26px 56px;">
+      <a href="#hero" style="text-decoration: none; display: flex; align-items: center; gap: 14px;">
+        <span style="display:flex;align-items:center;justify-content:center;width:54px;height:54px;border-radius:50%;background:#f6f3ea;flex:none;"><img src="assets/logo.png" alt="Maria Augusta Fölsener" style="height: 46px; width: 46px; object-fit: contain;"></span>
+        <span style="font-family: 'Marcellus', serif; font-size: 20px; letter-spacing: 1.5px; color: #fff;">MARIA A. FÖLSENER</span>
+      </a>
+      <div style="display: flex; align-items: center; gap: 36px;">
+        <a href="#ueber" style="text-decoration: none; color: rgba(255,255,255,0.85); font-size: 12px; letter-spacing: 2px; text-transform: uppercase;" style-hover="color: #fff;">Über mich</a>
+        <a href="Leistungen.dc.html" style="text-decoration: none; color: rgba(255,255,255,0.85); font-size: 12px; letter-spacing: 2px; text-transform: uppercase;" style-hover="color: #fff;">Leistungen</a>
+        <a href="#kontakt" style="text-decoration: none; color: rgba(255,255,255,0.85); font-size: 12px; letter-spacing: 2px; text-transform: uppercase;" style-hover="color: #fff;">Kontakt</a>
+        <a href="#kontakt" style="text-decoration: none; border: 1px solid rgba(255,255,255,0.55); color: #fff; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; padding: 12px 22px;" style-hover="background: #fff; color: #2a2f22;">Termin buchen</a>
+      </div>
+    </nav>
+
+    <!-- hero content -->
+    <div style="position: absolute; z-index: 2; left: 56px; right: 56px; bottom: 96px;">
+      <span style="font-size: 12px; letter-spacing: 5px; text-transform: uppercase; color: rgba(255,255,255,0.78);">Ganzheitskosmetik · Berlin</span>
+      <h1 style="font-family: 'Marcellus', serif; font-weight: 400; font-size: 92px; line-height: 1.0; margin: 22px 0 0; max-width: 980px; letter-spacing: -0.5px;">Wellness für Körper<br>und Seele</h1>
+      <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 40px; flex-wrap: wrap; margin-top: 40px;">
+        <p style="font-size: 18px; color: rgba(255,255,255,0.9); max-width: 440px; margin: 0; font-weight: 300;">Ganzheitliche Kosmetik – individuell abgestimmt auf deine Bedürfnisse, mit Ayurveda und Lomi-Lomi.</p>
+        <div style="display: flex; gap: 14px;">
+          <a href="#kontakt" style="text-decoration: none; background: #f6f3ea; color: #2a2f22; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; padding: 17px 32px;" style-hover="background: #fff;">Termin buchen</a>
+          <a href="Leistungen.dc.html" style="text-decoration: none; border: 1px solid rgba(255,255,255,0.55); color: #fff; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; padding: 16px 32px;" style-hover="background: rgba(255,255,255,0.12);">Behandlungen</a>
+        </div>
+      </div>
+    </div>
+    <div style="position: absolute; z-index: 2; left: 50%; bottom: 30px; transform: translateX(-50%); animation: scrollcue 2.2s ease-in-out infinite; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: rgba(255,255,255,0.7);">scroll ↓</div>
+  </section>
+
+  <!-- ÜBER MICH -->
+  <section id="ueber" style="max-width: 1240px; margin: 0 auto; padding: 130px 56px;">
+    <div style="display: flex; gap: 16px; align-items: baseline; border-top: 1px solid #d8d3c4; padding-top: 24px; margin-bottom: 64px;">
+      <span style="font-family: 'Marcellus', serif; font-size: 26px; color: #6f8f3f;">01</span>
+      <span style="font-size: 12px; letter-spacing: 3px; text-transform: uppercase; color: #8a907a;">Über mich</span>
+    </div>
+    <div style="display: grid; grid-template-columns: 1.15fr 1fr; gap: 80px; align-items: center;">
+      <div>
+        <h2 style="font-family: 'Marcellus', serif; font-weight: 400; font-size: 54px; line-height: 1.08; margin: 0 0 30px; color: #2f3a2a;">Ganzheitskosmetik mit Herz</h2>
+        <p style="font-size: 17px; color: #4c5340; max-width: 560px; margin: 0 0 28px; font-weight: 300;">Ich bin Maria und arbeite seit 9 Jahren als Ganzheitskosmetikerin. Ich sehe und behandle den Körper als Ganzes und kombiniere Techniken wie Ayurveda und Lomi-Lomi.</p>
+        <p style="font-size: 17px; color: #4c5340; max-width: 560px; margin: 0; font-weight: 300;">Ursprünglich komme ich aus Ecuador und spreche fließend Deutsch, Spanisch und Englisch. Ich bringe meine Herzlichkeit zur Arbeit und schaffe für jeden Kunden genau die richtige Balance aus Entspannung und Lebendigkeit.</p>
+        <div style="display: flex; gap: 56px; margin-top: 48px; border-top: 1px solid #d8d3c4; padding-top: 32px;">
+          <div><div style="font-family: 'Marcellus', serif; font-size: 44px; color: #2f3a2a; line-height: 1;">9</div><div style="font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #8a907a; margin-top: 6px;">Jahre Erfahrung</div></div>
+          <div><div style="font-family: 'Marcellus', serif; font-size: 44px; color: #2f3a2a; line-height: 1;">3</div><div style="font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #8a907a; margin-top: 6px;">Sprachen</div></div>
+          <div><div style="font-family: 'Marcellus', serif; font-size: 44px; color: #2f3a2a; line-height: 1;">2</div><div style="font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #8a907a; margin-top: 6px;">Techniken</div></div>
+        </div>
+      </div>
+      <div style="aspect-ratio: 4/5; overflow: hidden;">
+        <img src="assets/maria.png" alt="Maria Augusta Fölsener" style="width: 100%; height: 100%; object-fit: cover;">
+      </div>
+    </div>
+  </section>
+
+  <!-- LEISTUNGEN -->
+  <section id="leistungen" style="background: #2f3a2a; color: #eef0e6; padding: 124px 56px;">
+    <div style="max-width: 1240px; margin: 0 auto;">
+      <div style="display: flex; gap: 16px; align-items: baseline; border-top: 1px solid #4a5740; padding-top: 24px; margin-bottom: 18px;">
+        <span style="font-family: 'Marcellus', serif; font-size: 26px; color: #a9c07a;">02</span>
+        <span style="font-size: 12px; letter-spacing: 3px; text-transform: uppercase; color: #97a382;">Leistungen</span>
+      </div>
+      <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 30px; flex-wrap: wrap; margin-bottom: 50px;">
+        <h2 style="font-family: 'Marcellus', serif; font-weight: 400; font-size: 54px; margin: 0; color: #f6f3ea;">Meine Behandlungen</h2>
+        <a href="Leistungen.dc.html" style="text-decoration: none; color: #d7e0c4; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; border-bottom: 1px solid #5c6b4e; padding-bottom: 4px;" style-hover="color: #fff;">Alle Leistungen & Preise →</a>
+      </div>
+      <sc-for list="{{ services }}" as="svc" hint-placeholder-count="3">
+        <a href="Leistungen.dc.html" style="display: grid; grid-template-columns: 64px 1fr auto; gap: 28px; align-items: center; text-decoration: none; color: inherit; padding: 34px 8px; border-top: 1px solid #45533c; transition: background 0.3s, padding 0.3s;" style-hover="background: #34402d; padding-left: 24px; padding-right: 24px;">
+          <span style="font-family: 'Marcellus', serif; font-size: 22px; color: #a9c07a;">{{ svc.no }}</span>
+          <div>
+            <h3 style="font-family: 'Marcellus', serif; font-weight: 400; font-size: 30px; margin: 0 0 6px; color: #f6f3ea;">{{ svc.title }}</h3>
+            <p style="font-size: 15px; color: #aebb9c; margin: 0; font-weight: 300;">{{ svc.desc }}</p>
+          </div>
+          <span style="display: flex; align-items: center; gap: 22px;">
+            <span style="font-family: 'Marcellus', serif; font-size: 22px; color: #f6f3ea; white-space: nowrap;">{{ svc.price }}</span>
+            <span style="font-size: 20px; color: #a9c07a;">→</span>
+          </span>
+        </a>
+      </sc-for>
+      <div style="border-top: 1px solid #45533c;"></div>
+    </div>
+  </section>
+
+  <!-- PRODUKTPARTNER -->
+  <section style="max-width: 1240px; margin: 0 auto; padding: 90px 56px; border-bottom: 1px solid #d8d3c4;">
+    <div style="display: flex; align-items: center; gap: 48px; flex-wrap: wrap;">
+      <span style="font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #8a907a; white-space: nowrap;">Produktpartner —</span>
+      <div style="display: flex; align-items: center; gap: 56px; flex-wrap: wrap; flex: 1;">
+        <sc-for list="{{ partners }}" as="p" hint-placeholder-count="4">
+          <img src="{{ p }}" alt="Partnermarke" style="max-height: 38px; max-width: 150px; object-fit: contain; filter: grayscale(1); opacity: 0.62; transition: all 0.3s;" style-hover="filter: grayscale(0); opacity: 1;">
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- KUNDENSTIMMEN -->
+  <section style="max-width: 1240px; margin: 0 auto; padding: 124px 56px;">
+    <div style="display: flex; gap: 16px; align-items: baseline; border-top: 1px solid #d8d3c4; padding-top: 24px; margin-bottom: 14px;">
+      <span style="font-family: 'Marcellus', serif; font-size: 26px; color: #6f8f3f;">03</span>
+      <span style="font-size: 12px; letter-spacing: 3px; text-transform: uppercase; color: #8a907a;">Kundenstimmen</span>
+    </div>
+    <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 30px; flex-wrap: wrap; margin-bottom: 56px;">
+      <h2 style="font-family: 'Marcellus', serif; font-weight: 400; font-size: 54px; margin: 0; color: #2f3a2a;">Was Kundinnen sagen</h2>
+      <span style="display: inline-flex; align-items: center; gap: 8px; font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: #8a907a;"><span style="color: #d8a23a; letter-spacing: 1px;">★★★★★</span> Treatwell Top Rated 2020</span>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0;">
+      <sc-for list="{{ reviews }}" as="rev" hint-placeholder-count="3">
+        <div style="padding: 8px 36px; border-left: 1px solid #d8d3c4;">
+          <div style="color: #d8a23a; font-size: 14px; letter-spacing: 2px; margin-bottom: 20px;">★★★★★</div>
+          <p style="font-family: 'Marcellus', serif; font-size: 23px; line-height: 1.4; color: #34402d; margin: 0 0 24px;">„{{ rev.quote }}"</p>
+          <span style="font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: #8a907a;">— {{ rev.name }}</span>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- GALERIE -->
+  <section style="padding: 0 0 0; display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-rows: 280px; gap: 0;">
+    <div style="overflow: hidden; grid-column: span 2; grid-row: span 2;"><img src="assets/raum3.jpg" alt="Behandlungsraum" style="width:100%;height:100%;object-fit:cover;transition:transform 0.6s;" style-hover="transform: scale(1.04);"></div>
+    <div style="overflow: hidden;"><img src="assets/raum5.jpg" alt="Behandlungsplatz" style="width:100%;height:100%;object-fit:cover;transition:transform 0.6s;" style-hover="transform: scale(1.04);"></div>
+    <div style="overflow: hidden;"><img src="assets/raum1.jpg" alt="Massageraum" style="width:100%;height:100%;object-fit:cover;transition:transform 0.6s;" style-hover="transform: scale(1.04);"></div>
+    <div style="overflow: hidden;"><img src="assets/raum2.jpg" alt="Behandlungsraum" style="width:100%;height:100%;object-fit:cover;transition:transform 0.6s;" style-hover="transform: scale(1.04);"></div>
+    <div style="overflow: hidden;"><img src="assets/raum4.jpg" alt="Empfang" style="width:100%;height:100%;object-fit:cover;transition:transform 0.6s;" style-hover="transform: scale(1.04);"></div>
+  </section>
+
+  <!-- KONTAKT -->
+  <section id="kontakt" style="display: grid; grid-template-columns: 1fr 1fr; align-items: stretch; min-height: 640px;">
+    <div style="background: #f6f3ea; padding: 110px 64px; display: flex; flex-direction: column; justify-content: center;">
+      <div style="display: flex; gap: 16px; align-items: baseline; border-top: 1px solid #d8d3c4; padding-top: 24px; margin-bottom: 36px;">
+        <span style="font-family: 'Marcellus', serif; font-size: 26px; color: #6f8f3f;">04</span>
+        <span style="font-size: 12px; letter-spacing: 3px; text-transform: uppercase; color: #8a907a;">Kontakt</span>
+      </div>
+      <h2 style="font-family: 'Marcellus', serif; font-weight: 400; font-size: 48px; line-height: 1.08; margin: 0 0 16px; color: #2f3a2a;">Ich freue mich auf deinen Besuch</h2>
+      <p style="font-size: 16px; color: #4c5340; max-width: 440px; margin: 0 0 40px; font-weight: 300;">Termine im Studio sowie Hausbesuche nach Vereinbarung. Schreib mir oder ruf mich an.</p>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px 40px; margin-bottom: 38px;">
+        <div>
+          <div style="font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #8a907a; margin-bottom: 10px;">Telefon</div>
+          <a href="tel:+4917610106022" style="display: block; text-decoration: none; color: #2f3a2a; font-family: 'Marcellus', serif; font-size: 20px;" style-hover="color: #6f8f3f;">0176 10 10 60 22</a>
+          <a href="tel:+49302824080" style="display: block; text-decoration: none; color: #4c5340; font-size: 15px; margin-top: 4px;" style-hover="color: #6f8f3f;">030 28 24 080</a>
+        </div>
+        <div>
+          <div style="font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #8a907a; margin-bottom: 10px;">E-Mail</div>
+          <a href="mailto:kosmetik@mariafoelsener.com" style="text-decoration: none; color: #2f3a2a; font-size: 15px;" style-hover="color: #6f8f3f;">kosmetik@mariafoelsener.com</a>
+        </div>
+        <div>
+          <div style="font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #8a907a; margin-bottom: 10px;">Adresse</div>
+          <div style="font-size: 15px; color: #2f3a2a; line-height: 1.5;">Tieckstr. 1b<br>10115 Berlin</div>
+        </div>
+        <div>
+          <div style="font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #8a907a; margin-bottom: 10px;">Öffnungszeiten</div>
+          <sc-for list="{{ hours }}" as="h" hint-placeholder-count="4">
+            <div style="display: flex; justify-content: space-between; gap: 14px; font-size: 13.5px; color: #4c5340; padding: 2px 0;"><span>{{ h.day }}</span><span style="color: #2f3a2a;">{{ h.time }}</span></div>
+          </sc-for>
+        </div>
+      </div>
+
+      <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+        <a href="https://wa.me/4917610106022" target="_blank" style="display: inline-flex; align-items: center; gap: 10px; text-decoration: none; background: #2f3a2a; color: #f6f3ea; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; padding: 15px 26px;" style-hover="background: #6f8f3f;">{{ iconWhatsapp }} WhatsApp</a>
+        <a href="https://instagram.com/mariafoelsenerkosmetik" target="_blank" style="display: inline-flex; align-items: center; text-decoration: none; border: 1px solid #cdbfa3; color: #4c5340; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; padding: 15px 26px;" style-hover="border-color: #6f8f3f; color: #6f8f3f;">Instagram</a>
+        <a href="https://facebook.com/mariafoelsenerkosmetik" target="_blank" style="display: inline-flex; align-items: center; text-decoration: none; border: 1px solid #cdbfa3; color: #4c5340; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; padding: 15px 26px;" style-hover="border-color: #6f8f3f; color: #6f8f3f;">Facebook</a>
+      </div>
+    </div>
+    <div style="min-height: 480px;">
+      <iframe title="Standort auf Google Maps" src="https://www.google.com/maps?q=Tieckstr.+1b,+10115+Berlin&output=embed" style="width: 100%; height: 100%; min-height: 480px; border: 0; display: block; filter: grayscale(0.3);" loading="lazy"></iframe>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="background: #1f2818; color: #b9c4a6; padding: 80px 56px 44px;">
+    <div style="max-width: 1240px; margin: 0 auto; display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 48px;">
+      <div style="max-width: 360px;">
+        <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 18px;">
+          <span style="display:flex;align-items:center;justify-content:center;width:50px;height:50px;border-radius:50%;background:#f6f3ea;flex:none;"><img src="assets/logo.png" alt="" style="height: 42px; width: 42px; object-fit: contain;"></span>
+          <div style="font-family: 'Marcellus', serif; font-size: 21px; letter-spacing: 1px; color: #f3f6ea;">Maria A. Fölsener</div>
+        </div>
+        <p style="font-size: 14px; color: #8a9778; margin: 0; font-weight: 300;">Ganzheitliche Kosmetik in Berlin — Behandlungen mit Herz für Körper und Seele.</p>
+      </div>
+      <div>
+        <div style="font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #6f7d5a; margin-bottom: 18px;">Schnellmenü</div>
+        <div style="display: flex; flex-direction: column; gap: 12px;">
+          <a href="#hero" style="text-decoration: none; color: #b9c4a6; font-size: 14px;" style-hover="color: #fff;">Startseite</a>
+          <a href="#ueber" style="text-decoration: none; color: #b9c4a6; font-size: 14px;" style-hover="color: #fff;">Über mich</a>
+          <a href="Leistungen.dc.html" style="text-decoration: none; color: #b9c4a6; font-size: 14px;" style-hover="color: #fff;">Leistungen & Preise</a>
+          <a href="#kontakt" style="text-decoration: none; color: #b9c4a6; font-size: 14px;" style-hover="color: #fff;">Kontakt</a>
+        </div>
+      </div>
+      <div>
+        <div style="font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #6f7d5a; margin-bottom: 18px;">Kontakt</div>
+        <div style="display: flex; flex-direction: column; gap: 12px; font-size: 14px;">
+          <a href="tel:+4917610106022" style="text-decoration: none; color: #b9c4a6;" style-hover="color: #fff;">0176 10 10 60 22</a>
+          <a href="mailto:kosmetik@mariafoelsener.com" style="text-decoration: none; color: #b9c4a6;" style-hover="color: #fff;">kosmetik@mariafoelsener.com</a>
+          <span style="color: #8a9778;">Tieckstr. 1b, 10115 Berlin</span>
+        </div>
+      </div>
+    </div>
+    <div style="max-width: 1240px; margin: 48px auto 0; padding-top: 26px; border-top: 1px solid #34402d; display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; font-size: 12px; letter-spacing: 1px; color: #6f7d5a;">
+      <span>© 2025 Maria Augusta Fölsener Kosmetik</span>
+      <span style="display: flex; gap: 24px; flex-wrap: wrap;">
+        <a href="#" style="text-decoration: none; color: #6f7d5a;" style-hover="color: #fff;">Impressum</a>
+        <a href="#" style="text-decoration: none; color: #6f7d5a;" style-hover="color: #fff;">Datenschutz</a>
+        <a href="#" style="text-decoration: none; color: #6f7d5a;" style-hover="color: #fff;">AGB</a>
+      </span>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      services: [
+        { no: "01", title: "Gesichtsbehandlungen", desc: "Individuelle Pflege — von klassisch bis intensiv & Anti-Aging.", price: "ab 37 €" },
+        { no: "02", title: "Massagen", desc: "Ayurveda, Lomi-Lomi, Kräuterstempel & Hot-Stone.", price: "ab 54 €" },
+        { no: "03", title: "Hand- & Fußpflege", desc: "Maniküre, Pediküre & wohltuende Wellness-Rituale.", price: "ab 37 €" },
+      ],
+      partners: ["assets/brand-meentzen.png", "assets/brand-clarena.png", "assets/brand-denova.png", "assets/brand-grandel.png"],
+      reviews: [
+        { quote: "Maria nimmt sich Zeit und geht auf jeden Wunsch ein. Ich fühle mich rundum wohl.", name: "Tizia" },
+        { quote: "Die Lomi-Lomi Massage war pure Entspannung. Absolute Wohlfühloase.", name: "Finja" },
+        { quote: "So herzlich und professionell – meine Haut hat noch nie besser ausgesehen.", name: "Paula" },
+      ],
+      hours: [
+        { day: "Montag", time: "Geschlossen" },
+        { day: "Di – Fr", time: "09 – 19 Uhr" },
+        { day: "Samstag", time: "Auf Anfrage" },
+        { day: "Sonntag", time: "Geschlossen" },
+      ],
+      iconWhatsapp: React.createElement("svg", { width: 16, height: 16, viewBox: "0 0 24 24", fill: "none" },
+        React.createElement("path", { d: "M3 21l1.8-5A8 8 0 1112 20a8 8 0 01-4-1l-5 2z", stroke: "#f6f3ea", strokeWidth: 1.6, fill: "none", strokeLinejoin: "round" }),
+        React.createElement("path", { d: "M9 9c0 4 2 6 6 6 1-1 1-1.5.5-2.2-.5-.6-1.4-.9-2-.4-.7.6-1.9-.6-2.4-1.4-.4-.7 0-1.4.4-1.6C12 9 11.5 8 11 8 10 8 9 8 9 9z", fill: "#f6f3ea" })),
+    };
+  }
+}
+</script>
+</body>
+</html>
