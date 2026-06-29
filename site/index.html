@@ -6,9 +6,7 @@
   <title>Maria Augusta Fölsener — Ganzheitskosmetik in Berlin</title>
   <meta name="description" content="Ganzheitliche Kosmetik in Berlin — individuell abgestimmt auf deine Bedürfnisse. Gesichtsbehandlungen, Massagen mit Ayurveda & Lomi-Lomi, Hand- & Fußpflege.">
   <link rel="icon" href="assets/logo.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/fonts/fonts.css">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -97,7 +95,7 @@
   <section id="ueber" class="about">
     <div class="about__media">
       <div class="about__frame">
-        <img src="assets/maria.png" alt="Maria Augusta Fölsener">
+        <img src="assets/maria.jpg" alt="Maria Augusta Fölsener" width="1000" height="1016" loading="lazy">
       </div>
       <svg class="deco about__deco orchid-78" aria-hidden="true"><use href="#orchid"/></svg>
     </div>
@@ -284,7 +282,12 @@
           </div>
         </div>
         <div class="contact__map">
-          <iframe title="Standort auf Google Maps" src="https://www.google.com/maps?q=Tieckstr.+1b,+10115+Berlin&output=embed" loading="lazy"></iframe>
+          <div class="map-consent" id="mapConsent">
+            <svg width="30" height="30" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
+            <p>Aus Datenschutzgründen wird die Karte von Google Maps erst nach deiner Zustimmung geladen. Dabei können Daten an Google übertragen werden.</p>
+            <button type="button" class="map-consent__btn" onclick="loadSalonMap()">Karte laden</button>
+            <a class="map-consent__link" href="https://www.google.com/maps?q=Tieckstr.+1b,+10115+Berlin" target="_blank" rel="noopener">oder direkt auf Google Maps öffnen ↗</a>
+          </div>
         </div>
       </div>
     </div>
@@ -325,14 +328,26 @@
       </div>
     </div>
     <div class="footer__bar">
-      <span>© 2025 Maria Augusta Fölsener Kosmetik</span>
+      <span>© 2026 Maria Augusta Fölsener Kosmetik</span>
       <span class="legal">
-        <a href="#">Impressum</a>
-        <a href="#">Datenschutz</a>
-        <a href="#">AGB</a>
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
       </span>
     </div>
   </footer>
+
+  <script>
+    function loadSalonMap() {
+      var c = document.getElementById('mapConsent');
+      if (!c) return;
+      var f = document.createElement('iframe');
+      f.title = 'Standort auf Google Maps';
+      f.src = 'https://www.google.com/maps?q=Tieckstr.+1b,+10115+Berlin&output=embed';
+      f.loading = 'lazy';
+      f.setAttribute('style', 'width:100%;height:100%;border:0;display:block');
+      c.parentNode.replaceChild(f, c);
+    }
+  </script>
 
 </body>
 </html>
