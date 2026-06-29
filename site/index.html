@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Maria Augusta Fölsener — Ganzheitskosmetik in Berlin</title>
+  <meta name="description" content="Ganzheitliche Kosmetik in Berlin — individuell abgestimmt auf deine Bedürfnisse. Gesichtsbehandlungen, Massagen mit Ayurveda & Lomi-Lomi, Hand- & Fußpflege.">
+  <link rel="icon" href="assets/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- reusable botanical symbols (palette: Salbei & Orchidee) -->
+  <svg class="sprite" aria-hidden="true" focusable="false">
+    <symbol id="frond" viewBox="0 0 80 120">
+      <path d="M40 118 C36 92 40 60 52 30 C58 16 62 10 64 4" stroke="#7d9a4e" stroke-width="1.3" fill="none" stroke-linecap="round"/>
+      <ellipse cx="30" cy="96" rx="9"  ry="4"   fill="#7d9a4e" opacity=".55" transform="rotate(30 30 96)"/>
+      <ellipse cx="50" cy="88" rx="10" ry="4.4" fill="none" stroke="#7d9a4e" stroke-width="1.1" transform="rotate(-28 50 88)"/>
+      <ellipse cx="33" cy="78" rx="10" ry="4.2" fill="#7d9a4e" opacity=".55" transform="rotate(28 33 78)"/>
+      <ellipse cx="53" cy="70" rx="10" ry="4.4" fill="none" stroke="#7d9a4e" stroke-width="1.1" transform="rotate(-30 53 70)"/>
+      <ellipse cx="38" cy="58" rx="10" ry="4.2" fill="#7d9a4e" opacity=".55" transform="rotate(22 38 58)"/>
+      <ellipse cx="55" cy="50" rx="9"  ry="4"   fill="none" stroke="#7d9a4e" stroke-width="1.1" transform="rotate(-34 55 50)"/>
+      <ellipse cx="45" cy="38" rx="8"  ry="3.6" fill="#7d9a4e" opacity=".55" transform="rotate(8 45 38)"/>
+      <ellipse cx="58" cy="30" rx="8"  ry="3.4" fill="none" stroke="#7d9a4e" stroke-width="1.1" transform="rotate(-40 58 30)"/>
+      <circle cx="64" cy="5" r="3" fill="#7d9a4e" opacity=".7"/>
+    </symbol>
+    <symbol id="orchid" viewBox="0 0 170 100">
+      <path d="M6 70 C40 86 86 80 120 60" stroke="#7d9a4e" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+      <path d="M20 72 C16 60 18 52 24 46" stroke="#7d9a4e" stroke-width="1.3" fill="none" stroke-linecap="round"/>
+      <ellipse cx="24" cy="44" rx="5"   ry="8"   fill="#ecc3cd" transform="rotate(-20 24 44)"/>
+      <ellipse cx="44" cy="80" rx="5"   ry="7.5" fill="#ecc3cd" transform="rotate(40 44 80)"/>
+      <ellipse cx="66" cy="82" rx="4.5" ry="7"   fill="#ecc3cd" transform="rotate(35 66 82)"/>
+      <ellipse cx="120" cy="60" rx="13" ry="9"   fill="#e3a9b6" opacity=".92" stroke="#d99dab" stroke-width=".6"/>
+      <ellipse cx="108" cy="48" rx="11" ry="7"   fill="#e3a9b6" opacity=".92" stroke="#d99dab" stroke-width=".6" transform="rotate(-38 108 48)"/>
+      <ellipse cx="132" cy="48" rx="11" ry="7"   fill="#e3a9b6" opacity=".92" stroke="#d99dab" stroke-width=".6" transform="rotate(38 132 48)"/>
+      <ellipse cx="110" cy="70" rx="10" ry="6.5" fill="#e3a9b6" opacity=".92" stroke="#d99dab" stroke-width=".6" transform="rotate(40 110 70)"/>
+      <ellipse cx="130" cy="70" rx="10" ry="6.5" fill="#e3a9b6" opacity=".92" stroke="#d99dab" stroke-width=".6" transform="rotate(-40 130 70)"/>
+      <circle cx="120" cy="60" r="5" fill="#e7b84a"/>
+      <circle cx="120" cy="60" r="2" fill="#cf9a2e"/>
+    </symbol>
+    <symbol id="divider" viewBox="0 0 150 20">
+      <path d="M2 10 H56"  stroke="#b69b7d" stroke-width="1"/>
+      <path d="M94 10 H148" stroke="#b69b7d" stroke-width="1"/>
+      <ellipse cx="66" cy="10" rx="6" ry="3" stroke="#7d9a4e" stroke-width="1.1" fill="none" transform="rotate(35 66 10)"/>
+      <ellipse cx="84" cy="10" rx="6" ry="3" stroke="#7d9a4e" stroke-width="1.1" fill="none" transform="rotate(-35 84 10)"/>
+      <circle cx="75" cy="10" r="3" fill="#e3a9b6"/>
+      <circle cx="75" cy="10" r="1.2" fill="#e7b84a"/>
+    </symbol>
+    <symbol id="ic-instagram" viewBox="0 0 24 24">
+      <path d="M4 8a4 4 0 014-4h8a4 4 0 014 4v8a4 4 0 01-4 4H8a4 4 0 01-4-4z" fill="none" stroke="#6f8f3f" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M15.5 11.5a3.5 3.5 0 11-3-3" fill="none" stroke="#6f8f3f" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M17.5 6.6h.01" fill="none" stroke="#6f8f3f" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="ic-facebook" viewBox="0 0 24 24">
+      <path d="M14 8.5V6.8c0-.9.4-1.3 1.3-1.3H17V2.5h-2.4c-2.4 0-3.6 1.4-3.6 3.8v2.2H9V12h2v9.5h3V12h2.2l.4-3.5H14z" fill="none" stroke="#6f8f3f" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+  </svg>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <a class="nav__brand" href="#hero">
+      <img src="assets/logo.png" alt="Maria Augusta Fölsener">
+      <span class="nav__name">
+        <b>Maria Augusta Fölsener</b>
+        <small>Ganzheitskosmetik · Berlin</small>
+      </span>
+    </a>
+    <div class="nav__links">
+      <a href="#ueber">Über mich</a>
+      <a href="leistungen.html">Leistungen</a>
+      <a href="#kontakt">Kontakt</a>
+      <a class="btn-primary nav__cta" href="#kontakt">Termin buchen</a>
+    </div>
+  </nav>
+
+  <!-- HERO (minimal) -->
+  <section id="hero" class="hero">
+    <div class="hero__inner">
+      <div class="hero__divider"><svg class="divider-svg" aria-hidden="true"><use href="#divider"/></svg></div>
+      <span class="eyebrow">Ganzheitskosmetik · Berlin</span>
+      <h1>Wellness für<br>Körper und Seele</h1>
+      <p class="hero__sub">Ganzheitliche Kosmetik – individuell abgestimmt auf deine Bedürfnisse.</p>
+      <div class="hero__actions">
+        <a class="btn-primary" href="#kontakt">Jetzt Termin buchen</a>
+        <a class="hero__link" href="leistungen.html">Behandlungen ansehen →</a>
+      </div>
+    </div>
+    <div class="hero__image">
+      <img src="assets/raum3.jpg" alt="Behandlungsraum im Studio">
+    </div>
+  </section>
+
+  <!-- ÜBER MICH -->
+  <section id="ueber" class="about">
+    <div class="about__media">
+      <div class="about__frame">
+        <img src="assets/maria.png" alt="Maria Augusta Fölsener">
+      </div>
+      <svg class="deco about__deco orchid-78" aria-hidden="true"><use href="#orchid"/></svg>
+    </div>
+    <div>
+      <span class="eyebrow">Über mich</span>
+      <h2>Ganzheitskosmetik mit Herz</h2>
+      <p class="about__text">Ich bin Maria und arbeite seit 9 Jahren als Ganzheitskosmetikerin. Ich sehe und behandle den Körper als Ganzes und kombiniere Techniken wie Ayurveda und Lomi-Lomi. Ursprünglich komme ich aus Ecuador und spreche fließend Deutsch, Spanisch und Englisch. Ich bringe meine Herzlichkeit zur Arbeit und schaffe für jeden Kunden genau die richtige Balance aus Entspannung und Lebendigkeit.</p>
+      <div class="about__stats">
+        <div><div class="num">9</div><div class="lbl">Jahre Erfahrung</div></div>
+        <div><div class="num">3</div><div class="lbl">Sprachen</div></div>
+        <div><div class="num">∞</div><div class="lbl">Herzlichkeit</div></div>
+      </div>
+      <div class="about__rule"><svg class="divider-svg" aria-hidden="true"><use href="#divider"/></svg></div>
+    </div>
+  </section>
+
+  <!-- LEISTUNGEN PREVIEW -->
+  <section id="leistungen" class="services">
+    <svg class="deco services__deco frond-90" aria-hidden="true"><use href="#frond"/></svg>
+    <span class="eyebrow">Leistungen</span>
+    <h2>Meine Behandlungen</h2>
+    <div class="services__grid">
+      <div class="card-svc">
+        <div class="card-svc__icon">
+          <svg width="42" height="42" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+            <circle cx="20" cy="20" r="13" stroke="#6f8f3f" stroke-width="1.3"/>
+            <path d="M20 7 C20 14 16 18 12 20 C16 22 20 26 20 33" stroke="#6f8f3f" stroke-width="1.3" fill="none"/>
+            <path d="M20 7 C20 14 24 18 28 20 C24 22 20 26 20 33" stroke="#6f8f3f" stroke-width="1.3" fill="none"/>
+          </svg>
+        </div>
+        <h3>Gesichtsbehandlung</h3>
+        <p>Individuelle Pflege für deine Haut.</p>
+      </div>
+      <div class="card-svc">
+        <div class="card-svc__icon">
+          <svg width="42" height="42" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+            <path d="M20 34 C20 24 20 14 20 6" stroke="#6f8f3f" stroke-width="1.3"/>
+            <ellipse cx="11" cy="22" rx="7" ry="3.6" stroke="#6f8f3f" stroke-width="1.3" fill="none" transform="rotate(35 11 22)"/>
+            <ellipse cx="29" cy="22" rx="7" ry="3.6" stroke="#6f8f3f" stroke-width="1.3" fill="none" transform="rotate(-35 29 22)"/>
+            <ellipse cx="14" cy="13" rx="6" ry="3.2" stroke="#6f8f3f" stroke-width="1.3" fill="none" transform="rotate(35 14 13)"/>
+            <ellipse cx="26" cy="13" rx="6" ry="3.2" stroke="#6f8f3f" stroke-width="1.3" fill="none" transform="rotate(-35 26 13)"/>
+          </svg>
+        </div>
+        <h3>Massagen</h3>
+        <p>Entspannung mit Ayurveda &amp; Lomi-Lomi.</p>
+      </div>
+      <div class="card-svc">
+        <div class="card-svc__icon">
+          <svg width="42" height="42" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+            <path d="M20 6 C14 12 12 20 20 34 C28 20 26 12 20 6 Z" stroke="#6f8f3f" stroke-width="1.3" fill="none"/>
+            <path d="M20 12 V30" stroke="#6f8f3f" stroke-width="1.1"/>
+          </svg>
+        </div>
+        <h3>Hand- &amp; Fußpflege</h3>
+        <p>Verwöhnprogramm für deine Hände und Füße.</p>
+      </div>
+    </div>
+    <div class="services__actions">
+      <a class="btn-outline" href="leistungen.html">Alle Leistungen &amp; Preise</a>
+      <a class="btn-primary" href="https://www.treatwell.de" target="_blank" rel="noopener">Auf Treatwell buchen</a>
+    </div>
+  </section>
+
+  <!-- PRODUKTPARTNER -->
+  <section class="partners">
+    <div class="partners__inner">
+      <span class="eyebrow">Produktpartner</span>
+      <h2>Womit ich arbeite</h2>
+      <p class="partners__lead">Hochwertige Pflege von Marken, denen ich vertraue — für sichtbare und spürbare Ergebnisse.</p>
+      <div class="partners__grid">
+        <div class="partners__logo"><img src="assets/brand-meentzen.png" alt="Charlotte Meentzen"></div>
+        <div class="partners__logo"><img src="assets/brand-clarena.png" alt="Clarena"></div>
+        <div class="partners__logo"><img src="assets/brand-denova.png" alt="Denova Pro"></div>
+        <div class="partners__logo"><img src="assets/brand-grandel.png" alt="Dr. Grandel"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- KUNDENSTIMMEN -->
+  <section class="reviews">
+    <svg class="deco reviews__deco--orchid orchid-170" aria-hidden="true"><use href="#orchid"/></svg>
+    <svg class="deco reviews__deco--frond frond-130" aria-hidden="true"><use href="#frond"/></svg>
+    <div class="reviews__inner">
+      <span class="eyebrow">Kundenstimmen</span>
+      <h2>Was Kundinnen sagen</h2>
+      <div class="reviews__badge">
+        <span class="stars">★★★★★</span>
+        <span>Treatwell Top Rated 2020</span>
+      </div>
+      <div class="reviews__grid">
+        <div class="card-review">
+          <div class="stars">★★★★★</div>
+          <blockquote>„Maria nimmt sich Zeit und geht auf jeden Wunsch ein. Ich fühle mich rundum wohl."</blockquote>
+          <cite>Tizia</cite>
+        </div>
+        <div class="card-review">
+          <div class="stars">★★★★★</div>
+          <blockquote>„Die Lomi-Lomi Massage war pure Entspannung. Absolute Wohlfühloase."</blockquote>
+          <cite>Finja</cite>
+        </div>
+        <div class="card-review">
+          <div class="stars">★★★★★</div>
+          <blockquote>„So herzlich und professionell – meine Haut hat noch nie besser ausgesehen."</blockquote>
+          <cite>Paula</cite>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EINBLICKE / GALERIE -->
+  <section class="gallery">
+    <span class="eyebrow">Einblicke</span>
+    <h2>Mein Studio</h2>
+    <div class="gallery__grid">
+      <figure class="tall"><img src="assets/raum6.jpg" alt="Wohlfühlmoment"></figure>
+      <figure><img src="assets/raum5.jpg" alt="Behandlungsplatz"></figure>
+      <figure><img src="assets/raum1.jpg" alt="Massageraum"></figure>
+      <figure><img src="assets/raum2.jpg" alt="Behandlungsraum"></figure>
+      <figure><img src="assets/raum4.jpg" alt="Empfang"></figure>
+    </div>
+  </section>
+
+  <!-- KONTAKT -->
+  <section id="kontakt" class="contact">
+    <svg class="deco contact__deco--frond frond-90" aria-hidden="true"><use href="#frond"/></svg>
+    <svg class="deco contact__deco--orchid orchid-78" aria-hidden="true"><use href="#orchid"/></svg>
+    <div class="contact__inner">
+      <div class="contact__head">
+        <span class="eyebrow">Kontakt</span>
+        <h2>Ich freue mich auf deinen Besuch!</h2>
+        <p>Ich biete Termine im Studio sowie Hausbesuche an. Schreib mir oder ruf mich an.</p>
+      </div>
+      <div class="contact__grid">
+        <div class="contact__col">
+          <!-- direkt erreichen -->
+          <div class="contact-card">
+            <div class="contact-card__label">Direkt erreichen</div>
+            <a class="contact-line" href="tel:+4917610106022">
+              <span class="icon-badge">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 4h3l1.5 5-2 1.5a12 12 0 006 6l1.5-2 5 1.5v3a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z" stroke="#6f8f3f" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+              <span><span class="k">Mobil</span><span class="v">0176 10 10 60 22</span></span>
+            </a>
+            <a class="contact-line" href="tel:+49302824080">
+              <span class="icon-badge">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 4h3l1.5 5-2 1.5a12 12 0 006 6l1.5-2 5 1.5v3a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z" stroke="#6f8f3f" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+              <span><span class="k">Festnetz</span><span class="v">030 28 24 080</span></span>
+            </a>
+            <a class="contact-line" href="mailto:kosmetik@mariafoelsener.com">
+              <span class="icon-badge">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 6h18v12H3z" stroke="#6f8f3f" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 7l9 6 9-6" stroke="#6f8f3f" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+              <span><span class="k">E-Mail</span><span class="v v--mail">kosmetik@mariafoelsener.com</span></span>
+            </a>
+            <a class="btn-whatsapp" href="https://wa.me/4917610106022" target="_blank" rel="noopener">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 21l1.8-5A8 8 0 1112 20a8 8 0 01-4-1l-5 2z" stroke="#fff" stroke-width="1.6" fill="none" stroke-linejoin="round"/><path d="M9 9c0 4 2 6 6 6 1-1 1-1.5.5-2.2-.5-.6-1.4-.9-2-.4-.7.6-1.9-.6-2.4-1.4-.4-.7 0-1.4.4-1.6C12 9 11.5 8 11 8 10 8 9 8 9 9z" fill="#fff"/></svg>
+              Per WhatsApp schreiben
+            </a>
+          </div>
+          <!-- öffnungszeiten -->
+          <div class="contact-card hours-card">
+            <div class="contact-card__label">Öffnungszeiten</div>
+            <div class="hours-row"><span class="day">Montag</span><span class="time">Geschlossen</span></div>
+            <div class="hours-row"><span class="day">Dienstag – Freitag</span><span class="time">09:00 – 19:00</span></div>
+            <div class="hours-row"><span class="day">Samstag</span><span class="time">Auf Anfrage</span></div>
+            <div class="hours-row"><span class="day">Sonntag</span><span class="time">Geschlossen</span></div>
+            <p class="hours-note">Hausbesuche nach Vereinbarung.</p>
+          </div>
+          <!-- adresse -->
+          <div class="contact-card addr-card">
+            <div class="contact-card__label">Adresse</div>
+            <div class="addr-row">
+              <span class="icon-badge">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 21s7-6.4 7-11a7 7 0 10-14 0c0 4.6 7 11 7 11z" stroke="#6f8f3f" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 10.5a2 2 0 100-4 2 2 0 000 4z" stroke="#6f8f3f" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+              <span>Maria Augusta Fölsener Kosmetik<br>Tieckstr. 1b, 10115 Berlin</span>
+            </div>
+            <div class="addr-social">
+              <span class="lbl">Folgen</span>
+              <a href="https://instagram.com/mariafoelsenerkosmetik" target="_blank" rel="noopener"><svg width="17" height="17" aria-hidden="true"><use href="#ic-instagram"/></svg> Instagram</a>
+              <a href="https://facebook.com/mariafoelsenerkosmetik" target="_blank" rel="noopener"><svg width="17" height="17" aria-hidden="true"><use href="#ic-facebook"/></svg> Facebook</a>
+            </div>
+          </div>
+        </div>
+        <div class="contact__map">
+          <iframe title="Standort auf Google Maps" src="https://www.google.com/maps?q=Tieckstr.+1b,+10115+Berlin&output=embed" loading="lazy"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer__cols">
+      <div class="footer__brand">
+        <div class="footer__brand-row">
+          <img src="assets/logo.png" alt="">
+          <div class="name">Maria Augusta Fölsener</div>
+        </div>
+        <p>Ganzheitliche Kosmetik in Berlin — Behandlungen mit Herz für Körper und Seele.</p>
+        <div class="footer__social">
+          <a href="https://instagram.com/mariafoelsenerkosmetik" target="_blank" rel="noopener" aria-label="Instagram"><svg width="17" height="17" aria-hidden="true"><use href="#ic-instagram"/></svg></a>
+          <a href="https://facebook.com/mariafoelsenerkosmetik" target="_blank" rel="noopener" aria-label="Facebook"><svg width="17" height="17" aria-hidden="true"><use href="#ic-facebook"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <div class="footer__label">Schnellmenü</div>
+        <div class="footer__menu">
+          <a href="#hero">Startseite</a>
+          <a href="#ueber">Über mich</a>
+          <a href="leistungen.html">Leistungen &amp; Preise</a>
+          <a href="#kontakt">Kontakt</a>
+          <a href="https://www.treatwell.de" target="_blank" rel="noopener">Termin buchen</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer__label">Kontakt</div>
+        <div class="footer__contact">
+          <a href="tel:+4917610106022">0176 10 10 60 22</a>
+          <a href="tel:+49302824080">030 28 24 080</a>
+          <a href="mailto:kosmetik@mariafoelsener.com">kosmetik@mariafoelsener.com</a>
+          <span>Tieckstr. 1b<br>10115 Berlin</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bar">
+      <span>© 2025 Maria Augusta Fölsener Kosmetik</span>
+      <span class="legal">
+        <a href="#">Impressum</a>
+        <a href="#">Datenschutz</a>
+        <a href="#">AGB</a>
+      </span>
+    </div>
+  </footer>
+
+</body>
+</html>

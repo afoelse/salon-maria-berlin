@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Leistungen &amp; Preise — Maria Augusta Fölsener Kosmetik</title>
+  <meta name="description" content="Alle Behandlungen & Preise: Gesichtsbehandlungen, Massagen (Lomi-Lomi, Ayurveda), Hand- & Fußpflege sowie weitere Anwendungen im Studio in Berlin-Mitte.">
+  <link rel="icon" href="assets/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- reusable botanical symbols (palette: Salbei & Orchidee) -->
+  <svg class="sprite" aria-hidden="true" focusable="false">
+    <symbol id="frond" viewBox="0 0 80 120">
+      <path d="M40 118 C36 92 40 60 52 30 C58 16 62 10 64 4" stroke="#7d9a4e" stroke-width="1.3" fill="none" stroke-linecap="round"/>
+      <ellipse cx="30" cy="96" rx="9"  ry="4"   fill="#7d9a4e" opacity=".55" transform="rotate(30 30 96)"/>
+      <ellipse cx="50" cy="88" rx="10" ry="4.4" fill="none" stroke="#7d9a4e" stroke-width="1.1" transform="rotate(-28 50 88)"/>
+      <ellipse cx="33" cy="78" rx="10" ry="4.2" fill="#7d9a4e" opacity=".55" transform="rotate(28 33 78)"/>
+      <ellipse cx="53" cy="70" rx="10" ry="4.4" fill="none" stroke="#7d9a4e" stroke-width="1.1" transform="rotate(-30 53 70)"/>
+      <ellipse cx="38" cy="58" rx="10" ry="4.2" fill="#7d9a4e" opacity=".55" transform="rotate(22 38 58)"/>
+      <ellipse cx="55" cy="50" rx="9"  ry="4"   fill="none" stroke="#7d9a4e" stroke-width="1.1" transform="rotate(-34 55 50)"/>
+      <ellipse cx="45" cy="38" rx="8"  ry="3.6" fill="#7d9a4e" opacity=".55" transform="rotate(8 45 38)"/>
+      <ellipse cx="58" cy="30" rx="8"  ry="3.4" fill="none" stroke="#7d9a4e" stroke-width="1.1" transform="rotate(-40 58 30)"/>
+      <circle cx="64" cy="5" r="3" fill="#7d9a4e" opacity=".7"/>
+    </symbol>
+    <symbol id="orchid" viewBox="0 0 170 100">
+      <path d="M6 70 C40 86 86 80 120 60" stroke="#7d9a4e" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+      <path d="M20 72 C16 60 18 52 24 46" stroke="#7d9a4e" stroke-width="1.3" fill="none" stroke-linecap="round"/>
+      <ellipse cx="24" cy="44" rx="5"   ry="8"   fill="#ecc3cd" transform="rotate(-20 24 44)"/>
+      <ellipse cx="44" cy="80" rx="5"   ry="7.5" fill="#ecc3cd" transform="rotate(40 44 80)"/>
+      <ellipse cx="66" cy="82" rx="4.5" ry="7"   fill="#ecc3cd" transform="rotate(35 66 82)"/>
+      <ellipse cx="120" cy="60" rx="13" ry="9"   fill="#e3a9b6" opacity=".92" stroke="#d99dab" stroke-width=".6"/>
+      <ellipse cx="108" cy="48" rx="11" ry="7"   fill="#e3a9b6" opacity=".92" stroke="#d99dab" stroke-width=".6" transform="rotate(-38 108 48)"/>
+      <ellipse cx="132" cy="48" rx="11" ry="7"   fill="#e3a9b6" opacity=".92" stroke="#d99dab" stroke-width=".6" transform="rotate(38 132 48)"/>
+      <ellipse cx="110" cy="70" rx="10" ry="6.5" fill="#e3a9b6" opacity=".92" stroke="#d99dab" stroke-width=".6" transform="rotate(40 110 70)"/>
+      <ellipse cx="130" cy="70" rx="10" ry="6.5" fill="#e3a9b6" opacity=".92" stroke="#d99dab" stroke-width=".6" transform="rotate(-40 130 70)"/>
+      <circle cx="120" cy="60" r="5" fill="#e7b84a"/>
+      <circle cx="120" cy="60" r="2" fill="#cf9a2e"/>
+    </symbol>
+  </svg>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <a class="nav__brand" href="index.html">
+      <img src="assets/logo.png" alt="Maria Augusta Fölsener">
+      <span class="nav__name">
+        <b>Maria Augusta Fölsener</b>
+        <small>Ganzheitskosmetik · Berlin</small>
+      </span>
+    </a>
+    <div class="nav__links">
+      <a href="index.html#ueber">Über mich</a>
+      <a href="leistungen.html" class="is-active">Leistungen</a>
+      <a href="index.html#kontakt">Kontakt</a>
+      <a class="btn-primary nav__cta" href="https://www.treatwell.de" target="_blank" rel="noopener">Termin buchen</a>
+    </div>
+  </nav>
+
+  <!-- HEADER -->
+  <section class="lp-header">
+    <svg class="deco lp-header__deco--orchid orchid-120" aria-hidden="true"><use href="#orchid"/></svg>
+    <svg class="deco lp-header__deco--frond frond-140" aria-hidden="true"><use href="#frond"/></svg>
+    <a class="lp-back" href="index.html">← Zurück zur Startseite</a>
+    <h1>Leistungen &amp; Preise</h1>
+    <p>Jede Behandlung beginnt mit einem erholsamen Ritual, das von Kopf bis Fuß in tiefe Entspannung führt. In ruhiger Atmosphäre finden Körper und Geist zurück zur Balance.</p>
+  </section>
+
+  <!-- PRICE GROUPS -->
+  <section class="lp-prices">
+
+    <!-- Gesichtsbehandlungen -->
+    <div class="price-group">
+      <div class="price-group__head">
+        <span class="icon">
+          <svg width="40" height="40" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+            <circle cx="20" cy="20" r="13" stroke="#6f8f3f" stroke-width="1.3"/>
+            <path d="M20 7 C20 14 16 18 12 20 C16 22 20 26 20 33" stroke="#6f8f3f" stroke-width="1.3" fill="none"/>
+            <path d="M20 7 C20 14 24 18 28 20 C24 22 20 26 20 33" stroke="#6f8f3f" stroke-width="1.3" fill="none"/>
+          </svg>
+        </span>
+        <div>
+          <h2>Gesichtsbehandlungen</h2>
+          <p>Individuelle Pflege für deine Haut</p>
+        </div>
+      </div>
+      <div class="price-table">
+        <div class="price-row"><div class="price-row__main"><div class="price-row__name">Grundbehandlung Basic</div><div class="price-row__desc">Reinigung, Hautanalyse, Ausreinigung, kleine Massage &amp; Abschlusspflege</div></div><div class="price-row__dur">ca. 60 Min.</div><div class="price-row__price">68 €</div></div>
+        <div class="price-row"><div class="price-row__main"><div class="price-row__name">S.O.S. Kosmetikbehandlung</div><div class="price-row__desc">Ausreinigung mit Pflegecreme-Ampulle</div></div><div class="price-row__dur">ca. 30 Min.</div><div class="price-row__price">47 €</div></div>
+        <div class="price-row"><div class="price-row__main"><div class="price-row__name">Sanftes Gesichtspeeling</div><div class="price-row__desc">Für eine glatte Haut, inkl. kleiner Massage</div></div><div class="price-row__dur">ca. 30 Min.</div><div class="price-row__price">47 €</div></div>
+        <div class="price-row"><div class="price-row__main"><div class="price-row__name">Entspannende Vital-Massage</div><div class="price-row__desc">Inkl. Serum</div></div><div class="price-row__dur">ca. 20 Min.</div><div class="price-row__price">37 €</div></div>
+        <div class="price-row"><div class="price-row__main"><div class="price-row__name">Edelstein-Gesichtsmassage</div><div class="price-row__desc">Mit Rosenquarz und Bergkristall</div></div><div class="price-row__dur">ca. 20 Min.</div><div class="price-row__price">42 €</div></div>
+        <div class="price-row"><div class="price-row__main"><div class="price-row__name">Herren-Kosmetikbehandlung</div><div class="price-row__desc">Reinigung, Hautanalyse, Ausreinigung, kleine Massage &amp; Abschlusspflege</div></div><div class="price-row__dur">ca. 60 Min.</div><div class="price-row__price">68 €</div></div>
+        <div class="price-row"><div class="price-row__main"><div class="price-row__name">Teenager-Kosmetikbehandlung</div><div class="price-row__desc">Mit talgreduzierenden Wirkstoffen und HF-Stab</div></div><div class="price-row__dur">ca. 45 Min.</div><div class="price-row__price">52 €</div></div>
+        <div class="price-row"><div class="price-row__main"><div class="price-row__name">Akne-Behandlung</div><div class="price-row__desc">Mit Vapozon &amp; Hochfrequenz-Stab, wirkt desinfizierend</div></div><div class="price-row__dur">ca. 60 Min.</div><div class="price-row__price">85 €</div></div>
+        <div class="price-row"><div class="price-row__main"><div class="price-row__name">Super-Clean Akne-Behandlung</div><div class="price-row__desc">Porentiefe Reinigung &amp; Desinkrustation für strahlenden Teint</div></div><div class="price-row__dur">ca. 75 Min.</div><div class="price-row__price">105 €</div></div>
+        <div class="price-row"><div class="price-row__main"><div class="price-row__name">Mikrodermabrasion</div><div class="price-row__desc">Apparatives Peeling, regt Zellneubildung an</div></div><div class="price-row__dur">ca. 60 Min.</div><div class="price-row__price">88 €</div></div>
+        <div class="price-row"><div class="price-row__main"><div class="price-row__name">Anti-Aging-Iontophorese</div><div class="price-row__desc">Wirkstoffe dringen tief in die Haut ein und regenerieren</div></div><div class="price-row__dur">ca. 75 Min.</div><div class="price-row__price">105 €</div></div>
+        <div class="price-row"><div class="price-row__main"><div class="price-row__name">Galvanischer Strom</div><div class="price-row__desc">Bio-Cellulose-Maske, sehr intensive Behandlung</div></div><div class="price-row__dur">ca. 75 Min.</div><div class="price-row__price">115 €</div></div>
+        <div class="price-row"><div class="price-row__main"><div class="price-row__name">Behandlung mit Ultraschall</div><div class="price-row__desc">Impulsschall fördert die Zellerneuerung</div></div><div class="price-row__dur">ca. 75 Min.</div><div class="price-row__price">105 €</div></div>
+        <div class="price-row"><div class="price-row__main"><div class="price-row__name">Rückenbehandlung</div><div class="price-row__desc">Reinigung mit dem HF-Stab plus Packung</div></div><div class="price-row__dur">ca. 45 Min.</div><div class="price-row__price">70 €</div></div>
+        <div class="price-row"><div class="price-row__main"><div class="price-row__name">Thermo-Aktiv-Modellage</div><div class="price-row__desc">Extra-Ampulle mit Depoteffekt</div></div><div class="price-row__dur">ca. 75 Min.</div><div class="price-row__price">85 €</div></div>
+        <div class="price-row"><div class="price-row__main"><div class="price-row__name">Intensive Kosmetikbehandlung</div><div class="price-row__desc">Inkl. kleiner Rücken-, Hand- und Arm-Massage</div></div><div class="price-row__dur">ca. 75 Min.</div><div class="price-row__price">98 €</div></div>
+      </div>
+    </div>
+
+    <!-- Massagen -->
+    <div class="price-group">
+      <div class="price-group__head">
+        <span class="icon">
+          <svg width="40" height="40" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+            <path d="M20 34 C20 24 20 14 20 6" stroke="#6f8f3f" stroke-width="1.3"/>
+            <ellipse cx="11" cy="22" rx="7" ry="3.6" stroke="#6f8f3f" stroke-width="1.3" fill="none" transform="rotate(35 11 22)"/>
+            <ellipse cx="29" cy="22" rx="7" ry="3.6" stroke="#6f8f3f" stroke-width="1.3" fill="none" transform="rotate(-35 29 22)"/>
+            <ellipse cx="14" cy="13" rx="6" ry="3.2" stroke="#6f8f3f" stroke-width="1.3" fill="none" transform="rotate(35 14 13)"/>
+            <ellipse cx="26" cy="13" rx="6" ry="3.2" stroke="#6f8f3f" stroke-width="1.3" fill="none" transform="rotate(-35 26 13)"/>
+          </svg>
+        </span>
+        <div>
+          <h2>Massagen</h2>
+          <p>Jede Massage beginnt mit einem entspannenden Fußbad</p>
+        </div>
+      </div>
+      <div class="price-table">
+        <div class="price-row"><div class="price-row__main"><div class="price-row__name">Basische Salz-Öl-Massage</div><div class="price-row__desc">Zum Entgiften des Körpers</div></div><div class="price-row__dur">ca. 60 Min.</div><div class="price-row__price">85 €</div></div>
+        <div class="price-row"><div class="price-row__main"><div class="price-row__name">Körper-Sportmassage</div><div class="price-row__desc">Inkl. heißer Kompressen zum Lösen von Verspannungen</div></div><div class="price-row__dur">ca. 60 Min.</div><div class="price-row__price">90 €</div></div>
+        <div class="price-row"><div class="price-row__main"><div class="price-row__name">Kräuterstempel-Massage</div><div class="price-row__desc">Mit ausgesuchten Kräutern, entspannend &amp; entschlackend</div></div><div class="price-row__dur">ca. 60 Min.</div><div class="price-row__price">102 €</div></div>
+        <div class="price-row"><div class="price-row__main"><div class="price-row__name">Rückenmassage bei Verspannungen</div><div class="price-row__desc">Inkl. heißer Kompressen</div></div><div class="price-row__dur">ca. 30 Min.</div><div class="price-row__price">54 €</div></div>
+        <div class="price-row"><div class="price-row__main"><div class="price-row__name">Rückenmassage mit Tonerde</div><div class="price-row__desc">Gegen Schmerzen &amp; Verspannungen am Bewegungsapparat</div></div><div class="price-row__dur">ca. 30 Min.</div><div class="price-row__price">58 €</div></div>
+        <div class="price-row"><div class="price-row__main"><div class="price-row__name">Rückenmassage mit Schröpfen</div><div class="price-row__desc">Manuelle Massage mit Schröpfen, inkl. heißer Kompressen</div></div><div class="price-row__dur">ca. 30 Min.</div><div class="price-row__price">58 €</div></div>
+        <div class="price-row"><div class="price-row__main"><div class="price-row__name">Rückenmassage mit Kräuterstempel</div><div class="price-row__desc">Warme Kräuteressenzen für Tiefenentspannung</div></div><div class="price-row__dur">ca. 30 Min.</div><div class="price-row__price">60 €</div></div>
+        <div class="price-row"><div class="price-row__main"><div class="price-row__name">Lomi-Lomi-Massage</div><div class="price-row__desc">Hawaiianische Tempelmassage für Körper &amp; Seele</div></div><div class="price-row__dur">ca. 90 Min.</div><div class="price-row__price">125 €</div></div>
+        <div class="price-row"><div class="price-row__main"><div class="price-row__name">Raindrop-Technique-Massage</div><div class="price-row__desc">Neun ätherische Essenzen entlang der Wirbelsäule</div></div><div class="price-row__dur">ca. 75 Min.</div><div class="price-row__price">105 €</div></div>
+        <div class="price-row"><div class="price-row__main"><div class="price-row__name">Hot-Cold-Stone-Massage</div><div class="price-row__desc">Ayurveda: warme Lava-Basaltsteine &amp; Ölmassage</div></div><div class="price-row__dur">ca. 90 Min.</div><div class="price-row__price">132 €</div></div>
+        <div class="price-row"><div class="price-row__main"><div class="price-row__name">Garschan-Massage</div><div class="price-row__desc">Seidenhandschuh-Massage, peelend &amp; belebend</div></div><div class="price-row__dur">ca. 60 Min.</div><div class="price-row__price">90 €</div></div>
+        <div class="price-row"><div class="price-row__main"><div class="price-row__name">Aroma-Öl-Massage</div><div class="price-row__desc">Ganzkörpermassage mit ätherischen Ölen</div></div><div class="price-row__dur">ca. 60 Min.</div><div class="price-row__price">80 €</div></div>
+        <div class="price-row"><div class="price-row__main"><div class="price-row__name">Abhyanga-Massage</div><div class="price-row__desc">Mit Stirnaufguss nach altindischer Heilkunst</div></div><div class="price-row__dur">ca. 60 Min.</div><div class="price-row__price">85 €</div></div>
+      </div>
+    </div>
+
+    <!-- Hand- & Fußpflege -->
+    <div class="price-group">
+      <div class="price-group__head">
+        <span class="icon">
+          <svg width="40" height="40" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+            <path d="M20 6 C14 12 12 20 20 34 C28 20 26 12 20 6 Z" stroke="#6f8f3f" stroke-width="1.3" fill="none"/>
+            <path d="M20 12 V30" stroke="#6f8f3f" stroke-width="1.1"/>
+          </svg>
+        </span>
+        <div>
+          <h2>Hand- &amp; Fußpflege</h2>
+          <p>Verwöhnprogramm für Hände und Füße</p>
+        </div>
+      </div>
+      <div class="price-table">
+        <div class="price-row"><div class="price-row__main"><div class="price-row__name">Lack entfernen</div><div class="price-row__desc">Shellac nicht inbegriffen</div></div><div class="price-row__dur"></div><div class="price-row__price">5 €</div></div>
+        <div class="price-row"><div class="price-row__main"><div class="price-row__name">Klassische Maniküre</div><div class="price-row__desc">Optional mit Peeling (42 €) oder mit Lack (45 €)</div></div><div class="price-row__dur">ca. 30 Min.</div><div class="price-row__price">37 €</div></div>
+        <div class="price-row"><div class="price-row__main"><div class="price-row__name">Wellness Maniküre</div><div class="price-row__desc">Natur-Peeling, Hand- &amp; Unterarm-Massage und 1 Glas Sekt — mit Lack 76 €</div></div><div class="price-row__dur">ca. 60 Min.</div><div class="price-row__price">68 €</div></div>
+        <div class="price-row"><div class="price-row__main"><div class="price-row__name">Paraffin-Bad</div><div class="price-row__desc">Inkl. kleiner Massage und Peeling</div></div><div class="price-row__dur">ca. 20 Min.</div><div class="price-row__price">40 €</div></div>
+        <div class="price-row"><div class="price-row__main"><div class="price-row__name">Fußpflege (medizinisch)</div><div class="price-row__desc">Inkl. Fußbad — mit Peeling 51 €, mit Lack 53 €</div></div><div class="price-row__dur">ca. 30 Min.</div><div class="price-row__price">ab 45 €</div></div>
+        <div class="price-row"><div class="price-row__main"><div class="price-row__name">Wellness Pediküre</div><div class="price-row__desc">Hot-Cold-Stone, Natur-Peeling, Fuß- &amp; Waden-Massage und ein Glas Sekt</div></div><div class="price-row__dur">ca. 60 Min.</div><div class="price-row__price">68 €</div></div>
+        <div class="price-row"><div class="price-row__main"><div class="price-row__name">Fußreflexzonen-Massage</div><div class="price-row__desc">Gezielter Druck auf die Reflexpunkte, inkl. Fußbad</div></div><div class="price-row__dur">ca. 45 Min.</div><div class="price-row__price">52 €</div></div>
+        <div class="price-row"><div class="price-row__main"><div class="price-row__name">Wellness Luxus Fußmassage</div><div class="price-row__desc">Inkl. Peeling und ausgesuchten ätherischen Ölen</div></div><div class="price-row__dur">ca. 20 Min.</div><div class="price-row__price">40 €</div></div>
+        <div class="price-row"><div class="price-row__main"><div class="price-row__name">Padabhyanga</div><div class="price-row__desc">Indische Fußmassage mit Klangschale, Fußbad &amp; heißen Kompressen</div></div><div class="price-row__dur">ca. 45 Min.</div><div class="price-row__price">65 €</div></div>
+      </div>
+    </div>
+
+    <!-- Weitere Anwendungen & Extras -->
+    <div class="price-group">
+      <div class="price-group__head">
+        <span class="icon">
+          <svg width="40" height="40" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+            <path d="M20 5 L23 16 L34 19 L23 22 L20 33 L17 22 L6 19 L17 16 Z" stroke="#6f8f3f" stroke-width="1.3" fill="none" stroke-linejoin="round"/>
+            <circle cx="31" cy="9" r="1.6" fill="#6f8f3f"/>
+          </svg>
+        </span>
+        <div>
+          <h2>Weitere Anwendungen &amp; Extras</h2>
+          <p>Zusatzbehandlungen — auch zu jeder Behandlung dazu buchbar</p>
+        </div>
+      </div>
+      <div class="price-table">
+        <div class="price-row"><div class="price-row__main"><div class="price-row__name">Augenbrauen formen</div><div class="price-row__desc"></div></div><div class="price-row__dur">ca. 15 Min.</div><div class="price-row__price">ab 15 €</div></div>
+        <div class="price-row"><div class="price-row__main"><div class="price-row__name">Augenbrauen färben</div><div class="price-row__desc"></div></div><div class="price-row__dur">ca. 15 Min.</div><div class="price-row__price">ab 15 €</div></div>
+        <div class="price-row"><div class="price-row__main"><div class="price-row__name">Wimpern färben</div><div class="price-row__desc"></div></div><div class="price-row__dur">ca. 15 Min.</div><div class="price-row__price">15 €</div></div>
+        <div class="price-row"><div class="price-row__main"><div class="price-row__name">Augenbrauen &amp; Wimpern färben</div><div class="price-row__desc">In kosmetischer Behandlung</div></div><div class="price-row__dur"></div><div class="price-row__price">28 €</div></div>
+        <div class="price-row"><div class="price-row__main"><div class="price-row__name">Entfernung von Milien</div><div class="price-row__desc">Zu jeder Kosmetikbehandlung dazu buchbar</div></div><div class="price-row__dur"></div><div class="price-row__price">0,50 €</div></div>
+        <div class="price-row"><div class="price-row__main"><div class="price-row__name">Ohrkerzen-Behandlung</div><div class="price-row__desc">Sanfte Trommelfellmassage, intensive Entspannung</div></div><div class="price-row__dur">ca. 30 Min.</div><div class="price-row__price">42 €</div></div>
+        <div class="price-row"><div class="price-row__main"><div class="price-row__name">HF-Stab-Behandlung</div><div class="price-row__desc">Desinfizierend &amp; abheilend, dazu buchbar</div></div><div class="price-row__dur">ca. 10 Min.</div><div class="price-row__price">20 €</div></div>
+        <div class="price-row"><div class="price-row__main"><div class="price-row__name">Mikrodermabrasion (Zusatz)</div><div class="price-row__desc">Intensives Peeling, zu jeder Behandlung dazu buchbar</div></div><div class="price-row__dur">ca. 10 Min.</div><div class="price-row__price">18 €</div></div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- CTA STRIP -->
+  <section class="lp-cta">
+    <svg class="deco lp-cta__deco--orchid orchid-180" aria-hidden="true"><use href="#orchid"/></svg>
+    <svg class="deco lp-cta__deco--frond frond-140" aria-hidden="true"><use href="#frond"/></svg>
+    <div class="lp-cta__inner">
+      <h2>Bereit für deine Auszeit?</h2>
+      <p>Buche bequem online oder melde dich direkt bei mir. Geschenkgutscheine sind für alle Anwendungen erhältlich.</p>
+      <div class="lp-cta__actions">
+        <a class="btn-primary" href="https://www.treatwell.de" target="_blank" rel="noopener">Auf Treatwell buchen</a>
+        <a class="btn-outline" href="index.html#kontakt">Kontakt aufnehmen</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer__cols">
+      <div class="footer__brand">
+        <div class="footer__brand-row">
+          <img src="assets/logo.png" alt="">
+          <div class="name">Maria Augusta Fölsener</div>
+        </div>
+        <p>Ganzheitliche Kosmetik in Berlin — Behandlungen mit Herz für Körper und Seele.</p>
+        <div class="footer__social footer__social--text">
+          <a href="https://instagram.com/mariafoelsenerkosmetik" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://facebook.com/mariafoelsenerkosmetik" target="_blank" rel="noopener">Facebook</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer__label">Schnellmenü</div>
+        <div class="footer__menu">
+          <a href="index.html">Startseite</a>
+          <a href="index.html#ueber">Über mich</a>
+          <a href="leistungen.html">Leistungen &amp; Preise</a>
+          <a href="index.html#kontakt">Kontakt</a>
+          <a href="https://www.treatwell.de" target="_blank" rel="noopener">Termin buchen</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer__label">Kontakt</div>
+        <div class="footer__contact">
+          <a href="tel:+4917610106022">0176 10 10 60 22</a>
+          <a href="tel:+49302824080">030 28 24 080</a>
+          <a href="mailto:kosmetik@mariafoelsener.com">kosmetik@mariafoelsener.com</a>
+          <span>Tieckstr. 1b<br>10115 Berlin</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bar">
+      <span>© 2025 Maria Augusta Fölsener Kosmetik</span>
+      <span class="legal">
+        <a href="#">Impressum</a>
+        <a href="#">Datenschutz</a>
+        <a href="#">AGB</a>
+      </span>
+    </div>
+  </footer>
+
+</body>
+</html>
