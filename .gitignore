@@ -1,0 +1,27 @@
+# Environment & Secrets
+.env
+.env.local
+.env.*.local
+secrets/
+credentials.json
+.DS_Store
+
+# Netlify
+.netlify
+netlify-state.json
+
+# OS files
+Thumbs.db
+*.swp
+*.swo
+
+# Editor
+.vscode/
+.idea/
+*.sublime-*
+
+# Build/cache (falls später hinzugefügt)
+node_modules/
+dist/
+build/
+.cache/
