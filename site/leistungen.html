@@ -50,7 +50,10 @@
         <small>Ganzheitskosmetik · Berlin</small>
       </span>
     </a>
-    <div class="nav__links">
+    <button class="nav__toggle" type="button" aria-label="Menü öffnen" aria-expanded="false" aria-controls="navLinks">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav__links" id="navLinks">
       <a href="index.html#ueber">Über mich</a>
       <a href="leistungen.html" class="is-active">Leistungen</a>
       <a href="index.html#kontakt">Kontakt</a>
@@ -250,6 +253,31 @@
       </span>
     </div>
   </footer>
+
+  <!-- mobile burger navigation -->
+  <script>
+    (function () {
+      var nav = document.querySelector('.nav');
+      var toggle = nav && nav.querySelector('.nav__toggle');
+      var links = document.getElementById('navLinks');
+      if (!nav || !toggle || !links) return;
+
+      function setOpen(open) {
+        nav.classList.toggle('is-open', open);
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        toggle.setAttribute('aria-label', open ? 'Menü schließen' : 'Menü öffnen');
+      }
+      toggle.addEventListener('click', function () {
+        setOpen(!nav.classList.contains('is-open'));
+      });
+      links.addEventListener('click', function (e) {
+        if (e.target.closest('a')) setOpen(false);
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') setOpen(false);
+      });
+    })();
+  </script>
 
 </body>
 </html>

@@ -66,7 +66,10 @@
         <small>Ganzheitskosmetik · Berlin</small>
       </span>
     </a>
-    <div class="nav__links">
+    <button class="nav__toggle" type="button" aria-label="Menü öffnen" aria-expanded="false" aria-controls="navLinks">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav__links" id="navLinks">
       <a href="#ueber">Über mich</a>
       <a href="leistungen.html">Leistungen</a>
       <a href="#kontakt">Kontakt</a>
@@ -74,9 +77,8 @@
     </div>
   </nav>
 
-  <!-- HERO (photo + dark green filter) -->
-  <section id="hero" class="hero hero--photo">
-    <div class="hero__bg" aria-hidden="true"></div>
+  <!-- HERO (clean, imageless) -->
+  <section id="hero" class="hero">
     <div class="hero__inner">
       <div class="hero__divider"><svg class="divider-svg" aria-hidden="true"><use href="#divider"/></svg></div>
       <span class="eyebrow">Ganzheitskosmetik · Berlin</span>
@@ -100,9 +102,9 @@
     <div>
       <span class="eyebrow">Über mich</span>
       <h2>Ganzheitskosmetik mit Herz</h2>
-      <p class="about__text">Ich bin Maria und arbeite seit 9 Jahren als Ganzheitskosmetikerin. Ich sehe und behandle den Körper als Ganzes und kombiniere Techniken wie Ayurveda und Lomi-Lomi. Ursprünglich komme ich aus Ecuador und spreche fließend Deutsch, Spanisch und Englisch. Ich bringe meine Herzlichkeit zur Arbeit und schaffe für jeden Kunden genau die richtige Balance aus Entspannung und Lebendigkeit.</p>
+      <p class="about__text">Ich bin Maria und arbeite seit über 10 Jahren als Ganzheitskosmetikerin. Ich sehe und behandle den Körper als Ganzes und kombiniere Techniken wie Ayurveda und Lomi-Lomi. Ursprünglich komme ich aus Ecuador und spreche fließend Deutsch, Spanisch und Englisch. Ich bringe meine Herzlichkeit zur Arbeit und schaffe für jeden Kunden genau die richtige Balance aus Entspannung und Lebendigkeit.</p>
       <div class="about__stats">
-        <div><div class="num">9</div><div class="lbl">Jahre Erfahrung</div></div>
+        <div><div class="num">+10</div><div class="lbl">Jahre Erfahrung</div></div>
         <div><div class="num">3</div><div class="lbl">Sprachen</div></div>
         <div><div class="num">∞</div><div class="lbl">Herzlichkeit</div></div>
       </div>
@@ -351,6 +353,33 @@
       f.setAttribute('style', 'width:100%;height:100%;border:0;display:block');
       c.parentNode.replaceChild(f, c);
     }
+  </script>
+
+  <!-- mobile burger navigation -->
+  <script>
+    (function () {
+      var nav = document.querySelector('.nav');
+      var toggle = nav && nav.querySelector('.nav__toggle');
+      var links = document.getElementById('navLinks');
+      if (!nav || !toggle || !links) return;
+
+      function setOpen(open) {
+        nav.classList.toggle('is-open', open);
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        toggle.setAttribute('aria-label', open ? 'Menü schließen' : 'Menü öffnen');
+      }
+      toggle.addEventListener('click', function () {
+        setOpen(!nav.classList.contains('is-open'));
+      });
+      // close after tapping a link
+      links.addEventListener('click', function (e) {
+        if (e.target.closest('a')) setOpen(false);
+      });
+      // close on Escape
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') setOpen(false);
+      });
+    })();
   </script>
 
 </body>
