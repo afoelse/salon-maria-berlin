@@ -12,10 +12,16 @@
 </head>
 <body>
 
+  <a class="skip-link" href="#main-content">Zum Inhalt springen</a>
+
   <!-- NAV -->
   <nav class="nav">
     <a class="nav__brand" href="index.html">
-      <img src="assets/logo.png" alt="Maria Augusta Fölsener">
+      <picture>
+        <source srcset="assets/logo.avif" type="image/avif">
+        <source srcset="assets/logo.webp" type="image/webp">
+        <img src="assets/logo.png" alt="Maria Augusta Fölsener" width="600" height="600">
+      </picture>
       <span class="nav__name">
         <b>Maria Augusta Fölsener</b>
         <small>Ganzheitskosmetik · Berlin</small>
@@ -29,7 +35,7 @@
     </div>
   </nav>
 
-  <main class="legal-page">
+  <main id="main-content" class="legal-page">
     <h1>Impressum</h1>
     <p class="legal-sub">Angaben gemäß § 5 DDG</p>
 
@@ -108,7 +114,11 @@
     <div class="footer__cols">
       <div class="footer__brand">
         <div class="footer__brand-row">
-          <img src="assets/logo.png" alt="">
+          <picture>
+            <source srcset="assets/logo.avif" type="image/avif">
+            <source srcset="assets/logo.webp" type="image/webp">
+            <img src="assets/logo.png" alt="" width="600" height="600" loading="lazy">
+          </picture>
           <div class="name">Maria Augusta Fölsener</div>
         </div>
         <p>Ganzheitliche Kosmetik in Berlin — Behandlungen mit Herz für Körper und Seele.</p>

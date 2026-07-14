@@ -11,6 +11,8 @@
 </head>
 <body>
 
+  <a class="skip-link" href="#main-content">Zum Inhalt springen</a>
+
   <!-- reusable botanical symbols (palette: Salbei & Orchidee) -->
   <svg class="sprite" aria-hidden="true" focusable="false">
     <symbol id="frond" viewBox="0 0 80 120">
@@ -44,7 +46,11 @@
   <!-- NAV -->
   <nav class="nav">
     <a class="nav__brand" href="index.html">
-      <img src="assets/logo.png" alt="Maria Augusta Fölsener">
+      <picture>
+        <source srcset="assets/logo.avif" type="image/avif">
+        <source srcset="assets/logo.webp" type="image/webp">
+        <img src="assets/logo.png" alt="Maria Augusta Fölsener" width="600" height="600">
+      </picture>
       <span class="nav__name">
         <b>Maria Augusta Fölsener</b>
         <small>Ganzheitskosmetik · Berlin</small>
@@ -60,6 +66,8 @@
       <a class="btn-primary nav__cta" href="https://buchung.treatwell.de/ort/salon-maria-augusta-foelsener/?utm_source=widget&utm_medium=partners&utm_campaign=website_booknow" target="_blank" rel="noopener">Termin buchen</a>
     </div>
   </nav>
+
+  <main id="main-content">
 
   <!-- HEADER -->
   <section class="lp-header">
@@ -211,12 +219,18 @@
     </div>
   </section>
 
+  </main>
+
   <!-- FOOTER -->
   <footer class="footer">
     <div class="footer__cols">
       <div class="footer__brand">
         <div class="footer__brand-row">
-          <img src="assets/logo.png" alt="">
+          <picture>
+            <source srcset="assets/logo.avif" type="image/avif">
+            <source srcset="assets/logo.webp" type="image/webp">
+            <img src="assets/logo.png" alt="" width="600" height="600" loading="lazy">
+          </picture>
           <div class="name">Maria Augusta Fölsener</div>
         </div>
         <p>Ganzheitliche Kosmetik in Berlin — Behandlungen mit Herz für Körper und Seele.</p>
