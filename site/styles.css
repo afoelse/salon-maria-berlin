@@ -1057,9 +1057,34 @@ button:focus-visible,
   .reviews { padding: 64px 22px; }
   .reviews h2 { font-size: 38px; }
 
-  .gallery { padding: 64px 22px 56px; }
-  .gallery h2 { font-size: 38px; margin: 12px 0 32px; }
-  .gallery__grid { column-count: 1; }
+  .gallery { padding: 64px 0 56px; }
+  .gallery h2 { font-size: 38px; margin: 12px 0 28px; padding: 0 22px; }
+  .gallery .eyebrow { padding: 0 22px; }
+
+  /* mobile: swipeable strip instead of a long single column */
+  .gallery__grid {
+    column-count: unset;
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding-left: 22px;
+    padding: 4px 22px 20px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .gallery__grid::-webkit-scrollbar { display: none; }
+  .gallery__grid figure {
+    flex: 0 0 74%;
+    scroll-snap-align: center;
+    margin: 0;
+  }
+  .gallery__grid img {
+    aspect-ratio: 4 / 5;
+    height: 100%;
+    object-fit: cover;
+  }
 
   .contact { padding: 64px 22px; }
   .contact__head { margin-bottom: 40px; }
