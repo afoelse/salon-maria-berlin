@@ -17,12 +17,12 @@
   --ink-muted:    #6a7158;   /* muted body */
   --tan:          #7c6245;   /* eyebrow / accents — WCAG AA vs. bg/sand/paper (5.0:1+) */
 
-  --bg:           #fbfaf6;   /* page background */
+  --bg:           #fff;      /* page background */
   --paper:        #fff;
   --line:         #ebe7da;   /* hairlines */
 
-  --sand:         #f4f1e8;   /* warm section block */
-  --sage-block:   #eaf0df;   /* pastel green block */
+  --sand:         #fff;      /* warm section block */
+  --sage-block:   #fff;      /* pastel green block */
   --icon-bg:      #eef1e4;   /* round icon backdrop */
 
   --footer-bg:    #3c4a2a;
@@ -159,7 +159,7 @@ button:focus-visible,
   justify-content: space-between;
   gap: 24px;
   padding: 12px 48px;
-  background: rgba(251, 250, 246, .88);
+  background: rgba(255, 255, 255, .88);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--line);
@@ -1066,7 +1066,7 @@ button:focus-visible,
     align-items: stretch;
     gap: 4px;
     padding: 10px 20px 18px;
-    background: rgba(251, 250, 246, .98);
+    background: rgba(255, 255, 255, .98);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--line);
