@@ -530,6 +530,64 @@ button:focus-visible,
 .gallery__grid figure:hover img { transform: scale(1.05); }
 
 /* =====================================================================
+   STELLENANZEIGE
+   ===================================================================== */
+.jobad {
+  position: relative;
+  background: var(--sage-block);
+  padding: 96px 56px;
+  overflow: hidden;
+}
+.jobad__inner {
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+}
+.jobad h2 {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: 42px;
+  margin: 16px 0 18px;
+  color: var(--ink);
+}
+.jobad__lead {
+  font-size: 16.5px;
+  color: var(--ink-soft);
+  max-width: 560px;
+  margin: 0 auto 32px;
+  font-weight: 300;
+}
+.jobad__facts {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px 28px;
+  list-style: none;
+  margin: 0 0 40px;
+  padding: 0;
+  font-size: 15px;
+  color: var(--ink);
+}
+.jobad__facts li { display: flex; align-items: center; gap: 8px; }
+.jobad__facts li::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  flex-shrink: 0;
+}
+.jobad__actions {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.jobad__actions .btn-primary { padding: 15px 36px; font-size: 15px; color: #fff; font-weight: 500; }
+
+/* =====================================================================
    KONTAKT
    ===================================================================== */
 .contact {
@@ -970,6 +1028,8 @@ button:focus-visible,
   .gallery { padding: 80px 28px 72px; }
   .gallery__grid { column-count: 2; }
 
+  .jobad { padding: 64px 28px; }
+
   .contact { padding: 80px 28px; }
   .contact__grid { grid-template-columns: 1fr; }
   .contact__map { min-height: 360px; }
@@ -1085,6 +1145,10 @@ button:focus-visible,
     height: 100%;
     object-fit: cover;
   }
+
+  .jobad { padding: 56px 22px; }
+  .jobad h2 { font-size: 34px; }
+  .jobad__facts { gap: 10px 20px; margin-bottom: 32px; }
 
   .contact { padding: 64px 22px; }
   .contact__head { margin-bottom: 40px; }
