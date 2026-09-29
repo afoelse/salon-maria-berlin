@@ -1,0 +1,23 @@
+---
+import type { UiDict } from '../i18n/ui';
+interface Props { t: UiDict }
+const { t } = Astro.props;
+---
+<section id="ueber" class="about">
+  <div class="about__media">
+    <div class="about__frame">
+      <img src="/assets/maria.jpg" alt={t.nav.brand} width="1000" height="1016" loading="lazy" />
+    </div>
+  </div>
+  <div>
+    <span class="eyebrow">{t.about.eyebrow}</span>
+    <h2>{t.about.title}</h2>
+    <p class="about__text">{t.about.text}</p>
+    <div class="about__stats">
+      <div><div class="num">+10</div><div class="lbl">{t.about.stat1}</div></div>
+      <div><div class="num">3</div><div class="lbl">{t.about.stat2}</div></div>
+      <div><div class="num">&#8734;</div><div class="lbl">{t.about.stat3}</div></div>
+    </div>
+    <div class="about__rule"><svg class="divider-svg" aria-hidden="true"><use href="#divider"/></svg></div>
+  </div>
+</section>

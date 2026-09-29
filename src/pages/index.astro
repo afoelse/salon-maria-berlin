@@ -1,0 +1,25 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import About from '../components/About.astro';
+import ServicesPreview from '../components/ServicesPreview.astro';
+import Partners from '../components/Partners.astro';
+import Reviews from '../components/Reviews.astro';
+import Gallery from '../components/Gallery.astro';
+import Contact from '../components/Contact.astro';
+import { ui, bookingUrl } from '../i18n/ui';
+import { localizedPath } from '../i18n/paths';
+
+const lang = 'de' as const;
+const t = ui[lang];
+const servicesHref = localizedPath('leistungen', lang);
+---
+<Layout lang={lang} page="home" t={t} title={t.meta.homeTitle} description={t.meta.homeDesc}>
+  <Hero t={t} bookingUrl={bookingUrl} servicesHref={servicesHref} />
+  <About t={t} />
+  <ServicesPreview t={t} bookingUrl={bookingUrl} servicesHref={servicesHref} />
+  <Partners t={t} />
+  <Reviews t={t} />
+  <Gallery t={t} />
+  <Contact t={t} />
+</Layout>

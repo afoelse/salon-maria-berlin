@@ -1,0 +1,20 @@
+---
+import type { Lang, UiDict } from '../i18n/ui';
+interface Props { t: UiDict; lang: Lang }
+const { t, lang } = Astro.props;
+---
+<main class="legal-page">
+  <h1>{t.impressum.title}</h1>
+  <p class="legal-sub">{t.impressum.sub}</p>
+
+  {lang !== 'de' && (
+    <div class="legal-note"><strong>Note:</strong> <span set:html={t.impressum.note} /></div>
+  )}
+
+  {t.impressum.sections.map((section) => (
+    <>
+      <h2>{section.h}</h2>
+      <p set:html={section.p} />
+    </>
+  ))}
+</main>

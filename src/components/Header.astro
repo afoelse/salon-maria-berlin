@@ -1,0 +1,96 @@
+---
+import { languages, type Lang, type UiDict } from '../i18n/ui';
+import { localizedPath, type PageKey } from '../i18n/paths';
+
+interface Props {
+  lang: Lang;
+  page: PageKey;
+  t: UiDict;
+  bookingUrl: string;
+}
+const { lang, page, t, bookingUrl } = Astro.props;
+
+const homeHref = localizedPath('home', lang);
+const servicesHref = localizedPath('leistungen', lang);
+const aboutHref = page === 'home' ? '#ueber' : `${homeHref}#ueber`;
+const contactHref = page === 'home' ? '#kontakt' : `${homeHref}#kontakt`;
+---
+<nav class="nav" id="siteNav">
+  <a class="nav__brand" href={homeHref}>
+    <img src="/assets/logo.png" alt={t.nav.brand} />
+    <span class="nav__name">
+      <b>{t.nav.brand}</b>
+      <small>{t.nav.tagline}</small>
+    </span>
+  </a>
+
+  <button class="nav__toggle" type="button" aria-label={t.nav.menuOpen} aria-expanded="false" aria-controls="navLinks">
+    <span></span><span></span><span></span>
+  </button>
+
+  <div class="nav__links" id="navLinks">
+    <a href={aboutHref}>{t.nav.about}</a>
+    <a href={servicesHref} class={page === 'leistungen' ? 'is-active' : ''}>{t.nav.services}</a>
+    <a href={contactHref}>{t.nav.contact}</a>
+    <details class="langswitch">
+      <summary aria-label={t.nav.langLabel}>
+        <span class="langswitch__code">{lang.toUpperCase()}</span>
+        <svg class="langswitch__chevron" width="10" height="6" viewBox="0 0 10 6" aria-hidden="true">
+          <path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </summary>
+      <div class="langswitch__menu" role="menu">
+        {Object.entries(languages).map(([code, name]) => (
+          <a
+            role="menuitem"
+            href={localizedPath(page, code as Lang)}
+            class={code === lang ? 'is-active' : ''}
+            aria-current={code === lang ? 'true' : undefined}
+          >
+            {name}
+          </a>
+        ))}
+      </div>
+    </details>
+    <a class="btn-primary nav__cta" href={bookingUrl} target="_blank" rel="noopener">{t.nav.book}</a>
+  </div>
+</nav>
+
+<script>
+  (function () {
+    var nav = document.getElementById('siteNav');
+    var toggle = nav && nav.querySelector('.nav__toggle');
+    var links = document.getElementById('navLinks');
+    var langswitch = nav && nav.querySelector('.langswitch');
+    if (!nav || !toggle || !links) return;
+
+    function setOpen(open: boolean) {
+      nav!.classList.toggle('is-open', open);
+      toggle!.setAttribute('aria-expanded', open ? 'true' : 'false');
+    }
+    toggle.addEventListener('click', function () {
+      setOpen(!nav!.classList.contains('is-open'));
+    });
+    links.addEventListener('click', function (e) {
+      var target = e.target as HTMLElement;
+      if (target.closest('a')) setOpen(false);
+    });
+    document.addEventListener('click', function (e) {
+      if (langswitch && !langswitch.contains(e.target as Node)) {
+        langswitch.removeAttribute('open');
+      }
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') {
+        setOpen(false);
+        if (langswitch) langswitch.removeAttribute('open');
+      }
+    });
+
+    function onScroll() {
+      nav!.classList.toggle('is-scrolled', window.scrollY > 4);
+    }
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+  })();
+</script>

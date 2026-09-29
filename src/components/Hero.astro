@@ -1,0 +1,17 @@
+---
+import type { UiDict } from '../i18n/ui';
+interface Props { t: UiDict; bookingUrl: string; servicesHref: string }
+const { t, bookingUrl, servicesHref } = Astro.props;
+---
+<section id="hero" class="hero">
+  <div class="hero__inner">
+    <div class="hero__divider"><svg class="divider-svg" aria-hidden="true"><use href="#divider"/></svg></div>
+    <span class="eyebrow">{t.hero.eyebrow}</span>
+    <h1>{t.hero.title[0]}<br/>{t.hero.title[1]}</h1>
+    <p class="hero__sub">{t.hero.sub}</p>
+    <div class="hero__actions">
+      <a class="btn-primary" href={bookingUrl} target="_blank" rel="noopener">{t.hero.book}</a>
+      <a class="hero__link" href={servicesHref}>{t.hero.view}</a>
+    </div>
+  </div>
+</section>

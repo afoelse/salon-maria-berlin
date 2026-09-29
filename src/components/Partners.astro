@@ -1,0 +1,25 @@
+---
+import type { UiDict } from '../i18n/ui';
+interface Props { t: UiDict }
+const { t } = Astro.props;
+const logos = [
+  { src: '/assets/brand-meentzen.png', alt: 'Charlotte Meentzen' },
+  { src: '/assets/brand-clarena.png', alt: 'Clarena' },
+  { src: '/assets/brand-denova.png', alt: 'Denova Pro' },
+  { src: '/assets/brand-grandel.png', alt: 'Dr. Grandel' },
+  { src: '/assets/brand-gehwol.png', alt: 'Gehwol' },
+  { src: '/assets/brand-primavera.png', alt: 'Primavera' },
+];
+---
+<section class="partners">
+  <div class="partners__inner">
+    <span class="eyebrow">{t.partners.eyebrow}</span>
+    <h2>{t.partners.title}</h2>
+    <p class="partners__lead">{t.partners.lead}</p>
+    <div class="partners__grid">
+      {logos.map((logo) => (
+        <div class="partners__logo"><img src={logo.src} alt={logo.alt} /></div>
+      ))}
+    </div>
+  </div>
+</section>

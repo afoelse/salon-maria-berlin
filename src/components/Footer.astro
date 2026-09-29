@@ -1,0 +1,68 @@
+---
+import type { Lang, UiDict } from '../i18n/ui';
+import { localizedPath, type PageKey } from '../i18n/paths';
+
+interface Props {
+  lang: Lang;
+  page: PageKey;
+  t: UiDict;
+  bookingUrl: string;
+}
+const { lang, page, t, bookingUrl } = Astro.props;
+const homeHref = localizedPath('home', lang);
+const servicesHref = localizedPath('leistungen', lang);
+const impressumHref = localizedPath('impressum', lang);
+const datenschutzHref = localizedPath('datenschutz', lang);
+const aboutHref = page === 'home' ? '#ueber' : `${homeHref}#ueber`;
+const contactHref = page === 'home' ? '#kontakt' : `${homeHref}#kontakt`;
+---
+<footer class="footer">
+  <div class="footer__cols">
+    <div class="footer__brand">
+      <div class="footer__brand-row">
+        <img src="/assets/logo.png" alt="" />
+        <div class="name">{t.nav.brand}</div>
+      </div>
+      <p>{t.footer.tagline}</p>
+      <div class="footer__social">
+        <a href="https://instagram.com/mariafoelsenerkosmetik" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg width="17" height="17" aria-hidden="true"><use href="#ic-instagram"/></svg>
+        </a>
+        <a href="https://facebook.com/mariafoelsenerkosmetik" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg width="17" height="17" aria-hidden="true"><use href="#ic-facebook"/></svg>
+        </a>
+      </div>
+    </div>
+    <div>
+      <div class="footer__label">{t.footer.quickMenu}</div>
+      <div class="footer__menu">
+        <a href={homeHref}>{t.footer.home}</a>
+        <a href={aboutHref}>{t.footer.about}</a>
+        <a href={servicesHref}>{t.footer.services}</a>
+        <a href={contactHref}>{t.footer.contact}</a>
+        <a href={bookingUrl} target="_blank" rel="noopener">{t.footer.book}</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer__label">{t.footer.contactLabel}</div>
+      <div class="footer__contact">
+        <a href="tel:+4917610106022">0176 10 10 60 22</a>
+        <a href="tel:+49302824080">030 28 24 080</a>
+        <a href="mailto:kosmetik@mariafoelsener.com">kosmetik@mariafoelsener.com</a>
+        <span>Tieckstr. 1b<br/>10115 Berlin</span>
+      </div>
+    </div>
+  </div>
+  <div class="footer__bar">
+    <span>{t.footer.copyright}</span>
+    <span class="legal">
+      <a href={impressumHref}>{t.footer.impressum}</a>
+      <a href={datenschutzHref}>{t.footer.datenschutz}</a>
+    </span>
+    <span class="footer__langswitch">
+      <a href={localizedPath(page, 'de')} class={lang === 'de' ? 'is-active' : ''}>DE</a>
+      <a href={localizedPath(page, 'en')} class={lang === 'en' ? 'is-active' : ''}>EN</a>
+      <a href={localizedPath(page, 'es')} class={lang === 'es' ? 'is-active' : ''}>ES</a>
+    </span>
+  </div>
+</footer>

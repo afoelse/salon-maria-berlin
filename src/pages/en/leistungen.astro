@@ -1,0 +1,19 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import LeistungenHeader from '../../components/LeistungenHeader.astro';
+import ServicesPricing from '../../components/ServicesPricing.astro';
+import LeistungenCta from '../../components/LeistungenCta.astro';
+import { ui, bookingUrl } from '../../i18n/ui';
+import { localizedPath } from '../../i18n/paths';
+import { servicesData } from '../../data/services';
+
+const lang = 'en' as const;
+const t = ui[lang];
+const homeHref = localizedPath('home', lang);
+const contactHref = `${homeHref}#kontakt`;
+---
+<Layout lang={lang} page="leistungen" t={t} title={t.meta.leistungenTitle} description={t.meta.leistungenDesc}>
+  <LeistungenHeader t={t} homeHref={homeHref} />
+  <ServicesPricing groups={servicesData[lang]} />
+  <LeistungenCta t={t} bookingUrl={bookingUrl} contactHref={contactHref} />
+</Layout>

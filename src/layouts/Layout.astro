@@ -1,0 +1,37 @@
+---
+import '../styles/global.css';
+import Botanicals from '../components/Botanicals.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import type { Lang, UiDict } from '../i18n/ui';
+import { bookingUrl } from '../i18n/ui';
+import type { PageKey } from '../i18n/paths';
+
+interface Props {
+  lang: Lang;
+  page: PageKey;
+  t: UiDict;
+  title: string;
+  description: string;
+  noindex?: boolean;
+}
+const { lang, page, t, title, description, noindex } = Astro.props;
+---
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    {noindex && <meta name="robots" content="noindex" />}
+    <link rel="icon" href="/assets/logo.png" />
+    <link rel="stylesheet" href="/assets/fonts/fonts.css" />
+  </head>
+  <body>
+    <Botanicals />
+    <Header lang={lang} page={page} t={t} bookingUrl={bookingUrl} />
+    <slot />
+    <Footer lang={lang} page={page} t={t} bookingUrl={bookingUrl} />
+  </body>
+</html>

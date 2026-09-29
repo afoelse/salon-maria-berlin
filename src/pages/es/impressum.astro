@@ -1,0 +1,11 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ImpressumContent from '../../components/ImpressumContent.astro';
+import { ui } from '../../i18n/ui';
+
+const lang = 'es' as const;
+const t = ui[lang];
+---
+<Layout lang={lang} page="impressum" t={t} title={t.meta.impressumTitle} description={t.meta.impressumDesc} noindex>
+  <ImpressumContent t={t} lang={lang} />
+</Layout>

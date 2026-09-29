@@ -1,0 +1,24 @@
+---
+import type { UiDict } from '../i18n/ui';
+interface Props { t: UiDict }
+const { t } = Astro.props;
+---
+<section class="reviews">
+  <div class="reviews__inner">
+    <span class="eyebrow">{t.reviews.eyebrow}</span>
+    <h2>{t.reviews.title}</h2>
+    <div class="reviews__badge">
+      <span class="stars">★★★★★</span>
+      <span>{t.reviews.badge}</span>
+    </div>
+    <div class="reviews__grid">
+      {t.reviews.items.map((item) => (
+        <div class="card-review">
+          <div class="stars">★★★★★</div>
+          <blockquote>&#8222;{item.quote}&#8220;</blockquote>
+          <cite>{item.name}</cite>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
