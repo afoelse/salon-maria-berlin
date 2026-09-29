@@ -10,6 +10,7 @@ interface Props {
 }
 const { lang, page, t, bookingUrl } = Astro.props;
 
+const isLegal = page === 'impressum' || page === 'datenschutz';
 const homeHref = localizedPath('home', lang);
 const servicesHref = localizedPath('leistungen', lang);
 const aboutHref = page === 'home' ? '#ueber' : `${homeHref}#ueber`;
@@ -35,7 +36,7 @@ const contactHref = page === 'home' ? '#kontakt' : `${homeHref}#kontakt`;
       {Object.entries(languages).map(([code, name]) => (
         <a
           role="menuitem"
-          href={localizedPath(page, code as Lang)}
+          href={localizedPath(isLegal ? 'home' : page, code as Lang)}
           class={code === lang ? 'is-active' : ''}
           aria-current={code === lang ? 'true' : undefined}
         >
@@ -64,7 +65,7 @@ const contactHref = page === 'home' ? '#kontakt' : `${homeHref}#kontakt`;
         {Object.entries(languages).map(([code, name]) => (
           <a
             role="menuitem"
-            href={localizedPath(page, code as Lang)}
+            href={localizedPath(isLegal ? 'home' : page, code as Lang)}
             class={code === lang ? 'is-active' : ''}
             aria-current={code === lang ? 'true' : undefined}
           >

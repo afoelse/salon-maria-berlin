@@ -260,10 +260,6 @@ export const ui = {
       leistungenTitle: 'Treatments & Prices — Maria Augusta Fölsener Kosmetik',
       leistungenDesc:
         'All treatments & prices: facials, massages (Lomi Lomi, Ayurveda), hand & foot care and additional treatments at the studio in Berlin-Mitte.',
-      impressumTitle: 'Legal Notice — Maria Augusta Fölsener Kosmetik',
-      impressumDesc: 'Legal notice (Impressum) for Maria Augusta Fölsener Kosmetik, Berlin.',
-      datenschutzTitle: 'Privacy Policy — Maria Augusta Fölsener Kosmetik',
-      datenschutzDesc: 'Privacy policy of Maria Augusta Fölsener Kosmetik, Berlin.',
     },
     nav: {
       brand: 'Maria Augusta Fölsener',
@@ -368,8 +364,8 @@ export const ui = {
       contact: 'Contact',
       book: 'Book appointment',
       contactLabel: 'Contact',
-      impressum: 'Legal notice',
-      datenschutz: 'Privacy policy',
+      impressum: 'Impressum',
+      datenschutz: 'Datenschutz',
       copyright: '© 2026 Maria Augusta Fölsener Kosmetik',
     },
     leistungen: {
@@ -382,112 +378,6 @@ export const ui = {
       ctaBook: 'Book on Treatwell',
       ctaContact: 'Get in touch',
     },
-    impressum: {
-      title: 'Legal Notice',
-      sub: 'Information pursuant to § 5 DDG (German Digital Services Act)',
-      sections: [
-        {
-          h: 'Service provider',
-          p: 'Maria Augusta Fölsener<br>Tieckstr. 1b<br>10115 Berlin<br>Germany',
-        },
-        {
-          h: 'Contact',
-          p: 'Phone: +49 30 28 24 080<br>Mobile: +49 176 10 10 60 22<br>Email: <a href="mailto:kosmetik@mariafoelsener.com">kosmetik@mariafoelsener.com</a>',
-        },
-        {
-          h: 'VAT identification number',
-          p: 'VAT ID pursuant to § 27a of the German VAT Act:<br>DE274493311',
-        },
-        { h: 'Professional title', p: 'Beauty therapist (professional title awarded in: Germany)' },
-        {
-          h: 'Responsible for content pursuant to § 18 (2) MStV',
-          p: 'Maria Augusta Fölsener<br>Tieckstr. 1b, 10115 Berlin',
-        },
-        {
-          h: 'Consumer dispute resolution',
-          p: 'We are not willing and not obliged to participate in dispute resolution proceedings before a consumer arbitration board.',
-        },
-        {
-          h: 'Liability for content',
-          p: 'As a service provider, we are responsible for our own content on these pages in accordance with general law pursuant to § 7 (1) DDG. However, pursuant to §§ 8 to 10 DDG, we as a service provider are not obliged to monitor transmitted or stored third-party information or to investigate circumstances that indicate illegal activity. Obligations to remove or block the use of information under general law remain unaffected. However, liability in this regard is only possible from the point in time at which a concrete infringement becomes known. Upon becoming aware of any such infringements, we will remove this content immediately.',
-        },
-        {
-          h: 'Liability for links',
-          p: "Our website contains links to external third-party websites over whose content we have no influence. We therefore cannot accept any liability for this external content. The respective provider or operator of the linked pages is always responsible for their content. The linked pages were checked for possible legal violations at the time of linking. No illegal content was identifiable at the time of linking.",
-        },
-        {
-          h: 'Copyright',
-          p: 'The content and works created by the site operator on these pages are subject to German copyright law. Reproduction, editing, distribution and any kind of use outside the limits of copyright law require the written consent of the respective author or creator.',
-        },
-      ],
-      note: 'This page is legally binding in its German-language version. The German version takes precedence over this translation.',
-    },
-    datenschutz: {
-      title: 'Privacy Policy',
-      sub: 'Information pursuant to Art. 13 GDPR',
-      sections: [
-        {
-          h: '1. Data controller',
-          p: [
-            'The controller responsible for data processing on this website is:<br>Maria Augusta Fölsener<br>Tieckstr. 1b, 10115 Berlin, Germany<br>Email: <a href="mailto:kosmetik@mariafoelsener.com">kosmetik@mariafoelsener.com</a><br>Phone: +49 30 28 24 080',
-          ],
-        },
-        {
-          h: '2. Your rights',
-          p: ['You have the right at any time to:'],
-          ul: [
-            'obtain information about your stored data (Art. 15 GDPR),',
-            'request correction of inaccurate data (Art. 16 GDPR),',
-            'request deletion of your data (Art. 17 GDPR),',
-            'request restriction of processing (Art. 18 GDPR),',
-            'object to the processing (Art. 21 GDPR),',
-            'receive your data in a portable format (Art. 20 GDPR).',
-          ],
-          p2: [
-            'You may withdraw any consent given at any time with effect for the future. You also have the right to lodge a complaint with a supervisory authority. The competent authority is the Berlin Commissioner for Data Protection and Freedom of Information, Alt-Moabit 59–61, 10555 Berlin.',
-          ],
-        },
-        {
-          h: '3. Hosting and server log files',
-          p: [
-            'This website is hosted by an external provider (Danube Data). The servers are located in Falkenstein, Germany. When you access the pages, the provider automatically collects information in so-called server log files transmitted by your browser: IP address, date and time of access, page accessed, amount of data transferred, browser type and operating system.',
-            'This data is used for the technical provision and security of the website. The legal basis is our legitimate interest in stable and secure operation (Art. 6(1)(f) GDPR). A data processing agreement pursuant to Art. 28 GDPR is in place with the hosting provider. As the servers are located in Germany, your data is not transferred to a third country.',
-          ],
-        },
-        {
-          h: '4. Fonts',
-          p: [
-            'This website uses the typefaces "Cormorant Garamond" and "Jost". These are loaded locally from our own server and <strong>not</strong> from external servers (e.g. Google Fonts). No connection to third-party servers is therefore established when loading the fonts, and your IP address is not transmitted to third parties.',
-          ],
-        },
-        {
-          h: '5. Google Maps (embedded only with consent)',
-          p: [
-            'On the contact page we offer a map from the provider Google Maps (Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Ireland). The map is <strong>only loaded after you actively click "Load map"</strong>, thereby giving your consent. No connection to Google is established beforehand.',
-            'By clicking, you consent to data – in particular your IP address – being transferred to Google and possibly forwarded to third countries (USA). The legal basis is your consent (Art. 6(1)(a) GDPR). Further information can be found in Google\'s privacy policy: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">https://policies.google.com/privacy</a>.',
-          ],
-        },
-        {
-          h: '6. Getting in touch',
-          p: [
-            'If you contact us by email, phone or WhatsApp, we process the data you provide (e.g. name, phone number, request) to handle your enquiry. The legal basis is Art. 6(1)(b) GDPR (initiation/performance of a contract) or Art. 6(1)(f) GDPR. The data will be deleted as soon as it is no longer required for processing and no statutory retention periods apply.',
-            'If you contact us via <strong>WhatsApp</strong> (provider: WhatsApp Ireland Limited), WhatsApp\'s own privacy terms additionally apply. Please note that connection data is transmitted to WhatsApp in this case.',
-          ],
-        },
-        {
-          h: '7. External links and booking',
-          p: [
-            'Our website links to external services (e.g. the Treatwell booking portal as well as our Instagram and Facebook profiles). Only once you click such a link do you reach the respective provider, whose own privacy policy applies to their data processing. We have no influence over the scope of data collected there.',
-          ],
-        },
-        {
-          h: '8. Cookies',
-          p: ['This website does not use cookies and does not use any analytics or tracking services.'],
-        },
-      ],
-      note: 'This page is legally binding in its German-language version. The German version takes precedence over this translation.',
-      stand: 'Last updated: June 2026',
-    },
   },
 
   es: {
@@ -498,10 +388,6 @@ export const ui = {
       leistungenTitle: 'Tratamientos y Precios — Maria Augusta Fölsener Kosmetik',
       leistungenDesc:
         'Todos los tratamientos y precios: faciales, masajes (Lomi Lomi, Ayurveda), cuidado de manos y pies, y otros tratamientos en el estudio en Berlín-Mitte.',
-      impressumTitle: 'Aviso Legal — Maria Augusta Fölsener Kosmetik',
-      impressumDesc: 'Aviso legal de Maria Augusta Fölsener Kosmetik, Berlín.',
-      datenschutzTitle: 'Política de Privacidad — Maria Augusta Fölsener Kosmetik',
-      datenschutzDesc: 'Política de privacidad de Maria Augusta Fölsener Kosmetik, Berlín.',
     },
     nav: {
       brand: 'Maria Augusta Fölsener',
@@ -606,8 +492,8 @@ export const ui = {
       contact: 'Contacto',
       book: 'Reservar cita',
       contactLabel: 'Contacto',
-      impressum: 'Aviso legal',
-      datenschutz: 'Privacidad',
+      impressum: 'Impressum',
+      datenschutz: 'Datenschutz',
       copyright: '© 2026 Maria Augusta Fölsener Kosmetik',
     },
     leistungen: {
@@ -619,112 +505,6 @@ export const ui = {
       ctaText: 'Reserva cómodamente en línea o contáctame directamente. Hay vales de regalo disponibles para todos los tratamientos.',
       ctaBook: 'Reservar en Treatwell',
       ctaContact: 'Ponerse en contacto',
-    },
-    impressum: {
-      title: 'Aviso Legal',
-      sub: 'Información conforme al § 5 DDG (ley alemana de servicios digitales)',
-      sections: [
-        {
-          h: 'Prestadora del servicio',
-          p: 'Maria Augusta Fölsener<br>Tieckstr. 1b<br>10115 Berlín<br>Alemania',
-        },
-        {
-          h: 'Contacto',
-          p: 'Teléfono: +49 30 28 24 080<br>Móvil: +49 176 10 10 60 22<br>Correo: <a href="mailto:kosmetik@mariafoelsener.com">kosmetik@mariafoelsener.com</a>',
-        },
-        {
-          h: 'Número de identificación fiscal (IVA)',
-          p: 'Número de IVA conforme al § 27a de la ley alemana del IVA:<br>DE274493311',
-        },
-        { h: 'Título profesional', p: 'Esteticista (título profesional otorgado en: Alemania)' },
-        {
-          h: 'Responsable del contenido conforme al § 18 (2) MStV',
-          p: 'Maria Augusta Fölsener<br>Tieckstr. 1b, 10115 Berlín',
-        },
-        {
-          h: 'Resolución de litigios de consumo',
-          p: 'No estamos dispuestas ni obligadas a participar en procedimientos de resolución de litigios ante una junta de arbitraje de consumo.',
-        },
-        {
-          h: 'Responsabilidad por el contenido',
-          p: 'Como prestadoras de servicios, somos responsables de nuestro propio contenido en estas páginas conforme a la legislación general según el § 7 (1) DDG. No obstante, conforme a los §§ 8 a 10 DDG, no estamos obligadas a supervisar la información de terceros transmitida o almacenada ni a investigar circunstancias que indiquen actividades ilegales. Las obligaciones de eliminar o bloquear el uso de información conforme a la legislación general permanecen inalteradas. Sin embargo, la responsabilidad al respecto solo es posible desde el momento en que se tiene conocimiento de una infracción concreta. En cuanto tengamos conocimiento de tales infracciones, eliminaremos este contenido de inmediato.',
-        },
-        {
-          h: 'Responsabilidad por enlaces',
-          p: 'Nuestro sitio contiene enlaces a sitios web externos de terceros sobre cuyo contenido no tenemos ninguna influencia. Por ello, no podemos asumir ninguna responsabilidad sobre dicho contenido externo. El respectivo proveedor u operador de las páginas enlazadas es siempre responsable de su contenido. En el momento de enlazarlas, se comprobó que las páginas enlazadas no presentaban infracciones legales. En el momento de establecer el enlace no se identificó ningún contenido ilegal.',
-        },
-        {
-          h: 'Derechos de autor',
-          p: 'Los contenidos y obras creados por la operadora del sitio en estas páginas están sujetos a la legislación alemana de derechos de autor. La reproducción, edición, distribución y cualquier tipo de uso fuera de los límites de la ley de derechos de autor requieren el consentimiento por escrito de la autora o creadora correspondiente.',
-        },
-      ],
-      note: 'Esta página es legalmente vinculante en su versión en alemán. La versión alemana prevalece sobre esta traducción.',
-    },
-    datenschutz: {
-      title: 'Política de Privacidad',
-      sub: 'Información conforme al Art. 13 RGPD',
-      sections: [
-        {
-          h: '1. Responsable del tratamiento',
-          p: [
-            'La responsable del tratamiento de datos en este sitio web es:<br>Maria Augusta Fölsener<br>Tieckstr. 1b, 10115 Berlín, Alemania<br>Correo: <a href="mailto:kosmetik@mariafoelsener.com">kosmetik@mariafoelsener.com</a><br>Teléfono: +49 30 28 24 080',
-          ],
-        },
-        {
-          h: '2. Tus derechos',
-          p: ['Tienes derecho en cualquier momento a:'],
-          ul: [
-            'obtener información sobre tus datos almacenados (art. 15 RGPD),',
-            'solicitar la rectificación de datos incorrectos (art. 16 RGPD),',
-            'solicitar la supresión de tus datos (art. 17 RGPD),',
-            'solicitar la limitación del tratamiento (art. 18 RGPD),',
-            'oponerte al tratamiento (art. 21 RGPD),',
-            'recibir tus datos en un formato transferible (art. 20 RGPD).',
-          ],
-          p2: [
-            'Puedes revocar en cualquier momento, con efecto futuro, un consentimiento otorgado. Asimismo, tienes derecho a presentar una reclamación ante una autoridad de control. La autoridad competente es la Comisionada de Berlín para la Protección de Datos y la Libertad de Información, Alt-Moabit 59–61, 10555 Berlín.',
-          ],
-        },
-        {
-          h: '3. Alojamiento y archivos de registro del servidor',
-          p: [
-            'Este sitio web está alojado por un proveedor externo (Danube Data). Los servidores se encuentran en Falkenstein, Alemania. Al acceder a las páginas, el proveedor recoge automáticamente información en los llamados archivos de registro del servidor que transmite tu navegador: dirección IP, fecha y hora de acceso, página visitada, cantidad de datos transferidos, tipo de navegador y sistema operativo.',
-            'Estos datos se utilizan para la provisión técnica y la seguridad del sitio web. La base jurídica es nuestro interés legítimo en un funcionamiento estable y seguro (art. 6.1.f RGPD). Con el proveedor de alojamiento existe un contrato de encargo de tratamiento conforme al art. 28 RGPD. Dado que los servidores se encuentran en Alemania, tus datos no se transfieren a un tercer país.',
-          ],
-        },
-        {
-          h: '4. Tipografías (Fonts)',
-          p: [
-            'Este sitio web utiliza las tipografías «Cormorant Garamond» y «Jost». Estas se cargan localmente desde nuestro propio servidor y <strong>no</strong> desde servidores externos (p. ej., Google Fonts). Por lo tanto, al cargar las tipografías no se establece ninguna conexión con servidores de terceros ni se transmite tu dirección IP a terceros.',
-          ],
-        },
-        {
-          h: '5. Google Maps (integración solo con consentimiento)',
-          p: [
-            'En la página de contacto ofrecemos un mapa del proveedor Google Maps (Google Ireland Limited, Gordon House, Barrow Street, Dublín 4, Irlanda). El mapa <strong>solo se carga después de que hagas clic activamente en «Cargar mapa»</strong>, dando así tu consentimiento. Antes de eso no se establece ninguna conexión con Google.',
-            'Al hacer clic, aceptas que se transmitan datos —en particular tu dirección IP— a Google y, en su caso, se transfieran a terceros países (EE. UU.). La base jurídica es tu consentimiento (art. 6.1.a RGPD). Encontrarás más información en la política de privacidad de Google: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">https://policies.google.com/privacy</a>.',
-          ],
-        },
-        {
-          h: '6. Contacto',
-          p: [
-            'Si nos contactas por correo electrónico, teléfono o WhatsApp, procesamos los datos que nos facilites (p. ej., nombre, número de teléfono, motivo de la consulta) para gestionar tu solicitud. La base jurídica es el art. 6.1.b RGPD (inicio/ejecución de una relación contractual) o el art. 6.1.f RGPD. Los datos se eliminarán en cuanto ya no sean necesarios para su tramitación y no existan plazos legales de conservación que lo impidan.',
-            'Si nos contactas a través de <strong>WhatsApp</strong> (proveedor: WhatsApp Ireland Limited), se aplican adicionalmente las condiciones de privacidad de WhatsApp. Ten en cuenta que, en ese caso, se transmiten datos de conexión a WhatsApp.',
-          ],
-        },
-        {
-          h: '7. Enlaces externos y reservas',
-          p: [
-            'Nuestro sitio web enlaza a servicios externos (p. ej., el portal de reservas Treatwell, así como nuestros perfiles de Instagram y Facebook). Solo al hacer clic en dicho enlace accederás al proveedor correspondiente, cuya propia política de privacidad se aplicará al tratamiento de tus datos. No tenemos ninguna influencia sobre el alcance de los datos recopilados allí.',
-          ],
-        },
-        {
-          h: '8. Cookies',
-          p: ['Este sitio web no utiliza cookies ni servicios de análisis o seguimiento.'],
-        },
-      ],
-      note: 'Esta página es legalmente vinculante en su versión en alemán. La versión alemana prevalece sobre esta traducción.',
-      stand: 'Última actualización: junio de 2026',
     },
   },
 } as const;

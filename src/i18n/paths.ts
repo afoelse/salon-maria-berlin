@@ -9,8 +9,9 @@ const slugs: Record<Lang, Record<PageKey, string>> = {
 };
 
 export function localizedPath(page: PageKey, lang: Lang): string {
-  const prefix = lang === 'de' ? '' : `/${lang}`;
-  const slug = slugs[lang][page];
+  const legal = page === 'impressum' || page === 'datenschutz';
+  const prefix = lang === 'de' || legal ? '' : `/${lang}`;
+  const slug = slugs[legal ? 'de' : lang][page];
   const path = `${prefix}/${slug}`.replace(/\/+$/, '') || '/';
   return path === '' ? '/' : path;
 }

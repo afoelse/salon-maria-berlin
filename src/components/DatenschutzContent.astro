@@ -7,10 +7,6 @@ const { t, lang } = Astro.props;
   <h1>{t.datenschutz.title}</h1>
   <p class="legal-sub">{t.datenschutz.sub}</p>
 
-  {lang !== 'de' && (
-    <div class="legal-note"><strong>Note:</strong> <span set:html={t.datenschutz.note} /></div>
-  )}
-
   {t.datenschutz.sections.map((section: any) => (
     <>
       <h2>{section.h}</h2>
