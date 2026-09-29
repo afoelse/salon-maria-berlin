@@ -48,7 +48,7 @@ export const ui = {
     about: {
       eyebrow: 'Über mich',
       title: 'Ganzheitskosmetik mit Herz',
-      text: 'Ich bin Maria und arbeite seit über 10 Jahren als Ganzheitskosmetikerin. Ich sehe und behandle den Körper als Ganzes und kombiniere Techniken wie Ayurveda und Lomi-Lomi. Ursprünglich komme ich aus Ecuador und spreche fließend Deutsch, Spanisch und Englisch. Ich bringe meine Herzlichkeit zur Arbeit und schaffe für jeden Kunden genau die richtige Balance aus Entspannung und Lebendigkeit.',
+      text: 'Ich bin Maria und arbeite seit über 20 Jahren als Ganzheitskosmetikerin. Ich sehe und behandle den Körper als Ganzes und kombiniere Techniken wie Ayurveda und Lomi-Lomi. Ursprünglich komme ich aus Ecuador und spreche fließend Deutsch, Spanisch und Englisch. Ich bringe meine Herzlichkeit zur Arbeit und schaffe für jeden Kunden genau die richtige Balance aus Entspannung und Lebendigkeit.',
       stat1: 'Jahre Erfahrung',
       stat2: 'Sprachen',
       stat3: 'Herzlichkeit',
@@ -212,8 +212,8 @@ export const ui = {
         {
           h: '3. Hosting und Server-Logfiles',
           p: [
-            'Diese Website wird bei einem externen Dienstleister gehostet (Netlify, Inc., 512 2nd Street, Suite 200, San Francisco, CA 94107, USA – <a href="https://www.netlify.com" target="_blank" rel="noopener">netlify.com</a>). Beim Aufruf der Seiten werden durch den Anbieter automatisch Informationen in sogenannten Server-Logfiles erfasst, die Ihr Browser übermittelt: IP-Adresse, Datum und Uhrzeit des Zugriffs, aufgerufene Seite, übertragene Datenmenge, Browsertyp und Betriebssystem.',
-            'Diese Daten dienen der technischen Bereitstellung und Sicherheit der Website. Rechtsgrundlage ist unser berechtigtes Interesse an einem stabilen und sicheren Betrieb (Art. 6 Abs. 1 lit. f DSGVO). Mit dem Hosting-Anbieter besteht ein Vertrag zur Auftragsverarbeitung gemäß Art. 28 DSGVO. Da Netlify seinen Sitz in den USA hat, kann es zu einer Übermittlung von Daten in ein Drittland kommen; die Übermittlung wird auf Grundlage der EU-Standardvertragsklauseln abgesichert.',
+            'Diese Website wird bei einem externen Dienstleister gehostet (Danube Data). Die Server stehen in Falkenstein, Deutschland. Beim Aufruf der Seiten werden durch den Anbieter automatisch Informationen in sogenannten Server-Logfiles erfasst, die Ihr Browser übermittelt: IP-Adresse, Datum und Uhrzeit des Zugriffs, aufgerufene Seite, übertragene Datenmenge, Browsertyp und Betriebssystem.',
+            'Diese Daten dienen der technischen Bereitstellung und Sicherheit der Website. Rechtsgrundlage ist unser berechtigtes Interesse an einem stabilen und sicheren Betrieb (Art. 6 Abs. 1 lit. f DSGVO). Mit dem Hosting-Anbieter besteht ein Vertrag zur Auftragsverarbeitung gemäß Art. 28 DSGVO. Da sich die Server in Deutschland befinden, findet keine Übermittlung Ihrer Daten in ein Drittland statt.',
           ],
         },
         {
@@ -286,7 +286,7 @@ export const ui = {
     about: {
       eyebrow: 'About me',
       title: 'Holistic beauty, made with heart',
-      text: "I'm Maria, and I've worked as a holistic beauty therapist for over 10 years. I see and treat the body as a whole, combining techniques such as Ayurveda and Lomi Lomi. I originally come from Ecuador and speak fluent German, Spanish and English. I bring warmth to my work and create exactly the right balance of relaxation and vitality for every client.",
+      text: "I'm Maria, and I've worked as a holistic beauty therapist for over 20 years. I see and treat the body as a whole, combining techniques such as Ayurveda and Lomi Lomi. I originally come from Ecuador and speak fluent German, Spanish and English. I bring warmth to my work and create exactly the right balance of relaxation and vitality for every client.",
       stat1: 'Years of experience',
       stat2: 'Languages',
       stat3: 'Warmth',
@@ -450,8 +450,8 @@ export const ui = {
         {
           h: '3. Hosting and server log files',
           p: [
-            'This website is hosted by an external provider (Netlify, Inc., 512 2nd Street, Suite 200, San Francisco, CA 94107, USA – <a href="https://www.netlify.com" target="_blank" rel="noopener">netlify.com</a>). When you access the pages, the provider automatically collects information in so-called server log files transmitted by your browser: IP address, date and time of access, page accessed, amount of data transferred, browser type and operating system.',
-            'This data is used for the technical provision and security of the website. The legal basis is our legitimate interest in stable and secure operation (Art. 6(1)(f) GDPR). A data processing agreement pursuant to Art. 28 GDPR is in place with the hosting provider. As Netlify is based in the USA, data may be transferred to a third country; this transfer is safeguarded on the basis of the EU Standard Contractual Clauses.',
+            'This website is hosted by an external provider (Danube Data). The servers are located in Falkenstein, Germany. When you access the pages, the provider automatically collects information in so-called server log files transmitted by your browser: IP address, date and time of access, page accessed, amount of data transferred, browser type and operating system.',
+            'This data is used for the technical provision and security of the website. The legal basis is our legitimate interest in stable and secure operation (Art. 6(1)(f) GDPR). A data processing agreement pursuant to Art. 28 GDPR is in place with the hosting provider. As the servers are located in Germany, your data is not transferred to a third country.',
           ],
         },
         {
@@ -524,7 +524,7 @@ export const ui = {
     about: {
       eyebrow: 'Sobre mí',
       title: 'Cosmética holística con corazón',
-      text: 'Soy Maria y trabajo desde hace más de 10 años como esteticista holística. Veo y trato el cuerpo como un todo, combinando técnicas como el Ayurveda y el Lomi Lomi. Originaria de Ecuador, hablo con fluidez alemán, español e inglés. Aporto mi calidez a cada sesión y creo para cada clienta el equilibrio perfecto entre relajación y vitalidad.',
+      text: 'Soy Maria y trabajo desde hace más de 20 años como esteticista holística. Veo y trato el cuerpo como un todo, combinando técnicas como el Ayurveda y el Lomi Lomi. Originaria de Ecuador, hablo con fluidez alemán, español e inglés. Aporto mi calidez a cada sesión y creo para cada clienta el equilibrio perfecto entre relajación y vitalidad.',
       stat1: 'Años de experiencia',
       stat2: 'Idiomas',
       stat3: 'Calidez',
@@ -688,8 +688,8 @@ export const ui = {
         {
           h: '3. Alojamiento y archivos de registro del servidor',
           p: [
-            'Este sitio web está alojado por un proveedor externo (Netlify, Inc., 512 2nd Street, Suite 200, San Francisco, CA 94107, EE. UU. – <a href="https://www.netlify.com" target="_blank" rel="noopener">netlify.com</a>). Al acceder a las páginas, el proveedor recoge automáticamente información en los llamados archivos de registro del servidor que transmite tu navegador: dirección IP, fecha y hora de acceso, página visitada, cantidad de datos transferidos, tipo de navegador y sistema operativo.',
-            'Estos datos se utilizan para la provisión técnica y la seguridad del sitio web. La base jurídica es nuestro interés legítimo en un funcionamiento estable y seguro (art. 6.1.f RGPD). Con el proveedor de alojamiento existe un contrato de encargo de tratamiento conforme al art. 28 RGPD. Dado que Netlify tiene su sede en EE. UU., los datos pueden transferirse a un tercer país; dicha transferencia está garantizada mediante las cláusulas contractuales tipo de la UE.',
+            'Este sitio web está alojado por un proveedor externo (Danube Data). Los servidores se encuentran en Falkenstein, Alemania. Al acceder a las páginas, el proveedor recoge automáticamente información en los llamados archivos de registro del servidor que transmite tu navegador: dirección IP, fecha y hora de acceso, página visitada, cantidad de datos transferidos, tipo de navegador y sistema operativo.',
+            'Estos datos se utilizan para la provisión técnica y la seguridad del sitio web. La base jurídica es nuestro interés legítimo en un funcionamiento estable y seguro (art. 6.1.f RGPD). Con el proveedor de alojamiento existe un contrato de encargo de tratamiento conforme al art. 28 RGPD. Dado que los servidores se encuentran en Alemania, tus datos no se transfieren a un tercer país.',
           ],
         },
         {

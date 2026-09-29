@@ -209,6 +209,8 @@ a { color: inherit; }
 .langswitch__menu a:hover { background: var(--sage-block); color: var(--accent-text); }
 .langswitch__menu a.is-active { background: var(--accent); color: #fff; }
 
+.langswitch--mobile { display: none; }
+
 .nav__toggle {
   display: none;
   flex-direction: column;
@@ -1038,16 +1040,10 @@ a { color: inherit; }
     margin-top: 10px;
     font-size: 14px;
   }
-  .langswitch {
-    align-self: center;
-    margin-top: 10px;
-  }
-  .langswitch__menu {
-    left: 50%;
-    right: auto;
-    transform: translateX(-50%);
-    min-width: 160px;
-  }
+  .langswitch--desktop { display: none; }
+  .langswitch--mobile { display: block; margin-left: auto; }
+  .langswitch--mobile + .nav__toggle { margin-left: 0; }
+  .langswitch__menu { min-width: 150px; }
 }
 
 @media (max-width: 560px) {

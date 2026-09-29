@@ -24,6 +24,27 @@ const contactHref = page === 'home' ? '#kontakt' : `${homeHref}#kontakt`;
     </span>
   </a>
 
+  <details class="langswitch langswitch--mobile">
+    <summary aria-label={t.nav.langLabel}>
+      <span class="langswitch__code">{lang.toUpperCase()}</span>
+      <svg class="langswitch__chevron" width="10" height="6" viewBox="0 0 10 6" aria-hidden="true">
+        <path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </summary>
+    <div class="langswitch__menu" role="menu">
+      {Object.entries(languages).map(([code, name]) => (
+        <a
+          role="menuitem"
+          href={localizedPath(page, code as Lang)}
+          class={code === lang ? 'is-active' : ''}
+          aria-current={code === lang ? 'true' : undefined}
+        >
+          {name}
+        </a>
+      ))}
+    </div>
+  </details>
+
   <button class="nav__toggle" type="button" aria-label={t.nav.menuOpen} aria-expanded="false" aria-controls="navLinks">
     <span></span><span></span><span></span>
   </button>
@@ -32,7 +53,7 @@ const contactHref = page === 'home' ? '#kontakt' : `${homeHref}#kontakt`;
     <a href={aboutHref}>{t.nav.about}</a>
     <a href={servicesHref} class={page === 'leistungen' ? 'is-active' : ''}>{t.nav.services}</a>
     <a href={contactHref}>{t.nav.contact}</a>
-    <details class="langswitch">
+    <details class="langswitch langswitch--desktop">
       <summary aria-label={t.nav.langLabel}>
         <span class="langswitch__code">{lang.toUpperCase()}</span>
         <svg class="langswitch__chevron" width="10" height="6" viewBox="0 0 10 6" aria-hidden="true">
@@ -61,7 +82,7 @@ const contactHref = page === 'home' ? '#kontakt' : `${homeHref}#kontakt`;
     var nav = document.getElementById('siteNav');
     var toggle = nav && nav.querySelector('.nav__toggle');
     var links = document.getElementById('navLinks');
-    var langswitch = nav && nav.querySelector('.langswitch');
+    var langswitches = nav ? nav.querySelectorAll('.langswitch') : [];
     if (!nav || !toggle || !links) return;
 
     function setOpen(open: boolean) {
@@ -76,14 +97,14 @@ const contactHref = page === 'home' ? '#kontakt' : `${homeHref}#kontakt`;
       if (target.closest('a')) setOpen(false);
     });
     document.addEventListener('click', function (e) {
-      if (langswitch && !langswitch.contains(e.target as Node)) {
-        langswitch.removeAttribute('open');
-      }
+      langswitches.forEach(function (ls) {
+        if (!ls.contains(e.target as Node)) ls.removeAttribute('open');
+      });
     });
     document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape') {
         setOpen(false);
-        if (langswitch) langswitch.removeAttribute('open');
+        langswitches.forEach(function (ls) { ls.removeAttribute('open'); });
       }
     });
 
