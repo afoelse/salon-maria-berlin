@@ -41,6 +41,7 @@ export const ui = {
     nav: {
       brand: 'Maria Augusta Fölsener',
       tagline: 'Ganzheitskosmetik · Berlin',
+      home: 'Startseite',
       about: 'Über mich',
       services: 'Leistungen',
       contact: 'Kontakt',
@@ -301,6 +302,7 @@ export const ui = {
     nav: {
       brand: 'Maria Augusta Fölsener',
       tagline: 'Holistic Beauty · Berlin',
+      home: 'Home',
       about: 'About me',
       services: 'Treatments',
       contact: 'Contact',
@@ -455,6 +457,7 @@ export const ui = {
     nav: {
       brand: 'Maria Augusta Fölsener',
       tagline: 'Cosmética Holística · Berlín',
+      home: 'Inicio',
       about: 'Sobre mí',
       services: 'Tratamientos',
       contact: 'Contacto',

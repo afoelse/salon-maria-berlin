@@ -205,6 +205,7 @@ a { color: inherit; }
   font-weight: 500;
   letter-spacing: .2px;
   padding: 4px 0;
+  white-space: nowrap;
   transition: color .2s ease;
 }
 .nav__links a:not(.btn)::after {
@@ -1373,9 +1374,21 @@ a { color: inherit; }
 /* =====================================================================
    RESPONSIVE
    ===================================================================== */
+@media (max-width: 1180px) {
+  .nav__links { gap: 26px; }
+  .nav__name b { font-size: 20px; }
+}
+
 @media (max-width: 1100px) {
   .nav__inner { padding: 0 28px; }
-  .nav__links { gap: 24px; }
+  .nav__links { gap: 22px; }
+}
+
+@media (max-width: 1040px) {
+  .nav__name { display: none; }
+}
+
+@media (max-width: 1100px) {
   .hero { padding-left: 28px; padding-right: 28px; }
   .hero__inner { gap: 44px; }
 }

@@ -27,6 +27,7 @@ const contactHref = page === 'home' ? '#kontakt' : `${homeHref}#kontakt`;
     </a>
 
     <nav class="nav__links" id="navLinks" aria-label={t.nav.brand}>
+      <a href={page === 'home' ? '#hero' : homeHref} class={page === 'home' ? 'is-active' : ''}>{t.nav.home}</a>
       <a href={aboutHref}>{t.nav.about}</a>
       <a href={servicesHref} class={page === 'leistungen' ? 'is-active' : ''}>{t.nav.services}</a>
       <a href={contactHref}>{t.nav.contact}</a>
