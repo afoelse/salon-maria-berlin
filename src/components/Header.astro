@@ -30,7 +30,7 @@ const contactHref = page === 'home' ? '#kontakt' : `${homeHref}#kontakt`;
       <a href={aboutHref}>{t.nav.about}</a>
       <a href={servicesHref} class={page === 'leistungen' ? 'is-active' : ''}>{t.nav.services}</a>
       <a href={contactHref}>{t.nav.contact}</a>
-      <a class="btn btn-primary nav__cta nav__cta--mobile" href={bookingUrl} target="_blank" rel="noopener">{t.nav.book}</a>
+      <a class="btn btn-primary nav__cta nav__cta--mobile" href={bookingUrl} target="_blank" rel="noopener"><svg width="18" height="18" aria-hidden="true"><use href="#ic-whatsapp"/></svg>{t.nav.book}</a>
     </nav>
 
     <div class="nav__actions">
@@ -55,7 +55,7 @@ const contactHref = page === 'home' ? '#kontakt' : `${homeHref}#kontakt`;
           ))}
         </div>
       </details>
-      <a class="btn btn-primary nav__cta" href={bookingUrl} target="_blank" rel="noopener">{t.nav.book}</a>
+      <a class="btn btn-primary nav__cta" href={bookingUrl} target="_blank" rel="noopener"><svg width="18" height="18" aria-hidden="true"><use href="#ic-whatsapp"/></svg>{t.nav.book}</a>
       <button class="nav__toggle" type="button" aria-label={t.nav.menuOpen} aria-expanded="false" aria-controls="navLinks">
         <span></span><span></span><span></span>
       </button>

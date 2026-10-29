@@ -8,11 +8,12 @@ import Reviews from '../../components/Reviews.astro';
 import Gallery from '../../components/Gallery.astro';
 import Contact from '../../components/Contact.astro';
 import HomeCta from '../../components/HomeCta.astro';
-import { ui, bookingUrl } from '../../i18n/ui';
+import { ui, whatsappBookingUrl } from '../../i18n/ui';
 import { localizedPath } from '../../i18n/paths';
 
 const lang = 'en' as const;
 const t = ui[lang];
+const bookingUrl = whatsappBookingUrl(lang);
 const servicesHref = localizedPath('leistungen', lang);
 ---
 <Layout lang={lang} page="home" t={t} title={t.meta.homeTitle} description={t.meta.homeDesc}>

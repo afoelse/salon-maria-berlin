@@ -1,5 +1,5 @@
 ---
-import type { Lang, UiDict } from '../i18n/ui';
+import { treatwellUrl, type Lang, type UiDict } from '../i18n/ui';
 import { localizedPath, type PageKey } from '../i18n/paths';
 
 interface Props {
@@ -40,7 +40,8 @@ const contactHref = page === 'home' ? '#kontakt' : `${homeHref}#kontakt`;
         <a href={aboutHref}>{t.footer.about}</a>
         <a href={servicesHref}>{t.footer.services}</a>
         <a href={contactHref}>{t.footer.contact}</a>
-        <a href={bookingUrl} target="_blank" rel="noopener">{t.footer.book}</a>
+        <a href={bookingUrl} target="_blank" rel="noopener">{t.booking.whatsapp}</a>
+        <a href={treatwellUrl} target="_blank" rel="noopener">{t.booking.treatwell}</a>
       </div>
     </div>
     <div>

@@ -8,13 +8,24 @@ export type Lang = keyof typeof languages;
 
 export const defaultLang: Lang = 'de';
 
-const TREATWELL_URL =
+export const treatwellUrl =
   'https://buchung.treatwell.de/ort/salon-maria-augusta-foelsener/?utm_source=widget&utm_medium=partners&utm_campaign=website_booknow';
 
-export const bookingUrl = TREATWELL_URL;
+const WHATSAPP_NUMBER = '4917610106022';
+
+/** Primary booking route: WhatsApp chat with a prefilled message in the page language. */
+export function whatsappBookingUrl(lang: Lang): string {
+  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(ui[lang].booking.waText)}`;
+}
 
 export const ui = {
   de: {
+    booking: {
+      waText: 'Hallo Maria, ich möchte gerne einen Termin vereinbaren.',
+      whatsapp: 'Per WhatsApp buchen',
+      treatwell: 'Online über Treatwell',
+      orTreatwell: 'Lieber online? Über Treatwell buchen',
+    },
     meta: {
       homeTitle: 'Maria Augusta Fölsener — Ganzheitskosmetik in Berlin',
       homeDesc:
@@ -42,7 +53,7 @@ export const ui = {
       eyebrow: 'Ganzheitskosmetik · Berlin',
       title: ['Wellness für', 'Körper und Seele'],
       sub: 'Ganzheitliche Kosmetik – individuell abgestimmt auf deine Bedürfnisse.',
-      book: 'Jetzt Termin buchen',
+      book: 'Termin per WhatsApp',
       view: 'Behandlungen ansehen',
       trust: ['Über 20 Jahre Erfahrung', 'Hochwertige Naturkosmetik', 'Auch Hausbesuche'],
       ratingValue: '5,0',
@@ -68,7 +79,7 @@ export const ui = {
         { title: 'Hand- & Fußpflege', text: 'Verwöhnprogramm für deine Hände und Füße.' },
       ],
       all: 'Alle Leistungen & Preise',
-      bookTreatwell: 'Auf Treatwell buchen',
+      book: 'Per WhatsApp buchen',
     },
     partners: {
       eyebrow: 'Produktpartner',
@@ -129,9 +140,9 @@ export const ui = {
     },
     homeCta: {
       title: 'Bereit für deine Auszeit?',
-      text: 'Gönn dir eine Pause vom Alltag – buche deinen Termin bequem online oder schreib mir direkt.',
-      book: 'Jetzt Termin buchen',
-      contact: 'Kontakt aufnehmen',
+      text: 'Gönn dir eine Pause vom Alltag – schreib mir einfach per WhatsApp, ich finde einen passenden Termin für dich.',
+      book: 'Per WhatsApp buchen',
+      treatwell: 'Online über Treatwell',
     },
     footer: {
       tagline: 'Ganzheitliche Kosmetik in Berlin — Behandlungen mit Herz für Körper und Seele.',
@@ -152,9 +163,14 @@ export const ui = {
       intro:
         'Jede Behandlung beginnt mit einem erholsamen Ritual, das von Kopf bis Fuß in tiefe Entspannung führt. In ruhiger Atmosphäre finden Körper und Geist zurück zur Balance.',
       ctaTitle: 'Bereit für deine Auszeit?',
-      ctaText: 'Buche bequem online oder melde dich direkt bei mir. Geschenkgutscheine sind für alle Anwendungen erhältlich.',
-      ctaBook: 'Auf Treatwell buchen',
-      ctaContact: 'Kontakt aufnehmen',
+      ctaText: 'Schreib mir einfach per WhatsApp – ich melde mich schnell mit einem passenden Termin. Geschenkgutscheine gibt es für alle Anwendungen.',
+      ctaBook: 'Per WhatsApp buchen',
+      ctaTreatwell: 'Online über Treatwell',
+      tabs: { face: 'Gesicht', massage: 'Massagen', hands: 'Hand & Fuß', extras: 'Extras' },
+      count: 'Behandlungen',
+      adviceTitle: 'Unsicher, was zu dir passt?',
+      adviceText: 'Schreib mir kurz, worauf du Lust hast – ich berate dich gern und stelle dir deine Behandlung zusammen.',
+      adviceBtn: 'Beratung per WhatsApp',
     },
     impressum: {
       title: 'Impressum',
@@ -265,6 +281,12 @@ export const ui = {
   },
 
   en: {
+    booking: {
+      waText: 'Hi Maria, I would like to book an appointment.',
+      whatsapp: 'Book via WhatsApp',
+      treatwell: 'Book online via Treatwell',
+      orTreatwell: 'Prefer online? Book via Treatwell',
+    },
     meta: {
       homeTitle: 'Maria Augusta Fölsener — Holistic Beauty in Berlin',
       homeDesc:
@@ -288,7 +310,7 @@ export const ui = {
       eyebrow: 'Holistic Beauty · Berlin',
       title: ['Wellness for', 'body and soul'],
       sub: 'Holistic beauty treatments – tailored individually to your needs.',
-      book: 'Book an appointment',
+      book: 'Book via WhatsApp',
       view: 'View treatments',
       trust: ['20+ years of experience', 'Premium natural skincare', 'Home visits available'],
       ratingValue: '5.0',
@@ -314,7 +336,7 @@ export const ui = {
         { title: 'Hand & foot care', text: 'A pampering programme for your hands and feet.' },
       ],
       all: 'All treatments & prices',
-      bookTreatwell: 'Book on Treatwell',
+      book: 'Book via WhatsApp',
     },
     partners: {
       eyebrow: 'Product partners',
@@ -375,9 +397,9 @@ export const ui = {
     },
     homeCta: {
       title: 'Ready for your time-out?',
-      text: 'Treat yourself to a break from everyday life – book online or simply message me.',
-      book: 'Book an appointment',
-      contact: 'Get in touch',
+      text: 'Treat yourself to a break from everyday life – just message me on WhatsApp and I will find a suitable time for you.',
+      book: 'Book via WhatsApp',
+      treatwell: 'Book online via Treatwell',
     },
     footer: {
       tagline: 'Holistic beauty in Berlin — treatments made with heart, for body and soul.',
@@ -398,13 +420,24 @@ export const ui = {
       intro:
         'Every treatment begins with a soothing ritual that guides you into deep relaxation from head to toe. In a calm atmosphere, body and mind find their way back to balance.',
       ctaTitle: 'Ready for your time-out?',
-      ctaText: 'Book conveniently online or get in touch with me directly. Gift vouchers are available for all treatments.',
-      ctaBook: 'Book on Treatwell',
-      ctaContact: 'Get in touch',
+      ctaText: 'Just send me a WhatsApp message – I will get back to you quickly with a suitable appointment. Gift vouchers are available for all treatments.',
+      ctaBook: 'Book via WhatsApp',
+      ctaTreatwell: 'Book online via Treatwell',
+      tabs: { face: 'Face', massage: 'Massages', hands: 'Hands & feet', extras: 'Extras' },
+      count: 'treatments',
+      adviceTitle: 'Not sure what suits you?',
+      adviceText: 'Send me a short message about what you are looking for – I am happy to advise you and put together your treatment.',
+      adviceBtn: 'Ask via WhatsApp',
     },
   },
 
   es: {
+    booking: {
+      waText: 'Hola Maria, me gustaría reservar una cita.',
+      whatsapp: 'Reservar por WhatsApp',
+      treatwell: 'Reservar en Treatwell',
+      orTreatwell: '¿Prefieres en línea? Reserva en Treatwell',
+    },
     meta: {
       homeTitle: 'Maria Augusta Fölsener — Cosmética Holística en Berlín',
       homeDesc:
@@ -428,7 +461,7 @@ export const ui = {
       eyebrow: 'Cosmética Holística · Berlín',
       title: ['Bienestar para', 'cuerpo y alma'],
       sub: 'Cosmética holística, adaptada individualmente a tus necesidades.',
-      book: 'Reservar cita ahora',
+      book: 'Reservar por WhatsApp',
       view: 'Ver tratamientos',
       trust: ['Más de 20 años de experiencia', 'Cosmética natural de calidad', 'También a domicilio'],
       ratingValue: '5,0',
@@ -454,7 +487,7 @@ export const ui = {
         { title: 'Manos y pies', text: 'Un programa de mimos para tus manos y pies.' },
       ],
       all: 'Todos los tratamientos y precios',
-      bookTreatwell: 'Reservar en Treatwell',
+      book: 'Reservar por WhatsApp',
     },
     partners: {
       eyebrow: 'Marcas asociadas',
@@ -515,9 +548,9 @@ export const ui = {
     },
     homeCta: {
       title: '¿Lista para tu momento de descanso?',
-      text: 'Regálate una pausa de la rutina – reserva en línea o escríbeme directamente.',
-      book: 'Reservar cita ahora',
-      contact: 'Ponerse en contacto',
+      text: 'Regálate una pausa de la rutina – escríbeme por WhatsApp y encuentro una cita para ti.',
+      book: 'Reservar por WhatsApp',
+      treatwell: 'Reservar en Treatwell',
     },
     footer: {
       tagline: 'Cosmética holística en Berlín — tratamientos hechos con corazón para cuerpo y alma.',
@@ -538,9 +571,14 @@ export const ui = {
       intro:
         'Cada tratamiento comienza con un ritual reparador que conduce, de la cabeza a los pies, a una profunda relajación. En un ambiente tranquilo, el cuerpo y la mente recuperan el equilibrio.',
       ctaTitle: '¿Lista para tu momento de descanso?',
-      ctaText: 'Reserva cómodamente en línea o contáctame directamente. Hay vales de regalo disponibles para todos los tratamientos.',
-      ctaBook: 'Reservar en Treatwell',
-      ctaContact: 'Ponerse en contacto',
+      ctaText: 'Escríbeme por WhatsApp y te respondo rápido con una cita adecuada. Hay vales de regalo para todos los tratamientos.',
+      ctaBook: 'Reservar por WhatsApp',
+      ctaTreatwell: 'Reservar en Treatwell',
+      tabs: { face: 'Rostro', massage: 'Masajes', hands: 'Manos y pies', extras: 'Extras' },
+      count: 'tratamientos',
+      adviceTitle: '¿No sabes qué elegir?',
+      adviceText: 'Escríbeme qué te apetece – te asesoro con gusto y preparo tu tratamiento.',
+      adviceBtn: 'Asesoría por WhatsApp',
     },
   },
 } as const;

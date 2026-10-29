@@ -4,7 +4,7 @@ import Icons from '../components/Icons.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import type { Lang, UiDict } from '../i18n/ui';
-import { bookingUrl } from '../i18n/ui';
+import { whatsappBookingUrl } from '../i18n/ui';
 import type { PageKey } from '../i18n/paths';
 
 interface Props {
@@ -16,6 +16,7 @@ interface Props {
   noindex?: boolean;
 }
 const { lang, page, t, title, description, noindex } = Astro.props;
+const bookingUrl = whatsappBookingUrl(lang);
 ---
 <!doctype html>
 <html lang={lang}>
