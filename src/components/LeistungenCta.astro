@@ -3,13 +3,14 @@ import type { UiDict } from '../i18n/ui';
 interface Props { t: UiDict; bookingUrl: string; contactHref: string }
 const { t, bookingUrl, contactHref } = Astro.props;
 ---
-<section class="lp-cta">
-  <div class="lp-cta__inner">
+<section class="cta-band">
+  <div class="cta-band__inner">
+    <img class="cta-band__logo" src="/assets/logo.png" alt="" width="64" height="64" loading="lazy" />
     <h2>{t.leistungen.ctaTitle}</h2>
     <p>{t.leistungen.ctaText}</p>
-    <div class="lp-cta__actions">
-      <a class="btn-primary" href={bookingUrl} target="_blank" rel="noopener">{t.leistungen.ctaBook}</a>
-      <a class="btn-outline" href={contactHref}>{t.leistungen.ctaContact}</a>
+    <div class="cta-band__actions">
+      <a class="btn btn-light btn--lg" href={bookingUrl} target="_blank" rel="noopener">{t.leistungen.ctaBook}</a>
+      <a class="btn btn-ghost-light btn--lg" href={contactHref}>{t.leistungen.ctaContact}</a>
     </div>
   </div>
 </section>

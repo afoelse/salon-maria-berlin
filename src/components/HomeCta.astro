@@ -1,0 +1,16 @@
+---
+import type { UiDict } from '../i18n/ui';
+interface Props { t: UiDict; bookingUrl: string }
+const { t, bookingUrl } = Astro.props;
+---
+<section class="cta-band">
+  <div class="cta-band__inner">
+    <img class="cta-band__logo" src="/assets/logo.png" alt="" width="64" height="64" loading="lazy" />
+    <h2>{t.homeCta.title}</h2>
+    <p>{t.homeCta.text}</p>
+    <div class="cta-band__actions">
+      <a class="btn btn-light btn--lg" href={bookingUrl} target="_blank" rel="noopener">{t.homeCta.book}</a>
+      <a class="btn btn-ghost-light btn--lg" href="#kontakt">{t.homeCta.contact}</a>
+    </div>
+  </div>
+</section>

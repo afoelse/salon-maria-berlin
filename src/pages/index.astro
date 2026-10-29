@@ -7,6 +7,7 @@ import Partners from '../components/Partners.astro';
 import Reviews from '../components/Reviews.astro';
 import Gallery from '../components/Gallery.astro';
 import Contact from '../components/Contact.astro';
+import HomeCta from '../components/HomeCta.astro';
 import { ui, bookingUrl } from '../i18n/ui';
 import { localizedPath } from '../i18n/paths';
 
@@ -21,5 +22,6 @@ const servicesHref = localizedPath('leistungen', lang);
   <Partners t={t} />
   <Reviews t={t} />
   <Gallery t={t} />
+  <HomeCta t={t} bookingUrl={bookingUrl} />
   <Contact t={t} />
 </Layout>

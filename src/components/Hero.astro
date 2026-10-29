@@ -5,13 +5,55 @@ const { t, bookingUrl, servicesHref } = Astro.props;
 ---
 <section id="hero" class="hero">
   <div class="hero__inner">
-    <div class="hero__divider"><svg class="divider-svg" aria-hidden="true"><use href="#divider"/></svg></div>
-    <span class="eyebrow">{t.hero.eyebrow}</span>
-    <h1>{t.hero.title[0]}<br/>{t.hero.title[1]}</h1>
-    <p class="hero__sub">{t.hero.sub}</p>
-    <div class="hero__actions">
-      <a class="btn-primary" href={bookingUrl} target="_blank" rel="noopener">{t.hero.book}</a>
-      <a class="hero__link" href={servicesHref}>{t.hero.view}</a>
+    <div class="hero__content">
+      <span class="pill">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 19c0-8 5-14 15-14 0 10-6 15-14 15"/><path d="M5 19c3-4 6-7 10-9"/></svg>
+        {t.hero.eyebrow}
+      </span>
+      <h1>{t.hero.title[0]} <em>{t.hero.title[1]}</em></h1>
+      <p class="hero__sub">{t.hero.sub}</p>
+
+      <ul class="hero__trust">
+        {t.hero.trust.map((item) => (
+          <li><span class="check" aria-hidden="true">✓</span>{item}</li>
+        ))}
+      </ul>
+
+      <div class="hero__actions">
+        <a class="btn btn-primary btn--lg" href={bookingUrl} target="_blank" rel="noopener">
+          {t.hero.book}
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a class="btn btn-outline btn--lg" href={servicesHref}>{t.hero.view}</a>
+      </div>
+
+      <div class="hero__rating">
+        <div class="hero__avatars" aria-hidden="true">
+          <span>T</span><span>F</span><span>P</span><span>A</span>
+        </div>
+        <div>
+          <div class="hero__stars"><strong>{t.hero.ratingValue}</strong><span class="stars" aria-hidden="true">★★★★★</span></div>
+          <p>{t.hero.ratingText}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero__media">
+      <div class="hero__frame">
+        <img src="/assets/hero-bg.jpg" alt={t.hero.imageAlt} width="2000" height="1500" fetchpriority="high" />
+      </div>
+      <div class="hero__float hero__float--rating">
+        <span class="stars" aria-hidden="true">★★★★★</span>
+        <strong>{t.hero.floatRating}</strong>
+      </div>
+      <div class="hero__float hero__float--portrait">
+        <img src="/assets/maria.jpg" alt="" width="56" height="56" />
+        <span><strong>Maria</strong><small>{t.nav.tagline}</small></span>
+      </div>
+      <div class="hero__float hero__float--address">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-6.1 7-11.5A7 7 0 0 0 5 9.5C5 14.9 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.3"/></svg>
+        {t.hero.floatAddress}
+      </div>
     </div>
   </div>
 </section>

@@ -1,6 +1,6 @@
 ---
 import '../styles/global.css';
-import Botanicals from '../components/Botanicals.astro';
+import Icons from '../components/Icons.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import type { Lang, UiDict } from '../i18n/ui';
@@ -29,7 +29,7 @@ const { lang, page, t, title, description, noindex } = Astro.props;
     <link rel="stylesheet" href="/assets/fonts/fonts.css" />
   </head>
   <body>
-    <Botanicals />
+    <Icons />
     <Header lang={lang} page={page} t={t} bookingUrl={bookingUrl} />
     <slot />
     <Footer lang={lang} page={page} t={t} bookingUrl={bookingUrl} />
