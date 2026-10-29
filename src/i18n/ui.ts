@@ -79,6 +79,9 @@ export const ui = {
         { title: 'Hand- & Fußpflege', text: 'Verwöhnprogramm für deine Hände und Füße.' },
       ],
       all: 'Alle Leistungen & Preise',
+      cardCta: 'Preise ansehen',
+      footerTitle: 'Über {n} Behandlungen',
+      footerText: 'Von Gesicht bis Fuß – finde deine Auszeit oder lass dich von mir beraten.',
       book: 'Per WhatsApp buchen',
     },
     partners: {
@@ -336,6 +339,9 @@ export const ui = {
         { title: 'Hand & foot care', text: 'A pampering programme for your hands and feet.' },
       ],
       all: 'All treatments & prices',
+      cardCta: 'View prices',
+      footerTitle: 'Over {n} treatments',
+      footerText: 'From face to feet – find your time-out or let me advise you.',
       book: 'Book via WhatsApp',
     },
     partners: {
@@ -487,6 +493,9 @@ export const ui = {
         { title: 'Manos y pies', text: 'Un programa de mimos para tus manos y pies.' },
       ],
       all: 'Todos los tratamientos y precios',
+      cardCta: 'Ver precios',
+      footerTitle: 'Más de {n} tratamientos',
+      footerText: 'Del rostro a los pies – encuentra tu momento o déjame asesorarte.',
       book: 'Reservar por WhatsApp',
     },
     partners: {

@@ -580,17 +580,24 @@ a { color: inherit; }
   gap: 28px;
 }
 .card-svc {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
   background: var(--paper);
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  padding: 44px 32px 40px;
+  padding: 40px 28px 0;
   text-align: center;
   box-shadow: var(--shadow-sm);
+  overflow: hidden;
   transition: box-shadow .3s ease, transform .3s ease, border-color .3s ease;
 }
-.card-svc:hover {
+.card-svc:hover,
+.card-svc:focus-visible {
   box-shadow: var(--shadow);
-  border-color: rgba(111, 143, 63, .35);
+  border-color: rgba(111, 143, 63, .4);
   transform: translateY(-6px);
 }
 .card-svc__icon {
@@ -598,27 +605,79 @@ a { color: inherit; }
   place-items: center;
   width: 76px;
   height: 76px;
-  margin: 0 auto 24px;
+  flex: none;
+  margin: 0 auto 22px;
   border-radius: 50%;
   background: var(--sage-soft);
-  transition: background .3s ease;
+  color: var(--accent);
+  transition: background .3s ease, color .3s ease;
 }
-.card-svc:hover .card-svc__icon { background: var(--sage-block); }
+.card-svc:hover .card-svc__icon { background: var(--accent); color: #fff; }
+.card-svc__body { flex: 1; }
 .card-svc h3 {
   font-family: var(--serif);
   font-weight: 600;
   font-size: 26px;
-  margin: 0 0 12px;
+  margin: 0 0 10px;
   color: var(--ink);
 }
 .card-svc p { font-size: 15px; color: var(--ink-muted); margin: 0; font-weight: 300; }
-.services__actions {
+.card-svc__foot {
+  align-self: stretch;
   display: flex;
-  gap: 16px;
-  justify-content: center;
-  margin-top: 52px;
-  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 30px -28px 0;
+  padding: 16px 24px;
+  border-top: 1px solid var(--line);
+  background: var(--bg);
+  transition: background .3s ease;
 }
+.card-svc:hover .card-svc__foot { background: var(--sage-soft); }
+.card-svc__count { font-size: 12px; letter-spacing: 1.2px; text-transform: uppercase; color: var(--tan); }
+.card-svc__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--accent-text);
+}
+.card-svc__arrow {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1.5px solid var(--accent);
+  color: var(--accent);
+  transition: background .25s ease, color .25s ease, transform .25s ease;
+}
+.card-svc:hover .card-svc__arrow { background: var(--accent); color: #fff; transform: translateX(3px); }
+
+.services__bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  margin-top: 28px;
+  padding: 24px 28px 24px 32px;
+  text-align: left;
+  border-radius: var(--radius);
+  background: linear-gradient(120deg, var(--sage-soft), var(--bloom-soft));
+  border: 1px solid var(--line);
+}
+.services__bar-text strong {
+  display: block;
+  font-family: var(--serif);
+  font-size: 25px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--ink);
+}
+.services__bar-text span { font-size: 15px; color: var(--ink-soft); font-weight: 300; }
+.services__actions { display: flex; gap: 12px; flex: none; flex-wrap: wrap; }
 
 /* =====================================================================
    PRODUKTPARTNER
@@ -1339,13 +1398,16 @@ a { color: inherit; }
   .card-svc {
     display: grid;
     grid-template-columns: auto 1fr;
-    column-gap: 20px;
+    column-gap: 18px;
     align-items: center;
     text-align: left;
-    padding: 24px 24px;
+    padding: 22px 22px 0;
   }
-  .card-svc__icon { grid-row: span 2; width: 64px; height: 64px; margin: 0; }
+  .card-svc__icon { width: 60px; height: 60px; margin: 0; }
   .card-svc h3 { font-size: 23px; margin: 0 0 2px; }
+  .card-svc__foot { grid-column: 1 / -1; margin: 20px -22px 0; padding: 12px 22px; }
+  .services__bar { flex-direction: column; align-items: stretch; text-align: center; padding: 26px 22px; }
+  .services__actions { justify-content: center; }
 
   .partners { padding: 64px 28px; }
 
@@ -1435,6 +1497,7 @@ a { color: inherit; }
 
   .services { padding: 16px 22px 68px; }
   .services h2 { font-size: 38px; margin: 12px 0 36px; }
+  .services__actions .btn { flex: 1 1 100%; }
 
   .partners { padding: 56px 22px; }
   .partners__grid { grid-template-columns: 1fr 1fr; gap: 16px; }

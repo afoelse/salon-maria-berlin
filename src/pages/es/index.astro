@@ -19,7 +19,7 @@ const servicesHref = localizedPath('leistungen', lang);
 <Layout lang={lang} page="home" t={t} title={t.meta.homeTitle} description={t.meta.homeDesc}>
   <Hero t={t} bookingUrl={bookingUrl} servicesHref={servicesHref} />
   <About t={t} />
-  <ServicesPreview t={t} bookingUrl={bookingUrl} servicesHref={servicesHref} />
+  <ServicesPreview t={t} lang={lang} bookingUrl={bookingUrl} servicesHref={servicesHref} />
   <Partners t={t} />
   <Reviews t={t} />
   <Gallery t={t} />

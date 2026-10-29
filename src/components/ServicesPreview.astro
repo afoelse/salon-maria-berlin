@@ -1,49 +1,59 @@
 ---
-import type { UiDict } from '../i18n/ui';
-interface Props { t: UiDict; bookingUrl: string; servicesHref: string }
-const { t, bookingUrl, servicesHref } = Astro.props;
+import type { Lang, UiDict } from '../i18n/ui';
+import { servicesData, type PriceGroup } from '../data/services';
+interface Props { t: UiDict; lang: Lang; bookingUrl: string; servicesHref: string }
+const { t, lang, bookingUrl, servicesHref } = Astro.props;
+
+const groups = servicesData[lang];
+const countFor = (icon: PriceGroup['icon']) => groups.find((g) => g.icon === icon)?.rows.length ?? 0;
+// Round the total down to a tidy "over N" figure (46 → 40).
+const total = Math.floor(groups.reduce((sum, g) => sum + g.rows.length, 0) / 10) * 10;
+
+const icons: Record<'face' | 'massage' | 'hands', string> = {
+  face: '<circle cx="20" cy="20" r="13" stroke="currentColor" stroke-width="1.3"/><path d="M20 7 C20 14 16 18 12 20 C16 22 20 26 20 33" stroke="currentColor" stroke-width="1.3" fill="none"/><path d="M20 7 C20 14 24 18 28 20 C24 22 20 26 20 33" stroke="currentColor" stroke-width="1.3" fill="none"/>',
+  massage: '<path d="M20 34 C20 24 20 14 20 6" stroke="currentColor" stroke-width="1.3"/><ellipse cx="11" cy="22" rx="7" ry="3.6" stroke="currentColor" stroke-width="1.3" fill="none" transform="rotate(35 11 22)"/><ellipse cx="29" cy="22" rx="7" ry="3.6" stroke="currentColor" stroke-width="1.3" fill="none" transform="rotate(-35 29 22)"/><ellipse cx="14" cy="13" rx="6" ry="3.2" stroke="currentColor" stroke-width="1.3" fill="none" transform="rotate(35 14 13)"/><ellipse cx="26" cy="13" rx="6" ry="3.2" stroke="currentColor" stroke-width="1.3" fill="none" transform="rotate(-35 26 13)"/>',
+  hands: '<path d="M20 6 C14 12 12 20 20 34 C28 20 26 12 20 6 Z" stroke="currentColor" stroke-width="1.3" fill="none"/><path d="M20 12 V30" stroke="currentColor" stroke-width="1.1"/>',
+};
+const cards = (['face', 'massage', 'hands'] as const).map((icon, i) => ({
+  icon,
+  href: `${servicesHref}#${icon}`,
+  count: countFor(icon),
+  ...t.servicesPreview.cards[i],
+}));
 ---
 <section id="leistungen" class="services">
   <span class="eyebrow">{t.servicesPreview.eyebrow}</span>
   <h2>{t.servicesPreview.title}</h2>
   <div class="services__grid">
-    <div class="card-svc">
-      <div class="card-svc__icon">
-        <svg width="42" height="42" viewBox="0 0 40 40" fill="none" aria-hidden="true">
-          <circle cx="20" cy="20" r="13" stroke="#6f8f3f" stroke-width="1.3"/>
-          <path d="M20 7 C20 14 16 18 12 20 C16 22 20 26 20 33" stroke="#6f8f3f" stroke-width="1.3" fill="none"/>
-          <path d="M20 7 C20 14 24 18 28 20 C24 22 20 26 20 33" stroke="#6f8f3f" stroke-width="1.3" fill="none"/>
-        </svg>
-      </div>
-      <h3>{t.servicesPreview.cards[0].title}</h3>
-      <p>{t.servicesPreview.cards[0].text}</p>
-    </div>
-    <div class="card-svc">
-      <div class="card-svc__icon">
-        <svg width="42" height="42" viewBox="0 0 40 40" fill="none" aria-hidden="true">
-          <path d="M20 34 C20 24 20 14 20 6" stroke="#6f8f3f" stroke-width="1.3"/>
-          <ellipse cx="11" cy="22" rx="7" ry="3.6" stroke="#6f8f3f" stroke-width="1.3" fill="none" transform="rotate(35 11 22)"/>
-          <ellipse cx="29" cy="22" rx="7" ry="3.6" stroke="#6f8f3f" stroke-width="1.3" fill="none" transform="rotate(-35 29 22)"/>
-          <ellipse cx="14" cy="13" rx="6" ry="3.2" stroke="#6f8f3f" stroke-width="1.3" fill="none" transform="rotate(35 14 13)"/>
-          <ellipse cx="26" cy="13" rx="6" ry="3.2" stroke="#6f8f3f" stroke-width="1.3" fill="none" transform="rotate(-35 26 13)"/>
-        </svg>
-      </div>
-      <h3>{t.servicesPreview.cards[1].title}</h3>
-      <p>{t.servicesPreview.cards[1].text}</p>
-    </div>
-    <div class="card-svc">
-      <div class="card-svc__icon">
-        <svg width="42" height="42" viewBox="0 0 40 40" fill="none" aria-hidden="true">
-          <path d="M20 6 C14 12 12 20 20 34 C28 20 26 12 20 6 Z" stroke="#6f8f3f" stroke-width="1.3" fill="none"/>
-          <path d="M20 12 V30" stroke="#6f8f3f" stroke-width="1.1"/>
-        </svg>
-      </div>
-      <h3>{t.servicesPreview.cards[2].title}</h3>
-      <p>{t.servicesPreview.cards[2].text}</p>
-    </div>
+    {cards.map((card) => (
+      <a class="card-svc" href={card.href}>
+        <span class="card-svc__icon">
+          <svg width="40" height="40" viewBox="0 0 40 40" fill="none" aria-hidden="true" set:html={icons[card.icon]} />
+        </span>
+        <span class="card-svc__body">
+          <h3>{card.title}</h3>
+          <p>{card.text}</p>
+        </span>
+        <span class="card-svc__foot">
+          <span class="card-svc__count">{card.count} {t.leistungen.count}</span>
+          <span class="card-svc__cta">
+            {t.servicesPreview.cardCta}
+            <span class="card-svc__arrow" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </span>
+          </span>
+        </span>
+      </a>
+    ))}
   </div>
-  <div class="services__actions">
-    <a class="btn btn-outline" href={servicesHref}>{t.servicesPreview.all}</a>
-    <a class="btn btn-primary" href={bookingUrl} target="_blank" rel="noopener"><svg width="18" height="18" aria-hidden="true"><use href="#ic-whatsapp"/></svg>{t.servicesPreview.book}</a>
+  <div class="services__bar">
+    <div class="services__bar-text">
+      <strong>{t.servicesPreview.footerTitle.replace('{n}', String(total))}</strong>
+      <span>{t.servicesPreview.footerText}</span>
+    </div>
+    <div class="services__actions">
+      <a class="btn btn-outline" href={servicesHref}>{t.servicesPreview.all}</a>
+      <a class="btn btn-primary" href={bookingUrl} target="_blank" rel="noopener"><svg width="18" height="18" aria-hidden="true"><use href="#ic-whatsapp"/></svg>{t.servicesPreview.book}</a>
+    </div>
   </div>
 </section>

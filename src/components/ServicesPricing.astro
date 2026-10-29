@@ -109,6 +109,9 @@ const icons: Record<PriceGroup['icon'], string> = {
     });
 
     var fromHash = location.hash.replace('#', '');
-    select(tabs.some(function (t: HTMLButtonElement) { return t.dataset.tab === fromHash; }) ? fromHash : tabs[0].dataset.tab!);
+    var hashMatches = tabs.some(function (t: HTMLButtonElement) { return t.dataset.tab === fromHash; });
+    select(hashMatches ? fromHash : tabs[0].dataset.tab!);
+    // Coming from a treatment card on the home page: jump straight to the price list.
+    if (hashMatches) root.scrollIntoView({ block: 'start' });
   })();
 </script>
