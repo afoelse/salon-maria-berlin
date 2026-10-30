@@ -39,6 +39,7 @@ const contactHref = page === 'home' ? '#kontakt' : `${homeHref}#kontakt`;
         <a href={homeHref}>{t.footer.home}</a>
         <a href={aboutHref}>{t.footer.about}</a>
         <a href={servicesHref}>{t.footer.services}</a>
+        <a href={localizedPath('raummiete', lang)}>{t.rental.nav}</a>
         <a href={contactHref}>{t.footer.contact}</a>
         <a href={bookingUrl} target="_blank" rel="noopener">{t.booking.whatsapp}</a>
         <a href={treatwellUrl} target="_blank" rel="noopener">{t.booking.treatwell}</a>

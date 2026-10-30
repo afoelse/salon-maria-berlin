@@ -79,6 +79,8 @@ a { color: inherit; }
   padding: 7px 16px;
 }
 
+.nowrap { white-space: nowrap; }
+
 .sprite { position: absolute; width: 0; height: 0; overflow: hidden; }
 
 .divider-svg { width: 150px; height: 20px; display: block; }
@@ -1228,6 +1230,137 @@ a { color: inherit; }
 .lp-advice p { margin: 0; font-size: 15px; color: var(--ink-soft); font-weight: 300; max-width: 520px; }
 
 /* =====================================================================
+   RAUMMIETE (Behandlungsräume für Selbstständige)
+   ===================================================================== */
+.rental-head .pill { display: table; margin: 0 auto 18px; }
+.rental-head h1 { max-width: 760px; margin-left: auto; margin-right: auto; }
+.rental-facts {
+  list-style: none;
+  padding: 0;
+  margin: 36px auto 0;
+  max-width: 760px;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+.rental-facts li {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 16px 12px;
+  box-shadow: var(--shadow-sm);
+}
+.rental-facts strong {
+  display: block;
+  font-family: var(--serif);
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 1.1;
+  color: var(--accent-text);
+}
+.rental-facts span { display: block; margin-top: 4px; font-size: 13px; color: var(--ink-muted); }
+.rental-head__actions { margin-top: 32px; display: flex; justify-content: center; }
+
+.rental-rooms { max-width: var(--container); margin: 0 auto; padding: 72px 48px 24px; text-align: center; }
+.rental-rooms h2,
+.rental-info h2 {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 1.1;
+  margin: 0 0 32px;
+  color: var(--ink);
+}
+.rental-rooms__grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+.room-card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  text-align: left;
+}
+.room-card__media { aspect-ratio: 4 / 3; background: linear-gradient(150deg, var(--sage-soft), var(--bloom-soft)); }
+.room-card__media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.room-card__placeholder {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: var(--accent);
+}
+.room-card__placeholder span { font-size: 14px; color: var(--ink-muted); }
+.room-card__body { padding: 22px 24px 24px; }
+.room-card__body h3 { font-family: var(--serif); font-weight: 600; font-size: 26px; margin: 0 0 6px; color: var(--ink); }
+.room-card__body p { margin: 0; font-size: 15.5px; color: var(--ink-soft); }
+
+.rental-info {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 64px 48px 8px;
+  display: grid;
+  grid-template-columns: .9fr 1.1fr;
+  gap: 56px;
+}
+.rental-info h2 { font-size: 34px; margin-bottom: 22px; }
+.rental-jobs { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 10px; }
+.rental-jobs li {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--accent-dark);
+  background: var(--sage-block);
+  border-radius: 100px;
+  padding: 10px 18px;
+}
+.rental-why { list-style: none; padding: 0; margin: 0; display: grid; gap: 18px; }
+.rental-why li { display: flex; gap: 14px; align-items: flex-start; }
+.rental-why__check {
+  width: 26px;
+  height: 26px;
+  flex: none;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--accent-text);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  margin-top: 2px;
+}
+.rental-why strong { display: block; font-size: 17px; font-weight: 600; color: var(--ink); margin-bottom: 2px; }
+.rental-why li > span:last-child { font-size: 15.5px; color: var(--ink-soft); }
+
+/* Startseiten-Hinweis auf die Raummiete */
+.rental-teaser { max-width: var(--container); margin: 0 auto; padding: 0 48px clamp(56px, 7vw, 88px); }
+.rental-teaser a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  text-decoration: none;
+  color: inherit;
+  padding: 20px 24px 20px 28px;
+  border-radius: var(--radius);
+  border: 1px dashed rgba(111, 143, 63, .45);
+  background: var(--paper);
+  transition: border-color .2s ease, box-shadow .2s ease, transform .2s ease;
+}
+.rental-teaser a:hover { border-style: solid; box-shadow: var(--shadow-sm); transform: translateY(-2px); }
+.rental-teaser strong { display: block; font-family: var(--serif); font-size: 22px; font-weight: 600; line-height: 1.2; color: var(--ink); }
+.rental-teaser span { font-size: 15px; color: var(--ink-soft); }
+.rental-teaser__cta {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14.5px;
+  font-weight: 500;
+  color: var(--accent-text) !important;
+}
+
+/* =====================================================================
    CTA BAND (Startseite + Leistungen)
    ===================================================================== */
 .cta-band { padding: clamp(56px, 7vw, 96px) 48px; }
@@ -1393,6 +1526,10 @@ a { color: inherit; }
 
 
   .cta-band { padding: 56px 24px; }
+  .rental-rooms__grid { grid-template-columns: 1fr; gap: 18px; }
+  .rental-info { grid-template-columns: 1fr; }
+  .rental-rooms, .rental-info { padding-left: 24px; padding-right: 24px; }
+  .rental-teaser { padding: 0 24px 56px; }
 }
 
 @media (max-width: 560px) {
@@ -1411,6 +1548,17 @@ a { color: inherit; }
   .hero__facts { flex-direction: column; align-items: center; gap: 6px; margin-top: 28px; }
   .hero__facts li + li::before { display: none; }
   .cta-band { padding: 48px 16px; }
+  .rental-facts { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+  .rental-facts strong { font-size: 22px; }
+  .rental-facts span { font-size: 14px; }
+  .rental-head__actions .btn { width: 100%; }
+  .rental-rooms { padding: 48px 20px 8px; }
+  .rental-rooms h2 { font-size: 32px; margin-bottom: 22px; }
+  .rental-info { padding: 44px 20px 0; gap: 36px; }
+  .rental-info h2 { font-size: 28px; }
+  .room-card__body p, .rental-why li > span:last-child { font-size: 16px; }
+  .rental-teaser { padding: 0 16px 48px; }
+  .rental-teaser a { flex-direction: column; align-items: flex-start; gap: 10px; padding: 20px; }
   .cta-band__actions .btn { flex: 1 1 100%; }
 
   .about { padding: 64px 22px; gap: 34px; }

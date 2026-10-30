@@ -1,0 +1,81 @@
+---
+import { whatsappUrl, type UiDict } from '../i18n/ui';
+import { rooms } from '../data/rooms';
+interface Props { t: UiDict; homeHref: string }
+const { t, homeHref } = Astro.props;
+const r = t.rental;
+const waHref = whatsappUrl(r.waText);
+// Keep "Berlin-Mitte" on one line in the headline.
+const titleParts = r.title.split(/(Berl[ií]n-Mitte)/);
+const mailHref = `mailto:kosmetik@mariafoelsener.com?subject=${encodeURIComponent(r.mailSubject)}`;
+---
+<section class="lp-header rental-head">
+  <a class="lp-back" href={homeHref}>{t.leistungen.back}</a>
+  <span class="pill">{r.eyebrow}</span>
+  <h1>{titleParts.map((part) => (/-Mitte$/.test(part) ? <span class="nowrap">{part}</span> : part))}</h1>
+  <p>{r.intro}</p>
+  <ul class="rental-facts">
+    {r.facts.map((f) => (
+      <li><strong>{f.value}</strong><span>{f.label}</span></li>
+    ))}
+  </ul>
+  <div class="rental-head__actions">
+    <a class="btn btn-primary btn--lg" href={waHref} target="_blank" rel="noopener"><svg width="18" height="18" aria-hidden="true"><use href="#ic-whatsapp"/></svg>{r.whatsapp}</a>
+  </div>
+</section>
+
+<section class="rental-rooms">
+  <h2>{r.roomsTitle}</h2>
+  <div class="rental-rooms__grid">
+    {rooms.map((room, i) => (
+      <article class="room-card">
+        <div class="room-card__media">
+          {room.image ? (
+            <img src={room.image} alt={`${r.room} ${i + 1} – ${r.title}`} width="800" height="600" loading="lazy" decoding="async" />
+          ) : (
+            <div class="room-card__placeholder">
+              <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="18" height="14" rx="3"/><circle cx="12" cy="13" r="3.5"/><path d="M8 6l1.5-2h5L16 6"/></svg>
+              <span>{r.photoSoon}</span>
+            </div>
+          )}
+        </div>
+        <div class="room-card__body">
+          <h3>{r.room} {i + 1}</h3>
+          <p>{r.roomText}</p>
+        </div>
+      </article>
+    ))}
+  </div>
+</section>
+
+<section class="rental-info">
+  <div class="rental-info__for">
+    <h2>{r.forTitle}</h2>
+    <ul class="rental-jobs">
+      {r.jobs.map((job) => <li>{job}</li>)}
+    </ul>
+  </div>
+  <div class="rental-info__why">
+    <h2>{r.whyTitle}</h2>
+    <ul class="rental-why">
+      {r.why.map((w) => (
+        <li>
+          <span class="rental-why__check" aria-hidden="true">✓</span>
+          <span><strong>{w.title}</strong>{w.text}</span>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>
+
+<section class="cta-band" id="anfrage">
+  <div class="cta-band__inner">
+    <img class="cta-band__logo" src="/assets/logo-160.webp" alt="" width="64" height="64" loading="lazy" />
+    <h2>{r.priceTitle}</h2>
+    <p>{r.priceText}</p>
+    <div class="cta-band__actions">
+      <a class="btn btn-light btn--lg" href={waHref} target="_blank" rel="noopener"><svg width="18" height="18" aria-hidden="true"><use href="#ic-whatsapp"/></svg>{r.whatsapp}</a>
+      <a class="btn btn-ghost-light btn--lg" href={mailHref}>{r.email}</a>
+    </div>
+  </div>
+</section>

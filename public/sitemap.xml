@@ -48,4 +48,28 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://mariafoelsener.com/es/leistungen/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://mariafoelsener.com/leistungen/"/>
   </url>
+  <url>
+    <loc>https://mariafoelsener.com/raummiete/</loc>
+    <lastmod>2026-10-30</lastmod>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mariafoelsener.com/raummiete/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mariafoelsener.com/en/raummiete/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mariafoelsener.com/es/raummiete/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mariafoelsener.com/raummiete/"/>
+  </url>
+  <url>
+    <loc>https://mariafoelsener.com/en/raummiete/</loc>
+    <lastmod>2026-10-30</lastmod>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mariafoelsener.com/raummiete/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mariafoelsener.com/en/raummiete/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mariafoelsener.com/es/raummiete/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mariafoelsener.com/raummiete/"/>
+  </url>
+  <url>
+    <loc>https://mariafoelsener.com/es/raummiete/</loc>
+    <lastmod>2026-10-30</lastmod>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mariafoelsener.com/raummiete/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mariafoelsener.com/en/raummiete/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mariafoelsener.com/es/raummiete/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mariafoelsener.com/raummiete/"/>
+  </url>
 </urlset>

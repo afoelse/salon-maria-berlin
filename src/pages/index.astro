@@ -8,6 +8,7 @@ import Reviews from '../components/Reviews.astro';
 import Gallery from '../components/Gallery.astro';
 import Contact from '../components/Contact.astro';
 import HomeCta from '../components/HomeCta.astro';
+import RentalTeaser from '../components/RentalTeaser.astro';
 import { ui, whatsappBookingUrl } from '../i18n/ui';
 import { localizedPath } from '../i18n/paths';
 
@@ -24,5 +25,6 @@ const servicesHref = localizedPath('leistungen', lang);
   <Reviews t={t} />
   <Gallery t={t} />
   <HomeCta t={t} bookingUrl={bookingUrl} />
+  <RentalTeaser t={t} href={localizedPath('raummiete', lang)} />
   <Contact t={t} />
 </Layout>

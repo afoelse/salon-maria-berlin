@@ -1,0 +1,15 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Rental from '../../components/Rental.astro';
+import { ui } from '../../i18n/ui';
+import { localizedPath } from '../../i18n/paths';
+import { rentalSchema, SITE } from '../../data/schema';
+
+const lang = 'es' as const;
+const t = ui[lang];
+const schema = [rentalSchema(t.rental.title, t.rental.metaDesc, new URL(localizedPath('raummiete', lang), SITE).href)];
+const homeHref = localizedPath('home', lang);
+---
+<Layout lang={lang} page="raummiete" t={t} title={t.rental.metaTitle} description={t.rental.metaDesc} schema={schema}>
+  <Rental t={t} homeHref={homeHref} />
+</Layout>

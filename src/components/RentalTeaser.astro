@@ -1,0 +1,17 @@
+---
+import type { UiDict } from '../i18n/ui';
+interface Props { t: UiDict; href: string }
+const { t, href } = Astro.props;
+---
+<aside class="rental-teaser">
+  <a href={href}>
+    <span>
+      <strong>{t.rental.teaserTitle}</strong>
+      {t.rental.teaserText}
+    </span>
+    <span class="rental-teaser__cta">
+      {t.rental.teaserCta}
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </span>
+  </a>
+</aside>

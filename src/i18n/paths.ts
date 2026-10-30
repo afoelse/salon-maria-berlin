@@ -1,11 +1,11 @@
 import type { Lang } from './ui';
 
-export type PageKey = 'home' | 'leistungen' | 'impressum' | 'datenschutz';
+export type PageKey = 'home' | 'leistungen' | 'raummiete' | 'impressum' | 'datenschutz';
 
 const slugs: Record<Lang, Record<PageKey, string>> = {
-  de: { home: '', leistungen: 'leistungen', impressum: 'impressum', datenschutz: 'datenschutz' },
-  en: { home: '', leistungen: 'leistungen', impressum: 'impressum', datenschutz: 'datenschutz' },
-  es: { home: '', leistungen: 'leistungen', impressum: 'impressum', datenschutz: 'datenschutz' },
+  de: { home: '', leistungen: 'leistungen', raummiete: 'raummiete', impressum: 'impressum', datenschutz: 'datenschutz' },
+  en: { home: '', leistungen: 'leistungen', raummiete: 'raummiete', impressum: 'impressum', datenschutz: 'datenschutz' },
+  es: { home: '', leistungen: 'leistungen', raummiete: 'raummiete', impressum: 'impressum', datenschutz: 'datenschutz' },
 };
 
 export function localizedPath(page: PageKey, lang: Lang): string {

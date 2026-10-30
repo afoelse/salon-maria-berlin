@@ -86,3 +86,30 @@ export function offerCatalogSchema(lang: Lang, name: string, pageUrl: string) {
     })),
   };
 }
+
+/** The two rental rooms as a lease offer, so "Behandlungsraum mieten Berlin" searches can surface it. */
+export function rentalSchema(name: string, description: string, pageUrl: string) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Offer',
+    name,
+    description,
+    url: pageUrl,
+    businessFunction: 'http://purl.org/goodrelations/v1#LeaseOut',
+    availability: 'https://schema.org/InStock',
+    eligibleQuantity: { '@type': 'QuantitativeValue', value: 2 },
+    offeredBy: { '@id': `${SITE}/#business` },
+    itemOffered: {
+      '@type': 'Place',
+      name,
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: 'Tieckstr. 1b',
+        postalCode: '10115',
+        addressLocality: 'Berlin',
+        addressCountry: 'DE',
+      },
+      geo: { '@type': 'GeoCoordinates', latitude: 52.52884, longitude: 13.38639 },
+    },
+  };
+}

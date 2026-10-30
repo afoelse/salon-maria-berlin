@@ -13,9 +13,14 @@ export const treatwellUrl =
 
 const WHATSAPP_NUMBER = '4917610106022';
 
+/** WhatsApp chat link with a prefilled message. */
+export function whatsappUrl(text: string): string {
+  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
+}
+
 /** Primary booking route: WhatsApp chat with a prefilled message in the page language. */
 export function whatsappBookingUrl(lang: Lang): string {
-  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(ui[lang].booking.waText)}`;
+  return whatsappUrl(ui[lang].booking.waText);
 }
 
 export const ui = {
@@ -155,6 +160,36 @@ export const ui = {
       impressum: 'Impressum',
       datenschutz: 'Datenschutz',
       copyright: '© 2026 Maria Augusta Fölsener Kosmetik',
+    },
+    rental: {
+      metaTitle: 'Behandlungsraum mieten in Berlin-Mitte | Kosmetik & Fußpflege',
+      metaDesc: 'Zwei möblierte Behandlungsräume in Berlin-Mitte (Tieckstr. 1b) ab sofort monatlich zu vermieten – für selbstständige Kosmetiker:innen, Fußpflege, Massage und Nageldesign.',
+      nav: 'Raummiete',
+      eyebrow: 'Für Selbstständige',
+      title: 'Behandlungsraum mieten in Berlin-Mitte',
+      intro: 'Du bist selbstständig und suchst einen schönen Ort für deine Kundinnen und Kunden? In meinem etablierten Kosmetikstudio in der Tieckstraße sind zwei möblierte Behandlungsräume frei – ab sofort und zur festen monatlichen Miete.',
+      facts: [{ value: '2', label: 'Räume frei' }, { value: 'Möbliert', label: 'sofort startklar' }, { value: 'Monatlich', label: 'feste Miete' }, { value: 'Ab sofort', label: 'verfügbar' }],
+      roomsTitle: 'Die Räume',
+      room: 'Raum',
+      roomText: 'Möblierter Behandlungsraum mit Liege – bereit für deine Behandlungen.',
+      photoSoon: 'Fotos folgen in Kürze',
+      forTitle: 'Ideal für',
+      jobs: ['Kosmetik', 'Fußpflege & Podologie', 'Massage', 'Nageldesign & Lashes'],
+      whyTitle: 'Warum hier arbeiten?',
+      why: [
+        { title: 'Top-Lage in Berlin-Mitte', text: 'Zentral in der Tieckstr. 1b – gut erreichbar für deine Kundschaft.' },
+        { title: 'Etabliertes Studio', text: 'Seit über 20 Jahren Kosmetik an diesem Standort, in ruhiger und gepflegter Atmosphäre.' },
+        { title: 'Sofort loslegen', text: 'Die Räume sind möbliert – du bringst nur dein Equipment und deine Kundinnen mit.' },
+      ],
+      priceTitle: 'Miete auf Anfrage',
+      priceText: 'Schreib mir kurz, was du anbietest und ab wann du starten möchtest – ich melde mich mit allen Details und wir vereinbaren eine Besichtigung.',
+      whatsapp: 'Per WhatsApp anfragen',
+      email: 'Per E-Mail anfragen',
+      waText: 'Hallo Maria, ich interessiere mich für einen Behandlungsraum zur Miete in der Tieckstraße.',
+      mailSubject: 'Anfrage Behandlungsraum zur Miete',
+      teaserTitle: 'Selbstständig? Arbeite bei mir in Berlin-Mitte.',
+      teaserText: 'Zwei möblierte Behandlungsräume ab sofort zu vermieten.',
+      teaserCta: 'Mehr erfahren',
     },
     leistungen: {
       back: '← Zurück zur Startseite',
@@ -412,6 +447,36 @@ export const ui = {
       datenschutz: 'Datenschutz',
       copyright: '© 2026 Maria Augusta Fölsener Kosmetik',
     },
+    rental: {
+      metaTitle: 'Treatment Room for Rent in Berlin-Mitte | Beauty & Foot Care',
+      metaDesc: 'Two furnished treatment rooms in Berlin-Mitte (Tieckstr. 1b) available now on a monthly basis – for self-employed beauticians, foot care, massage and nail artists.',
+      nav: 'Room rental',
+      eyebrow: 'For self-employed',
+      title: 'Treatment room for rent in Berlin-Mitte',
+      intro: 'Are you self-employed and looking for a beautiful place for your clients? In my established beauty studio on Tieckstraße, two furnished treatment rooms are available – right away, for a fixed monthly rent.',
+      facts: [{ value: '2', label: 'rooms available' }, { value: 'Furnished', label: 'ready to start' }, { value: 'Monthly', label: 'fixed rent' }, { value: 'Now', label: 'available' }],
+      roomsTitle: 'The rooms',
+      room: 'Room',
+      roomText: 'Furnished treatment room with treatment bed – ready for your clients.',
+      photoSoon: 'Photos coming soon',
+      forTitle: 'Ideal for',
+      jobs: ['Beauticians', 'Foot care & podiatry', 'Massage', 'Nails & lashes'],
+      whyTitle: 'Why work here?',
+      why: [
+        { title: 'Central Berlin-Mitte', text: 'Right on Tieckstr. 1b – easy to reach for your clients.' },
+        { title: 'Established studio', text: 'Over 20 years of beauty treatments at this address, in a calm and well-kept atmosphere.' },
+        { title: 'Start right away', text: 'The rooms are furnished – just bring your equipment and your clients.' },
+      ],
+      priceTitle: 'Rent on request',
+      priceText: 'Send me a short message about what you offer and when you would like to start – I will get back to you with all details and we can arrange a viewing.',
+      whatsapp: 'Enquire via WhatsApp',
+      email: 'Enquire by email',
+      waText: 'Hi Maria, I am interested in renting a treatment room on Tieckstraße.',
+      mailSubject: 'Enquiry: treatment room for rent',
+      teaserTitle: 'Self-employed? Work with me in Berlin-Mitte.',
+      teaserText: 'Two furnished treatment rooms available for rent now.',
+      teaserCta: 'Learn more',
+    },
     leistungen: {
       back: '← Back to home',
       title: 'Treatments & Prices',
@@ -561,6 +626,36 @@ export const ui = {
       impressum: 'Impressum',
       datenschutz: 'Datenschutz',
       copyright: '© 2026 Maria Augusta Fölsener Kosmetik',
+    },
+    rental: {
+      metaTitle: 'Alquiler de cabina de tratamiento en Berlín-Mitte | Estética',
+      metaDesc: 'Dos cabinas de tratamiento amuebladas en Berlín-Mitte (Tieckstr. 1b), disponibles ya con alquiler mensual – para esteticistas autónomas, pedicura, masaje y uñas.',
+      nav: 'Alquiler de cabinas',
+      eyebrow: 'Para autónomos',
+      title: 'Alquila una cabina de tratamiento en Berlín-Mitte',
+      intro: '¿Trabajas por cuenta propia y buscas un lugar bonito para tus clientes? En mi estudio de estética en la Tieckstraße hay dos cabinas amuebladas disponibles – desde ya y con alquiler mensual fijo.',
+      facts: [{ value: '2', label: 'cabinas libres' }, { value: 'Amuebladas', label: 'listas para empezar' }, { value: 'Mensual', label: 'alquiler fijo' }, { value: 'Desde ya', label: 'disponibles' }],
+      roomsTitle: 'Las cabinas',
+      room: 'Cabina',
+      roomText: 'Cabina amueblada con camilla – lista para tus tratamientos.',
+      photoSoon: 'Fotos próximamente',
+      forTitle: 'Ideal para',
+      jobs: ['Estética', 'Pedicura y podología', 'Masaje', 'Uñas y pestañas'],
+      whyTitle: '¿Por qué trabajar aquí?',
+      why: [
+        { title: 'Ubicación céntrica en Mitte', text: 'En la Tieckstr. 1b – de fácil acceso para tu clientela.' },
+        { title: 'Estudio consolidado', text: 'Más de 20 años de estética en esta dirección, en un ambiente tranquilo y cuidado.' },
+        { title: 'Empieza ya', text: 'Las cabinas están amuebladas – solo trae tu equipo y tus clientes.' },
+      ],
+      priceTitle: 'Precio a consultar',
+      priceText: 'Escríbeme brevemente qué ofreces y desde cuándo quieres empezar – te respondo con todos los detalles y acordamos una visita.',
+      whatsapp: 'Consultar por WhatsApp',
+      email: 'Consultar por e-mail',
+      waText: 'Hola Maria, me interesa alquilar una cabina de tratamiento en la Tieckstraße.',
+      mailSubject: 'Consulta: alquiler de cabina de tratamiento',
+      teaserTitle: '¿Eres autónoma? Trabaja conmigo en Berlín-Mitte.',
+      teaserText: 'Dos cabinas amuebladas en alquiler, disponibles ya.',
+      teaserCta: 'Más información',
     },
     leistungen: {
       back: '← Volver al inicio',
