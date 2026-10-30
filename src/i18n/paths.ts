@@ -12,6 +12,6 @@ export function localizedPath(page: PageKey, lang: Lang): string {
   const legal = page === 'impressum' || page === 'datenschutz';
   const prefix = lang === 'de' || legal ? '' : `/${lang}`;
   const slug = slugs[legal ? 'de' : lang][page];
-  const path = `${prefix}/${slug}`.replace(/\/+$/, '') || '/';
-  return path === '' ? '/' : path;
+  // Always end in a slash: the host serves directory indexes and 301s the bare form.
+  return `${prefix}/${slug}/`.replace(/\/+$/, '/');
 }

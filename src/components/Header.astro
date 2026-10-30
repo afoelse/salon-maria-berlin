@@ -19,7 +19,7 @@ const contactHref = page === 'home' ? '#kontakt' : `${homeHref}#kontakt`;
 <header class="nav" id="siteNav">
   <div class="nav__inner">
     <a class="nav__brand" href={homeHref}>
-      <img src="/assets/logo.png" alt={t.nav.brand} width="56" height="56" />
+      <img src="/assets/logo-160.webp" alt={t.nav.brand} width="56" height="56" />
       <span class="nav__name">
         <b>{t.nav.brand}</b>
         <small>{t.nav.tagline}</small>
@@ -36,7 +36,7 @@ const contactHref = page === 'home' ? '#kontakt' : `${homeHref}#kontakt`;
 
     <div class="nav__actions">
       <details class="langswitch">
-        <summary aria-label={t.nav.langLabel}>
+        <summary aria-label={`${lang.toUpperCase()} – ${t.nav.langLabel}`}>
           <span class="langswitch__code">{lang.toUpperCase()}</span>
           <svg class="langswitch__chevron" width="10" height="6" viewBox="0 0 10 6" aria-hidden="true">
             <path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>

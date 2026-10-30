@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://mariafoelsener.com/</loc>
+    <lastmod>2026-10-30</lastmod>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mariafoelsener.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mariafoelsener.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mariafoelsener.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mariafoelsener.com/"/>
+  </url>
+  <url>
+    <loc>https://mariafoelsener.com/en/</loc>
+    <lastmod>2026-10-30</lastmod>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mariafoelsener.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mariafoelsener.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mariafoelsener.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mariafoelsener.com/"/>
+  </url>
+  <url>
+    <loc>https://mariafoelsener.com/es/</loc>
+    <lastmod>2026-10-30</lastmod>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mariafoelsener.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mariafoelsener.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mariafoelsener.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mariafoelsener.com/"/>
+  </url>
+  <url>
+    <loc>https://mariafoelsener.com/leistungen/</loc>
+    <lastmod>2026-10-30</lastmod>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mariafoelsener.com/leistungen/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mariafoelsener.com/en/leistungen/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mariafoelsener.com/es/leistungen/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mariafoelsener.com/leistungen/"/>
+  </url>
+  <url>
+    <loc>https://mariafoelsener.com/en/leistungen/</loc>
+    <lastmod>2026-10-30</lastmod>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mariafoelsener.com/leistungen/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mariafoelsener.com/en/leistungen/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mariafoelsener.com/es/leistungen/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mariafoelsener.com/leistungen/"/>
+  </url>
+  <url>
+    <loc>https://mariafoelsener.com/es/leistungen/</loc>
+    <lastmod>2026-10-30</lastmod>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mariafoelsener.com/leistungen/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mariafoelsener.com/en/leistungen/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mariafoelsener.com/es/leistungen/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mariafoelsener.com/leistungen/"/>
+  </url>
+</urlset>

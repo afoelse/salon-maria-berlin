@@ -3,15 +3,15 @@ import type { UiDict } from '../i18n/ui';
 interface Props { t: UiDict }
 const { t } = Astro.props;
 const images = [
-  { src: '/assets/studio-schaufenster.jpg', alt: t.gallery.alt.schaufenster },
-  { src: '/assets/studio-behandlung.jpg', alt: t.gallery.alt.behandlung },
-  { src: '/assets/studio-lounge.jpg', alt: t.gallery.alt.lounge },
-  { src: '/assets/studio-flur.jpg', alt: t.gallery.alt.flur },
-  { src: '/assets/studio-empfang.jpg', alt: t.gallery.alt.empfang },
-  { src: '/assets/studio-fusspflege.jpg', alt: t.gallery.alt.fusspflege },
-  { src: '/assets/studio-produkte.jpg', alt: t.gallery.alt.produkte },
-  { src: '/assets/studio-eingang.jpg', alt: t.gallery.alt.eingang },
-  { src: '/assets/studio-wartebereich.jpg', alt: t.gallery.alt.wartebereich },
+  { src: '/assets/studio-schaufenster.webp', alt: t.gallery.alt.schaufenster, w: 750, h: 562 },
+  { src: '/assets/studio-behandlung.webp', alt: t.gallery.alt.behandlung },
+  { src: '/assets/studio-lounge.webp', alt: t.gallery.alt.lounge },
+  { src: '/assets/studio-flur.webp', alt: t.gallery.alt.flur },
+  { src: '/assets/studio-empfang.webp', alt: t.gallery.alt.empfang },
+  { src: '/assets/studio-fusspflege.webp', alt: t.gallery.alt.fusspflege },
+  { src: '/assets/studio-produkte.webp', alt: t.gallery.alt.produkte },
+  { src: '/assets/studio-eingang.webp', alt: t.gallery.alt.eingang },
+  { src: '/assets/studio-wartebereich.webp', alt: t.gallery.alt.wartebereich },
 ];
 ---
 <section class="gallery">
@@ -19,7 +19,7 @@ const images = [
   <h2>{t.gallery.title}</h2>
   <div class="gallery__grid">
     {images.map((img) => (
-      <figure><img src={img.src} alt={img.alt} loading="lazy" /></figure>
+      <figure><img src={img.src} alt={img.alt} width={img.w ?? 750} height={img.h ?? 1000} loading="lazy" decoding="async" /></figure>
     ))}
   </div>
 </section>

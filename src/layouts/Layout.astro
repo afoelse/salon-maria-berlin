@@ -5,7 +5,8 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import type { Lang, UiDict } from '../i18n/ui';
 import { whatsappBookingUrl } from '../i18n/ui';
-import type { PageKey } from '../i18n/paths';
+import { localizedPath, type PageKey } from '../i18n/paths';
+import { SITE, businessSchema } from '../data/schema';
 
 interface Props {
   lang: Lang;
@@ -14,9 +15,20 @@ interface Props {
   title: string;
   description: string;
   noindex?: boolean;
+  /** Extra JSON-LD blocks for this page (e.g. the price list). */
+  schema?: object[];
 }
-const { lang, page, t, title, description, noindex } = Astro.props;
+const { lang, page, t, title, description, noindex, schema = [] } = Astro.props;
 const bookingUrl = whatsappBookingUrl(lang);
+
+const isLegal = page === 'impressum' || page === 'datenschutz';
+const canonical = new URL(localizedPath(page, lang), SITE).href;
+const alternates = isLegal
+  ? []
+  : (['de', 'en', 'es'] as const).map((code) => ({ code, href: new URL(localizedPath(page, code), SITE).href }));
+const ogLocale = { de: 'de_DE', en: 'en_US', es: 'es_ES' }[lang];
+const ogImage = `${SITE}/assets/og-image.jpg`;
+const jsonLd = [businessSchema(lang, t.meta.homeDesc), ...schema];
 ---
 <!doctype html>
 <html lang={lang}>
@@ -25,14 +37,41 @@ const bookingUrl = whatsappBookingUrl(lang);
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <meta name="description" content={description} />
-    {noindex && <meta name="robots" content="noindex" />}
-    <link rel="icon" href="/assets/logo.png" />
+    {noindex ? <meta name="robots" content="noindex, follow" /> : <meta name="robots" content="index, follow, max-image-preview:large" />}
+    <link rel="canonical" href={canonical} />
+    {alternates.map((alt) => <link rel="alternate" hreflang={alt.code} href={alt.href} />)}
+    {alternates.length > 0 && <link rel="alternate" hreflang="x-default" href={alternates[0].href} />}
+
+    <meta name="geo.region" content="DE-BE" />
+    <meta name="geo.placename" content="Berlin" />
+    <meta name="geo.position" content="52.52884;13.38639" />
+    <meta name="ICBM" content="52.52884, 13.38639" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Maria Augusta Fölsener Kosmetik" />
+    <meta property="og:locale" content={ogLocale} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <meta name="theme-color" content="#fbfaf6" />
+    <link rel="icon" href="/assets/favicon-48.png" sizes="48x48" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <link rel="preload" href="/assets/fonts/co3bmX5slCNuHLi8bLeY9MK7whWMhyjYqXtK.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/assets/fonts/92zatBhPNqw73oTd4g.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="stylesheet" href="/assets/fonts/fonts.css" />
+    {!isLegal && jsonLd.map((block) => <script type="application/ld+json" set:html={JSON.stringify(block)} />)}
   </head>
   <body>
     <Icons />
     <Header lang={lang} page={page} t={t} bookingUrl={bookingUrl} />
-    <slot />
+    <main id="main">
+      <slot />
+    </main>
     <Footer lang={lang} page={page} t={t} bookingUrl={bookingUrl} />
   </body>
 </html>

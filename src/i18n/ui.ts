@@ -27,10 +27,10 @@ export const ui = {
       orTreatwell: 'Lieber online? Über Treatwell buchen',
     },
     meta: {
-      homeTitle: 'Maria Augusta Fölsener — Ganzheitskosmetik in Berlin',
+      homeTitle: 'Ganzheitskosmetik in Berlin-Mitte | Maria Augusta Fölsener',
       homeDesc:
-        'Ganzheitliche Kosmetik in Berlin — individuell abgestimmt auf deine Bedürfnisse. Gesichtsbehandlungen, Massagen mit Ayurveda & Lomi-Lomi, Hand- & Fußpflege.',
-      leistungenTitle: 'Leistungen & Preise — Maria Augusta Fölsener Kosmetik',
+        'Ganzheitliche Kosmetik in Berlin-Mitte: Gesichtsbehandlungen, Ayurveda- & Lomi-Lomi-Massagen, Hand- & Fußpflege – über 20 Jahre Erfahrung. Termin per WhatsApp.',
+      leistungenTitle: 'Kosmetik Preise & Leistungen Berlin-Mitte | M. A. Fölsener',
       leistungenDesc:
         'Alle Behandlungen & Preise: Gesichtsbehandlungen, Massagen (Lomi-Lomi, Ayurveda), Hand- & Fußpflege sowie weitere Anwendungen im Studio in Berlin-Mitte.',
       impressumTitle: 'Impressum — Maria Augusta Fölsener Kosmetik',
@@ -51,17 +51,12 @@ export const ui = {
       langLabel: 'Sprache',
     },
     hero: {
-      eyebrow: 'Ganzheitskosmetik · Berlin',
+      eyebrow: 'Ganzheitskosmetik in Berlin-Mitte',
       title: ['Wellness für', 'Körper und Seele'],
-      sub: 'Ganzheitliche Kosmetik – individuell abgestimmt auf deine Bedürfnisse.',
+      sub: 'Gesichtsbehandlungen, Massagen mit Ayurveda & Lomi-Lomi sowie Hand- & Fußpflege – individuell auf dich abgestimmt.',
       book: 'Termin per WhatsApp',
       view: 'Behandlungen ansehen',
-      trust: ['Über 20 Jahre Erfahrung', 'Hochwertige Naturkosmetik', 'Auch Hausbesuche'],
-      ratingValue: '5,0',
-      ratingText: 'Treatwell Top Rated – von Kundinnen geliebt',
-      floatRating: 'Treatwell Top Rated',
-      floatAddress: 'Tieckstr. 1b · Mitte',
-      imageAlt: 'Behandlungsraum im Studio mit warmem Licht',
+      facts: ['Treatwell Top Rated', 'Über 20 Jahre Erfahrung', 'Tieckstr. 1b, Berlin-Mitte'],
     },
     about: {
       eyebrow: 'Über mich',
@@ -292,10 +287,10 @@ export const ui = {
       orTreatwell: 'Prefer online? Book via Treatwell',
     },
     meta: {
-      homeTitle: 'Maria Augusta Fölsener — Holistic Beauty in Berlin',
+      homeTitle: 'Holistic Beauty Salon in Berlin-Mitte | Maria Augusta Fölsener',
       homeDesc:
-        'Holistic beauty treatments in Berlin — tailored individually to your needs. Facials, massages with Ayurveda & Lomi Lomi, hand & foot care.',
-      leistungenTitle: 'Treatments & Prices — Maria Augusta Fölsener Kosmetik',
+        'Holistic beauty in Berlin-Mitte: facials, Ayurveda & Lomi Lomi massages, manicures and pedicures – 20+ years of experience. Book via WhatsApp.',
+      leistungenTitle: 'Beauty Treatments & Prices Berlin-Mitte | M. A. Fölsener',
       leistungenDesc:
         'All treatments & prices: facials, massages (Lomi Lomi, Ayurveda), hand & foot care and additional treatments at the studio in Berlin-Mitte.',
     },
@@ -312,17 +307,12 @@ export const ui = {
       langLabel: 'Language',
     },
     hero: {
-      eyebrow: 'Holistic Beauty · Berlin',
+      eyebrow: 'Holistic beauty in Berlin-Mitte',
       title: ['Wellness for', 'body and soul'],
-      sub: 'Holistic beauty treatments – tailored individually to your needs.',
+      sub: 'Facials, Ayurveda & Lomi-Lomi massages, manicures and pedicures – tailored individually to you.',
       book: 'Book via WhatsApp',
       view: 'View treatments',
-      trust: ['20+ years of experience', 'Premium natural skincare', 'Home visits available'],
-      ratingValue: '5.0',
-      ratingText: 'Treatwell Top Rated – loved by our clients',
-      floatRating: 'Treatwell Top Rated',
-      floatAddress: 'Tieckstr. 1b · Mitte',
-      imageAlt: 'Treatment room in the studio with warm light',
+      facts: ['Treatwell Top Rated', '20+ years of experience', 'Tieckstr. 1b, Berlin-Mitte'],
     },
     about: {
       eyebrow: 'About me',
@@ -447,10 +437,10 @@ export const ui = {
       orTreatwell: '¿Prefieres en línea? Reserva en Treatwell',
     },
     meta: {
-      homeTitle: 'Maria Augusta Fölsener — Cosmética Holística en Berlín',
+      homeTitle: 'Cosmética holística en Berlín-Mitte | Maria Augusta Fölsener',
       homeDesc:
-        'Cosmética holística en Berlín, adaptada individualmente a tus necesidades. Tratamientos faciales, masajes con Ayurveda y Lomi Lomi, cuidado de manos y pies.',
-      leistungenTitle: 'Tratamientos y Precios — Maria Augusta Fölsener Kosmetik',
+        'Cosmética holística en Berlín-Mitte: faciales, masajes Ayurveda y Lomi Lomi, manicura y pedicura – más de 20 años de experiencia. Reserva por WhatsApp.',
+      leistungenTitle: 'Tratamientos y precios en Berlín-Mitte | M. A. Fölsener',
       leistungenDesc:
         'Todos los tratamientos y precios: faciales, masajes (Lomi Lomi, Ayurveda), cuidado de manos y pies, y otros tratamientos en el estudio en Berlín-Mitte.',
     },
@@ -467,17 +457,12 @@ export const ui = {
       langLabel: 'Idioma',
     },
     hero: {
-      eyebrow: 'Cosmética Holística · Berlín',
+      eyebrow: 'Cosmética holística en Berlín-Mitte',
       title: ['Bienestar para', 'cuerpo y alma'],
-      sub: 'Cosmética holística, adaptada individualmente a tus necesidades.',
+      sub: 'Tratamientos faciales, masajes Ayurveda y Lomi-Lomi, manicura y pedicura – adaptados a ti.',
       book: 'Reservar por WhatsApp',
       view: 'Ver tratamientos',
-      trust: ['Más de 20 años de experiencia', 'Cosmética natural de calidad', 'También a domicilio'],
-      ratingValue: '5,0',
-      ratingText: 'Treatwell Top Rated – querida por sus clientas',
-      floatRating: 'Treatwell Top Rated',
-      floatAddress: 'Tieckstr. 1b · Mitte',
-      imageAlt: 'Sala de tratamiento del estudio con luz cálida',
+      facts: ['Treatwell Top Rated', 'Más de 20 años de experiencia', 'Tieckstr. 1b, Berlín-Mitte'],
     },
     about: {
       eyebrow: 'Sobre mí',

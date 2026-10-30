@@ -5,14 +5,16 @@ import ServicesPricing from '../../components/ServicesPricing.astro';
 import LeistungenCta from '../../components/LeistungenCta.astro';
 import { ui, whatsappBookingUrl } from '../../i18n/ui';
 import { localizedPath } from '../../i18n/paths';
+import { offerCatalogSchema, SITE } from '../../data/schema';
 import { servicesData } from '../../data/services';
 
 const lang = 'es' as const;
 const t = ui[lang];
 const bookingUrl = whatsappBookingUrl(lang);
+const schema = [offerCatalogSchema(lang, t.meta.leistungenTitle, new URL(localizedPath('leistungen', lang), SITE).href)];
 const homeHref = localizedPath('home', lang);
 ---
-<Layout lang={lang} page="leistungen" t={t} title={t.meta.leistungenTitle} description={t.meta.leistungenDesc}>
+<Layout lang={lang} page="leistungen" t={t} title={t.meta.leistungenTitle} description={t.meta.leistungenDesc} schema={schema}>
   <LeistungenHeader t={t} homeHref={homeHref} />
   <ServicesPricing groups={servicesData[lang]} t={t} bookingUrl={bookingUrl} />
   <LeistungenCta t={t} bookingUrl={bookingUrl} />

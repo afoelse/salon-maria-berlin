@@ -3,7 +3,7 @@ import type { Lang, UiDict } from '../i18n/ui';
 interface Props { t: UiDict; lang: Lang }
 const { t, lang } = Astro.props;
 ---
-<main class="legal-page">
+<article class="legal-page">
   <h1>{t.datenschutz.title}</h1>
   <p class="legal-sub">{t.datenschutz.sub}</p>
 
@@ -21,4 +21,4 @@ const { t, lang } = Astro.props;
   ))}
 
   <p style="margin-top:32px;font-size:13px;color:var(--ink-muted)">{t.datenschutz.stand}</p>
-</main>
+</article>
