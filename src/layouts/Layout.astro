@@ -73,5 +73,25 @@ const jsonLd = [businessSchema(lang, t.meta.homeDesc), ...schema];
       <slot />
     </main>
     <Footer lang={lang} page={page} t={t} bookingUrl={bookingUrl} />
+    <script>
+      // Fade sections in as they scroll into view; content already on screen stays put.
+      (function () {
+        if (!('IntersectionObserver' in window) || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+        var items = document.querySelectorAll(
+          'main h2, main .eyebrow, .about__media, .card-svc, .services__bar, .partners__grid > *, .reviews__grid, .gallery__grid, .cta-band__inner, .rental-teaser, .contact-card, .contact__map, .lp-menu, .rental-room, .rental-info > *'
+        );
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); }
+          });
+        }, { rootMargin: '0px 0px -8% 0px' });
+        items.forEach(function (el, i) {
+          if (el.getBoundingClientRect().top < innerHeight) return;
+          el.classList.add('reveal');
+          el.style.transitionDelay = (i % 3) * 70 + 'ms';
+          io.observe(el);
+        });
+      })();
+    </script>
   </body>
 </html>
